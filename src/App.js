@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import '../src/assets/styles/App.css';
+import React from 'react';
+import Question from './components/Question.jsx';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const handleSubmit = (question) => {
+        console.log(question);
+    };
+
+    return (
+        <div>
+            <Question onSubmit={handleSubmit} />
+        </div>
+    );
+};
 
 export default App;
