@@ -1,17 +1,14 @@
 import '../src/assets/styles/App.css';
 import React from 'react';
-import Question from './components/Question.jsx';
+import QuestionList from './components/QuestionList';
 
-const App = () => {
-    const handleSubmit = (question) => {
-        console.log(question);
-    };
-
+function App() {
     return (
         <div>
-            <Question onSubmit={handleSubmit} />
+            <h1>Question List</h1>
+            <QuestionList />
         </div>
     );
-};
+}
 
 export default App;
