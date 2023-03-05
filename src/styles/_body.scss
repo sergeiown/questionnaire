@@ -1,17 +1,12 @@
-@import '../styles/_colors';
+@import '../styles/colors';
 
 body {
-    position: relative;
     width: 100vw;
     max-width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    background-color: $color-gray-dark;
+    background-color: $color-black;
+    color: $color-gray;
 
     @media only screen and (max-width: 1200px) and (orientation: landscape) {
     }

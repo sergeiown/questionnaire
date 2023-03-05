@@ -1,0 +1,47 @@
+@import '../styles/reset';
+@import '../styles/colors';
+@import '../styles/fonts';
+@import '../styles/body';
+@import '../styles/scroll';
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 50vw;
+    position: relative;
+
+    hr {
+        border: $color-ivory 1px solid;
+        margin: 0.5rem 0;
+    }
+}
+
+.postList {
+    h1 {
+        text-align: center;
+        color: $color-ivory;
+        margin: 1rem 0;
+    }
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 2px solid $color-orange;
+    margin: 15px 0 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post:nth-last-of-type(1) {
+    margin-bottom: 25vh;
+}
+.post > * :not(button) {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}

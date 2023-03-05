@@ -1,0 +1,7 @@
+.loader {
+  width: 6rem;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

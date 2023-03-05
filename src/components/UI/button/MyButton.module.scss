@@ -1,0 +1,15 @@
+@import '../../../styles/colors';
+
+.myBtn {
+    padding: 0.3rem 1rem;
+    color: $color-orange;
+    background: transparent;
+    border: 1px solid $color-orange;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-orange;
+        color: $color-black;
+    }
+}

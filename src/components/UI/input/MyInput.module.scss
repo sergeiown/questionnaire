@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+
+.myInp {
+    width: 100%;
+    padding: 0.3rem 1.2rem;
+    margin: 0.3rem 0;
+    color: $color-gray;
+    border: $color-orange 1px solid;
+    background: $color-gray-darker;
+
+    &::placeholder {
+        color: $color-gray;
+    }
+}

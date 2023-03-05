@@ -1,0 +1,12 @@
+.myBtn {
+  padding: 0.3rem 1rem;
+  color: #ff6600;
+  background: transparent;
+  border: 1px solid #ff6600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.myBtn:hover {
+  background: #ff6600;
+  color: #0a0a0a;
+}

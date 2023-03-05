@@ -1,0 +1,14 @@
+.myInp {
+  width: 100%;
+  padding: 0.3rem 1.2rem;
+  margin: 0.3rem 0;
+  color: #a0a0a0;
+  border: #ff6600 1px solid;
+  background: #313131;
+}
+.myInp::-moz-placeholder {
+  color: #a0a0a0;
+}
+.myInp::placeholder {
+  color: #a0a0a0;
+}
