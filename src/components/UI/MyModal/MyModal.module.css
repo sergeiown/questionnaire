@@ -16,6 +16,16 @@
   width: 45vw;
   min-width: 15rem;
 }
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  .myModal .myModalContent {
+    width: 95vw;
+  }
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .myModal .myModalContent {
+    width: 99vw;
+  }
+}
 .myModal .myModalContent form {
   display: flex;
   flex-direction: column;

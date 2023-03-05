@@ -18,6 +18,14 @@
         width: 45vw;
         min-width: 15rem;
 
+        @media only screen and (max-width: 1200px) and (orientation: landscape) {
+            width: 95vw;
+        }
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            width: 99vw;
+        }
+
         form {
             display: flex;
             flex-direction: column;

@@ -79,6 +79,16 @@ body .App {
   height: 100vh;
   position: relative;
 }
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  body .App {
+    width: 95vw;
+  }
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  body .App {
+    width: 99vw;
+  }
+}
 body .App .controlPanel {
   position: fixed;
   top: 0;
@@ -87,8 +97,18 @@ body .App .controlPanel {
   height: 11rem;
   padding: 1.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 99% -15%/20%;
+  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
   box-shadow: 0 0 0.2rem #313131;
+}
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  body .App .controlPanel {
+    width: 95vw;
+  }
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  body .App .controlPanel {
+    width: 99vw;
+  }
 }
 body .App .controlPanel hr {
   border: #fffff0 1px solid;
@@ -101,7 +121,7 @@ body .App .controlPanel hr {
   margin: 12rem 0 0 0;
   padding: 1rem;
   text-shadow: 2px 2px 2px #0a0a0a;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% 105%/30%;
+  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat bottom right/30%;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
 }
@@ -120,6 +140,17 @@ body .App .controlPanel hr {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .postList .post {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .postList .post__btns {
+    align-self: flex-end;
+  }
 }
 .postList .post__content {
   display: flex;

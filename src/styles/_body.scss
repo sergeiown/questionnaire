@@ -19,6 +19,14 @@ body {
         height: 100vh;
         position: relative;
 
+        @media only screen and (max-width: 1200px) and (orientation: landscape) {
+            width: 95vw;
+        }
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            width: 99vw;
+        }
+
         .controlPanel {
             position: fixed;
             top: 0;
@@ -27,8 +35,16 @@ body {
             height: 11rem;
             padding: 1.5rem;
             border-radius: 0 0 0.5rem 0.5rem;
-            background: $color-dark url('../assets/logo/logo.svg') no-repeat 99% -15% / 20%;
+            background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% -10% / 16%;
             box-shadow: 0 0 0.2rem $color-gray-darker;
+
+            @media only screen and (max-width: 1200px) and (orientation: landscape) {
+                width: 95vw;
+            }
+
+            @media only screen and (max-width: 1200px) and (orientation: portrait) {
+                width: 99vw;
+            }
 
             hr {
                 border: $color-ivory 1px solid;
