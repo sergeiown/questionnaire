@@ -1,7 +1,13 @@
 @import '../styles/colors';
 
 .postList {
-    margin: 11rem 0 0 0;
+    margin: 12rem 0 0 0;
+    padding: 1rem;
+    text-shadow: 2px 2px 2px $color-black;
+    background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% 105% / 30%;
+    box-shadow: 0 0 0.2rem $color-gray-darker;
+    border-radius: 0.5rem;
+
     h1 {
         text-align: center;
         color: $color-ivory;
@@ -11,14 +17,16 @@
     .post {
         display: flex;
         padding: 15px;
+        background: $color-black;
         border: 2px solid $color-orange;
+        border-radius: 1rem 0.5rem;
         margin: 15px 0 0 0;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
 
         &:nth-last-of-type(1) {
-            margin-bottom: 25vh;
+            margin-bottom: 20vh;
         }
         & > * :not(button) {
             -webkit-hyphens: auto;

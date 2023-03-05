@@ -5,11 +5,13 @@
   right: 0;
   left: 0;
   display: none;
-  background: rgba(10, 10, 10, 0.5);
+  background: rgba(10, 10, 10, 0.9);
 }
 .myModal .myModalContent {
   padding: 1.5rem;
   background: #1c1c1c;
+  box-shadow: 0 0 0.2rem #313131;
+  border: 1px solid #ff6600;
   border-radius: 1rem;
   width: 45vw;
   min-width: 15rem;

@@ -11,7 +11,7 @@
       enable-background="new 0 0 0 0"
       xml:space="preserve"
     >
-      <circle fill="#fff" stroke="none" cx="6" cy="50" r="6">
+      <circle fill="#fffff0" stroke="none" cx="6" cy="50" r="6">
         <animateTransform
           attributeName="transform"
           dur="1s"
@@ -22,13 +22,13 @@
         />
         <animate
           attributeName="fill"
-          values="#fff; #24588f; #fff"
+          values="#fffff0; #ff6600; #fffff0"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
         />
       </circle>
-      <circle fill="#fff" stroke="none" cx="30" cy="50" r="6">
+      <circle fill="#fffff0" stroke="none" cx="30" cy="50" r="6">
         <animateTransform
           attributeName="transform"
           dur="1s"
@@ -39,13 +39,13 @@
         />
         <animate
           attributeName="fill"
-          values="#fff; #24588f; #fff"
+          values="#fffff0; #ff6600; #fffff0"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
         />
       </circle>
-      <circle fill="#fff" stroke="none" cx="54" cy="50" r="6">
+      <circle fill="#fffff0" stroke="none" cx="54" cy="50" r="6">
         <animateTransform
           attributeName="transform"
           dur="1s"
@@ -56,7 +56,7 @@
         />
         <animate
           attributeName="fill"
-          values="#fff; #24588f; #fff"
+          values="#fffff0; #ff6600; #fffff0"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"

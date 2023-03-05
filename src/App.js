@@ -48,9 +48,7 @@ function App() {
     return (
         <div className="App">
             <div className="controlPanel">
-                <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
-                    Create Post
-                </MyButton>
+                <MyButton onClick={() => setModal(true)}>Створити питання</MyButton>
 
                 <MyModal visible={modal} setVisible={setModal}>
                     <PostForm create={createPost} />
@@ -64,7 +62,7 @@ function App() {
             {isPostsLoading ? (
                 <Loader />
             ) : (
-                <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'List of posts:'} />
+                <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Перелік питань:'} />
             )}
         </div>
     );
