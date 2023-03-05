@@ -9,7 +9,7 @@ const PostForm = ({ create }) => {
         e.preventDefault();
         const newPost = {
             ...post,
-            id: Date.now(),
+            id: Date.now().toString(),
         };
         create(newPost);
         setPost({ title: '', body: '' });
@@ -21,17 +21,17 @@ const PostForm = ({ create }) => {
                 value={post.title}
                 onChange={(e) => setPost({ ...post, title: e.target.value })}
                 type="text"
-                placeholder="post title"
+                placeholder="Текст питання..."
             />
 
             <MyInput
                 value={post.body}
                 onChange={(e) => setPost({ ...post, body: e.target.value })}
                 type="text"
-                placeholder="post description"
+                placeholder="Тип питання..."
             />
 
-            <MyButton onClick={addNewPost}>Create post</MyButton>
+            <MyButton onClick={addNewPost}>Створити питання</MyButton>
         </form>
     );
 };

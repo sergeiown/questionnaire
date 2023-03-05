@@ -97,6 +97,7 @@ body .App .controlPanel hr {
 }
 
 .postList {
+  min-height: 15rem;
   margin: 12rem 0 0 0;
   padding: 1rem;
   text-shadow: 2px 2px 2px #0a0a0a;
@@ -119,6 +120,11 @@ body .App .controlPanel hr {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+.postList .post__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .postList .post:nth-last-of-type(1) {
   margin-bottom: 20vh;

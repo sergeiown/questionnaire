@@ -1,17 +1,17 @@
 [
     {
         "id": "1678036427557",
-        "title": "Title1",
-        "body": "Description1"
+        "title": "Адреса електронної пошти",
+        "body": "email"
     },
     {
         "id": "1678036427558",
-        "title": "Title2",
-        "body": "Description2"
+        "title": "П.І.Б.",
+        "body": "text"
     },
     {
         "id": "1678036427559",
-        "title": "Title3",
-        "body": "Description3"
+        "title": "Назва організації",
+        "body": "text"
     }
 ]

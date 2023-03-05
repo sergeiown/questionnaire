@@ -3,8 +3,15 @@ import PostItem from './PostItem.jsx';
 
 const PostList = ({ posts, title, remove }) => {
     if (!posts.length) {
-        return <h1 style={{ textAlign: 'center' }}>No posts found!</h1>;
+        return (
+            <div className="postList">
+                <h1>Питання не знайдені...</h1>
+            </div>
+        );
     }
+
+    console.clear();
+    console.table(posts);
 
     return (
         <div className="postList">

@@ -1,6 +1,7 @@
 @import '../styles/colors';
 
 .postList {
+    min-height: 15rem;
     margin: 12rem 0 0 0;
     padding: 1rem;
     text-shadow: 2px 2px 2px $color-black;
@@ -24,6 +25,12 @@
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
         &:nth-last-of-type(1) {
             margin-bottom: 20vh;

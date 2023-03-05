@@ -11,7 +11,6 @@ import Loader from './components/UI/Loader/Loader';
 
 function App() {
     const [posts, setPosts] = useState([]);
-
     const [filter, setFilter] = useState({ sort: '', query: '' });
     const [modal, setModal] = useState(false);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
@@ -35,7 +34,6 @@ function App() {
         setIsPostsLoading(true);
         setTimeout(async () => {
             const posts = await PostService.getAll();
-            // console.table(response.data);
             setPosts(posts);
             setIsPostsLoading(false);
         }, 1000);
