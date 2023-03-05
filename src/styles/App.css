@@ -77,11 +77,22 @@ body .App {
   width: 50vw;
   position: relative;
 }
+body .App .controlPanel {
+  position: fixed;
+  top: 0;
+  left: 50;
+  width: 50vw;
+  height: 11rem;
+  background-color: #0a0a0a;
+}
 body .App hr {
   border: #fffff0 1px solid;
   margin: 0.5rem 0;
 }
 
+.postList {
+  margin: 11rem 0 0 0;
+}
 .postList h1 {
   text-align: center;
   color: #fffff0;
@@ -120,16 +131,17 @@ body .App hr {
   display: none;
 }
 
-#root {
-  display: flex;
-  justify-content: center;
+html {
+  font-size: 100%;
 }
 
-.App {
-  width: 50vw;
-  position: relative;
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
 }
-.App hr {
-  border: #fffff0 1px solid;
-  margin: 0.5rem 0;
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 50%;
+  }
 }

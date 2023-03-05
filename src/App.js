@@ -47,17 +47,19 @@ function App() {
 
     return (
         <div className="App">
-            <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
-                Create Post
-            </MyButton>
+            <div className="controlPanel">
+                <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
+                    Create Post
+                </MyButton>
 
-            <MyModal visible={modal} setVisible={setModal}>
-                <PostForm create={createPost} />
-            </MyModal>
+                <MyModal visible={modal} setVisible={setModal}>
+                    <PostForm create={createPost} />
+                </MyModal>
 
-            <hr />
+                <hr />
 
-            <PostFilter filter={filter} setFilter={setFilter} />
+                <PostFilter filter={filter} setFilter={setFilter} />
+            </div>
 
             {isPostsLoading ? (
                 <Loader />

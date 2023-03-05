@@ -23,6 +23,15 @@ body {
         width: 50vw;
         position: relative;
 
+        .controlPanel {
+            position: fixed;
+            top: 0;
+            left: 50;
+            width: 50vw;
+            height: 11rem;
+            background-color: $color-black;
+        }
+
         hr {
             border: $color-ivory 1px solid;
             margin: 0.5rem 0;
