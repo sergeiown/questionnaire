@@ -69,6 +69,43 @@ body {
   background-color: #0a0a0a;
   color: #a0a0a0;
 }
+body #root {
+  display: flex;
+  justify-content: center;
+}
+body .App {
+  width: 50vw;
+  position: relative;
+}
+body .App hr {
+  border: #fffff0 1px solid;
+  margin: 0.5rem 0;
+}
+
+.postList h1 {
+  text-align: center;
+  color: #fffff0;
+  margin: 1rem 0;
+}
+.postList .post {
+  display: flex;
+  padding: 15px;
+  border: 2px solid #ff6600;
+  margin: 15px 0 0 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.postList .post:nth-last-of-type(1) {
+  margin-bottom: 25vh;
+}
+.postList .post > * :not(button) {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 ::-webkit-scrollbar {
   width: 1rem;
   background-color: rgba(109, 109, 109, 0.5);
@@ -95,30 +132,4 @@ body {
 .App hr {
   border: #fffff0 1px solid;
   margin: 0.5rem 0;
-}
-
-.postList h1 {
-  text-align: center;
-  color: #fffff0;
-  margin: 1rem 0;
-}
-
-.post {
-  display: flex;
-  padding: 15px;
-  border: 2px solid #ff6600;
-  margin: 15px 0 0 0;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.post:nth-last-of-type(1) {
-  margin-bottom: 25vh;
-}
-
-.post > * :not(button) {
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  word-wrap: break-word;
-  word-break: break-all;
 }

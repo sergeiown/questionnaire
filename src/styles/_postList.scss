@@ -1,0 +1,29 @@
+@import '../styles/colors';
+
+.postList {
+    h1 {
+        text-align: center;
+        color: $color-ivory;
+        margin: 1rem 0;
+    }
+
+    .post {
+        display: flex;
+        padding: 15px;
+        border: 2px solid $color-orange;
+        margin: 15px 0 0 0;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        &:nth-last-of-type(1) {
+            margin-bottom: 25vh;
+        }
+        & > * :not(button) {
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+}

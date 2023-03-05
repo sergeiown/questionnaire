@@ -13,4 +13,19 @@ body {
 
     @media only screen and (max-width: 1200px) and (orientation: portrait) {
     }
+
+    #root {
+        display: flex;
+        justify-content: center;
+    }
+
+    .App {
+        width: 50vw;
+        position: relative;
+
+        hr {
+            border: $color-ivory 1px solid;
+            margin: 0.5rem 0;
+        }
+    }
 }
