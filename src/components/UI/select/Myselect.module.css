@@ -11,5 +11,5 @@
   background: #313131;
 }
 .mySelect:invalid {
-  border: 0.125rem solid maroon;
+  border: 1px solid maroon;
 }
