@@ -10,6 +10,21 @@ const PostItem = (props) => {
                     {props.post.title}
                 </strong>
 
+                {/* Show post.options */}
+                {props.post.options.length > 0 && (
+                    <div>
+                        <span style={{ color: '#6d6d6d' }}>Варіанти відповідей:</span>
+                        <ul className="optionsList">
+                            {props.post.options[0].map((option, index) => (
+                                <li key={index}>
+                                    <span style={{ color: '#6d6d6d' }}>{index + 1}. </span>
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
                 <div>
                     <span style={{ color: '#6d6d6d' }}>Обов'язкове:</span> {props.post.required}
                 </div>

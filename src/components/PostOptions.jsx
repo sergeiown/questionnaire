@@ -3,11 +3,17 @@ import MyInput from './UI/input/MyInput';
 import MyButton from './UI/button/MyButton';
 
 function DynamicOption({ create }) {
-    const [options, setOptions] = useState(['']);
+    const [options, setOptions] = useState([]);
 
     const addInput = (click) => {
         click.preventDefault();
         setOptions([...options, '']);
+    };
+
+    const deleteInput = (index) => {
+        const newOptions = [...options];
+        newOptions.splice(index, 1);
+        setOptions(newOptions);
     };
 
     const handleInputChange = (index, value) => {
@@ -20,25 +26,29 @@ function DynamicOption({ create }) {
         click.preventDefault();
         const newOptions = [...options, 'Власний варіант'];
         create(newOptions);
-        setOptions(['']);
+        setOptions([]);
     };
 
     return (
-        <div className="dynamicOptions">
+        <div>
             {options.map((input, index) => (
-                <MyInput
-                    key={index}
-                    number={index + 1}
-                    value={input}
-                    type="text"
-                    placeholder="Текст варіанту відповіді..."
-                    onChange={(event) => handleInputChange(index, event.target.value)}
-                />
+                <div key={index}>
+                    <MyInput
+                        key={index}
+                        number={index + 1}
+                        value={input}
+                        type="text"
+                        placeholder="Текст варіанту відповіді..."
+                        onChange={(event) => handleInputChange(index, event.target.value)}
+                    />
+
+                    <MyButton onClick={() => deleteInput(index)}>Видалити</MyButton>
+                </div>
             ))}
 
             <div>
                 <MyButton onClick={addInput}>Додати варіант</MyButton>
-                <MyButton onClick={addNewOptions}>Зберегти</MyButton>
+                <MyButton onClick={addNewOptions}>Зберегти варіанти</MyButton>
             </div>
         </div>
     );

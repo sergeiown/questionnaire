@@ -159,6 +159,9 @@ body .App .controlPanel hr {
   flex-direction: column;
   gap: 0.5rem;
 }
+.postList .post__content ul {
+  font-size: smaller;
+}
 .postList .post:nth-last-of-type(1) {
   margin-bottom: 20vh;
 }
