@@ -8,6 +8,10 @@ function DynamicOption({ create }) {
     const addInput = (click) => {
         click.preventDefault();
         setOptions([...options, '']);
+
+        /* scroll to the bottom */
+        const element = document.getElementById('bottomOptionsButton');
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     const deleteInput = (index) => {
@@ -47,7 +51,9 @@ function DynamicOption({ create }) {
             ))}
 
             <div>
-                <MyButton onClick={addInput}>Додати варіант</MyButton>
+                <MyButton onClick={addInput} id="bottomOptionsButton">
+                    Додати варіант
+                </MyButton>
                 <MyButton onClick={addNewOptions}>Зберегти варіанти</MyButton>
             </div>
         </div>
