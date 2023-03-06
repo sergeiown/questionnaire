@@ -24,7 +24,7 @@ function DynamicOption({ create }) {
     };
 
     return (
-        <div>
+        <div className="dynamicOptions">
             {options.map((input, index) => (
                 <MyInput
                     key={index}
@@ -35,9 +35,11 @@ function DynamicOption({ create }) {
                     onChange={(event) => handleInputChange(index, event.target.value)}
                 />
             ))}
-            <MyButton onClick={addInput}>Додати варіант</MyButton>
 
-            <MyButton onClick={addNewOptions}>Зберегти</MyButton>
+            <div>
+                <MyButton onClick={addInput}>Додати варіант</MyButton>
+                <MyButton onClick={addNewOptions}>Зберегти</MyButton>
+            </div>
         </div>
     );
 }

@@ -9,11 +9,11 @@ const PostForm = ({ create }) => {
 
     const [options, setOptions] = useState([]);
 
-    console.log(options);
+    const [selected, setSelected] = useState('');
 
     const createOptions = (newOptions) => {
         setOptions([...options, newOptions]);
-        // setModal(false);
+        setSelected('');
     };
 
     const addNewPost = (e) => {
@@ -49,7 +49,10 @@ const PostForm = ({ create }) => {
 
             <Myselect
                 value={post.type}
-                onChange={(selectedType) => setPost({ ...post, type: selectedType })}
+                onChange={(selectedType) => {
+                    setSelected(selectedType);
+                    setPost({ ...post, type: selectedType });
+                }}
                 defaultValue="Тип очікуваної відповіді..."
                 options={[
                     { value: 'email', name: 'електронна пошта' },
@@ -59,7 +62,7 @@ const PostForm = ({ create }) => {
                 ]}
             />
 
-            <DynamicOption create={createOptions} />
+            {selected === 'select' && <DynamicOption create={createOptions} />}
 
             <MyButton onClick={addNewPost}>Створити питання</MyButton>
         </form>
