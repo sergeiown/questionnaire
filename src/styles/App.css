@@ -134,7 +134,7 @@ body .App .controlPanel hr {
   display: flex;
   padding: 15px;
   background: #0a0a0a;
-  border: 2px solid #ff6600;
+  border: 0.125rem solid #ff6600;
   border-radius: 1rem 0.5rem;
   margin: 15px 0 0 0;
   justify-content: space-between;

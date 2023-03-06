@@ -17,7 +17,7 @@ const PostFilter = ({ filter, setFilter }) => {
                 defaultValue="Сортувати..."
                 options={[
                     { value: 'title', name: 'За текстом питання' },
-                    { value: 'body', name: 'За типом питання' },
+                    { value: 'type', name: 'За типом питання' },
                     { value: 'id', name: 'Від старих до нових' },
                 ]}
             />

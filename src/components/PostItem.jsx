@@ -6,9 +6,17 @@ const PostItem = (props) => {
         <div className="post">
             <div className="post__content" id={props.id}>
                 <strong>
-                    {props.number}. {props.post.title}
+                    <span style={{ color: '#6d6d6d' }}>{props.number}. </span>
+                    {props.post.title}
                 </strong>
-                <div>Тип: {props.post.body}</div>
+
+                <div>
+                    <span style={{ color: '#6d6d6d' }}>Обов'язкове:</span> {props.post.required}
+                </div>
+
+                <div>
+                    <span style={{ color: '#6d6d6d' }}>Тип:</span> {props.post.type}
+                </div>
             </div>
             <div className="post__btns">
                 <MyButton onClick={() => props.remove(props.post)}>Видалити</MyButton>

@@ -9,11 +9,17 @@
     display: none;
     background: rgba($color: $color-black, $alpha: 0.9);
 
-    .myModalContent {
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &Content {
         padding: 1.5rem;
         background: $color-dark;
         box-shadow: 0 0 0.2rem $color-gray-darker;
-        border: 1px solid $color-orange;
+        border: 0.125rem solid $color-orange;
         border-radius: 1rem;
         width: 45vw;
         min-width: 15rem;
@@ -34,10 +40,4 @@
             gap: 1rem;
         }
     }
-}
-
-.myModal.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
