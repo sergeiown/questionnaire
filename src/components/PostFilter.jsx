@@ -14,7 +14,7 @@ const PostFilter = ({ filter, setFilter }) => {
             <Myselect
                 value={filter.sort}
                 onChange={(selectedSort) => setFilter({ ...filter, sort: selectedSort })}
-                defaultValue="Сортувати..."
+                defaultValue="Сортування..."
                 options={[
                     { value: 'title', name: 'За текстом питання' },
                     { value: 'type', name: 'За типом питання' },

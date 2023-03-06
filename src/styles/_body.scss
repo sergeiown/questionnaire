@@ -26,37 +26,5 @@ body {
         @media only screen and (max-width: 1200px) and (orientation: portrait) {
             width: 99vw;
         }
-
-        .controlPanel {
-            position: fixed;
-            top: 0;
-            left: 50;
-            width: 50vw;
-            height: 11rem;
-            padding: 1.5rem;
-            border-radius: 0 0 0.5rem 0.5rem;
-            background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% -10% / 16%;
-            box-shadow: 0 0 0.2rem $color-gray-darker;
-
-            & input,
-            select,
-            button {
-                box-shadow: 0 0 0.5rem $color-black;
-            }
-
-            @media only screen and (max-width: 1200px) and (orientation: landscape) {
-                width: 95vw;
-            }
-
-            @media only screen and (max-width: 1200px) and (orientation: portrait) {
-                width: 99vw;
-            }
-
-            hr {
-                border: $color-ivory 1px solid;
-                margin: 0.8rem 0 0.5rem 0;
-                box-shadow: 0 0 0.5rem $color-black;
-            }
-        }
     }
 }

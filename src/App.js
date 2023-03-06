@@ -46,7 +46,13 @@ function App() {
     return (
         <div className="App">
             <div className="controlPanel">
-                <MyButton onClick={() => setModal(true)}>Створити питання</MyButton>
+                <div className="controlPanel__Buttons">
+                    <MyButton onClick={() => setModal(true)}>Створити питання</MyButton>
+
+                    <MyButton>Новий перелік</MyButton>
+
+                    <MyButton>Зберегти перелік</MyButton>
+                </div>
 
                 <MyModal visible={modal} setVisible={setModal}>
                     <PostForm create={createPost} />

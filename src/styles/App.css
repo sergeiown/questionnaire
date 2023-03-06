@@ -89,7 +89,8 @@ body .App {
     width: 99vw;
   }
 }
-body .App .controlPanel {
+
+.controlPanel {
   position: fixed;
   top: 0;
   left: 50;
@@ -100,25 +101,49 @@ body .App .controlPanel {
   background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
   box-shadow: 0 0 0.2rem #313131;
 }
-body .App .controlPanel input,
-body .App .controlPanel select,
-body .App .controlPanel button {
+.controlPanel input,
+.controlPanel select,
+.controlPanel button {
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 1200px) and (orientation: landscape) {
-  body .App .controlPanel {
+  .controlPanel {
     width: 95vw;
   }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
-  body .App .controlPanel {
+  .controlPanel {
     width: 99vw;
+    height: 13rem;
   }
 }
-body .App .controlPanel hr {
+.controlPanel hr {
   border: #fffff0 1px solid;
   margin: 0.8rem 0 0.5rem 0;
   box-shadow: 0 0 0.5rem #0a0a0a;
+}
+.controlPanel .controlPanel__Buttons {
+  margin: 0 25% 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media only screen and (max-width: 1440px) and (orientation: landscape) {
+  .controlPanel .controlPanel__Buttons {
+    margin: 0 15% 0 0;
+  }
+  .controlPanel .controlPanel__Buttons button {
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .controlPanel .controlPanel__Buttons {
+    margin: 0 15% 0 0;
+  }
+  .controlPanel .controlPanel__Buttons button {
+    font-size: smaller;
+  }
 }
 
 .postList {
