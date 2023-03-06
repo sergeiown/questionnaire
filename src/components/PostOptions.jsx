@@ -44,6 +44,7 @@ function DynamicOption({ create }) {
                         type="text"
                         placeholder="Текст варіанту відповіді..."
                         onChange={(event) => handleInputChange(index, event.target.value)}
+                        required
                     />
 
                     <MyButton onClick={() => deleteInput(index)}>Видалити</MyButton>

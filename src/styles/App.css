@@ -117,7 +117,7 @@ body .App .controlPanel button {
 }
 body .App .controlPanel hr {
   border: #fffff0 1px solid;
-  margin: 0.5rem 0;
+  margin: 0.8rem 0 0.5rem 0;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
 

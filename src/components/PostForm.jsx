@@ -30,7 +30,7 @@ const PostForm = ({ create }) => {
     };
 
     return (
-        <form>
+        <form onSubmit={addNewPost}>
             <MyTextArea
                 value={post.title}
                 onChange={(e) => setPost({ ...post, title: e.target.value })}
@@ -38,6 +38,7 @@ const PostForm = ({ create }) => {
                 placeholder="Текст питання..."
                 cols="55"
                 rows="3"
+                required
             />
 
             <Myselect
@@ -48,6 +49,7 @@ const PostForm = ({ create }) => {
                     { value: 'true', name: 'так' },
                     { value: 'false', name: 'ні' },
                 ]}
+                required
             />
 
             <Myselect
@@ -63,11 +65,12 @@ const PostForm = ({ create }) => {
                     { value: 'boolean', name: 'так або ні' },
                     { value: 'select', name: 'вибір варіанту' },
                 ]}
+                required
             />
 
             {selected === 'select' && <DynamicOption create={createOptions} />}
 
-            <MyButton onClick={addNewPost}>Створити питання</MyButton>
+            <MyButton onSubmit={addNewPost}>Створити питання</MyButton>
         </form>
     );
 };

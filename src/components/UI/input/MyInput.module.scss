@@ -19,4 +19,8 @@
         font-size: inherit;
         color: $color-gray;
     }
+
+    &:invalid {
+        border: 0.125rem solid red;
+    }
 }

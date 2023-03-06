@@ -10,3 +10,6 @@
   border-radius: 0.8rem 0.5rem;
   background: #313131;
 }
+.mySelect:invalid {
+  border: 0.125rem solid red;
+}

@@ -32,3 +32,6 @@
   background-color: #0a0a0a;
   border-radius: 0.8rem;
 }
+.myText:invalid {
+  border: 0.125rem solid red;
+}

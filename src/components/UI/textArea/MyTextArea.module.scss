@@ -33,4 +33,8 @@
         background-color: $color-black;
         border-radius: 0.8rem;
     }
+
+    &:invalid {
+        border: 0.125rem solid red;
+    }
 }
