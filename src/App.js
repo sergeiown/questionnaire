@@ -24,7 +24,7 @@ function App() {
         setPosts([...posts, newPost]);
         setModal(false);
 
-        //scroll to the post with maximum id
+        /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });

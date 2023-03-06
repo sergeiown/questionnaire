@@ -38,6 +38,7 @@
         }
 
         &__content {
+            line-height: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
@@ -46,6 +47,8 @@
         &:nth-last-of-type(1) {
             margin-bottom: 20vh;
         }
+
+        /* allow to move parts of words to a new line. */
         & > * :not(button) {
             -webkit-hyphens: auto;
             hyphens: auto;

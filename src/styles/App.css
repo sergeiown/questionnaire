@@ -140,6 +140,7 @@ body .App .controlPanel hr {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  /* allow to move parts of words to a new line. */
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .postList .post {
@@ -153,6 +154,7 @@ body .App .controlPanel hr {
   }
 }
 .postList .post__content {
+  line-height: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
