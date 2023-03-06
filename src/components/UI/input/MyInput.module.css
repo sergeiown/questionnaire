@@ -21,5 +21,5 @@
   color: #a0a0a0;
 }
 .myInp:invalid {
-  border: 0.125rem solid red;
+  border: 0.125rem solid maroon;
 }

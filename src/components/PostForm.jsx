@@ -70,7 +70,15 @@ const PostForm = ({ create }) => {
 
             {selected === 'select' && <DynamicOption create={createOptions} />}
 
-            <MyButton onSubmit={addNewPost}>Створити питання</MyButton>
+            {(selected === 'select' && (
+                <MyButton disabled={true} onSubmit={addNewPost}>
+                    Створити питання
+                </MyButton>
+            )) || (
+                <MyButton disabled={false} onSubmit={addNewPost}>
+                    Створити питання
+                </MyButton>
+            )}
         </form>
     );
 };

@@ -17,4 +17,12 @@
         color: $color-black;
         text-shadow: 0.125rem 0.125rem 0.125rem $color-gray;
     }
+
+    &:disabled {
+        background: $color-gray-darker;
+        border: 1px solid $color-gray;
+        color: $color-gray-dark;
+        text-shadow: none;
+        cursor: not-allowed;
+    }
 }
