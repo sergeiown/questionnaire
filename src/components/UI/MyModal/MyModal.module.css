@@ -39,6 +39,9 @@
   justify-content: center;
   gap: 1rem;
 }
+.myModalContent form * {
+  box-shadow: 0 0 0.5rem #0a0a0a;
+}
 .myModalContent form div:not(:last-child) {
   display: flex;
   flex-direction: column;
@@ -51,9 +54,8 @@
   max-height: 35vh;
   overflow-y: auto;
   padding: 1.1rem 0.4rem;
-  box-shadow: 0 0 0.5rem #0a0a0a;
   border: 1px solid #ff6600;
-  border-radius: 1rem 0 0 1rem;
+  border-radius: 0.8rem 0.5rem;
   background: #0a0a0a;
 }
 .myModalContent form div:not(:last-child) div:not(:last-child) {

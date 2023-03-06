@@ -100,6 +100,11 @@ body .App .controlPanel {
   background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
   box-shadow: 0 0 0.2rem #313131;
 }
+body .App .controlPanel input,
+body .App .controlPanel select,
+body .App .controlPanel button {
+  box-shadow: 0 0 0.5rem #0a0a0a;
+}
 @media only screen and (max-width: 1200px) and (orientation: landscape) {
   body .App .controlPanel {
     width: 95vw;
@@ -113,7 +118,7 @@ body .App .controlPanel {
 body .App .controlPanel hr {
   border: #fffff0 1px solid;
   margin: 0.5rem 0;
-  box-shadow: 0 0 0.2rem #313131;
+  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 
 .postList {
@@ -135,6 +140,7 @@ body .App .controlPanel hr {
   padding: 15px;
   background: #0a0a0a;
   border: 0.125rem solid #ff6600;
+  box-shadow: 0 0 0.5rem #0a0a0a;
   border-radius: 1rem 0.5rem;
   margin: 15px 0 0 0;
   justify-content: space-between;
@@ -179,11 +185,12 @@ body .App .controlPanel hr {
 ::-webkit-scrollbar {
   width: 1rem;
   background-color: rgba(10, 10, 10, 0.5);
+  border-radius: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #1c1c1c;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
 }
 
 ::-webkit-scrollbar-button {

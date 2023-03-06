@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MyInput from './UI/input/MyInput';
+import MyTextArea from './UI/textArea/MyTextArea';
 import Myselect from './UI/select/Myselect';
 import MyButton from './UI/button/MyButton';
 import DynamicOption from './PostOptions';
@@ -30,11 +31,13 @@ const PostForm = ({ create }) => {
 
     return (
         <form>
-            <MyInput
+            <MyTextArea
                 value={post.title}
                 onChange={(e) => setPost({ ...post, title: e.target.value })}
                 type="text"
                 placeholder="Текст питання..."
+                cols="55"
+                rows="3"
             />
 
             <Myselect

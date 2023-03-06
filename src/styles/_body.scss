@@ -38,6 +38,12 @@ body {
             background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% -10% / 16%;
             box-shadow: 0 0 0.2rem $color-gray-darker;
 
+            & input,
+            select,
+            button {
+                box-shadow: 0 0 0.5rem $color-black;
+            }
+
             @media only screen and (max-width: 1200px) and (orientation: landscape) {
                 width: 95vw;
             }
@@ -49,7 +55,7 @@ body {
             hr {
                 border: $color-ivory 1px solid;
                 margin: 0.5rem 0;
-                box-shadow: 0 0 0.2rem $color-gray-darker;
+                box-shadow: 0 0 0.5rem $color-black;
             }
         }
     }
