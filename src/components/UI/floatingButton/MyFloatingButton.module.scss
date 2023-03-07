@@ -1,10 +1,9 @@
 @import '../../../styles/colors';
 
-.myBtn {
+.myFloatingBtn {
     position: fixed;
-    bottom: 4%;
-    right: 16%;
-    display: none;
+    bottom: 7vh;
+    right: 16vw;
     padding: 0.3rem 1rem;
     color: $color-orange;
     background: $color-dark;
@@ -22,13 +21,7 @@
         text-shadow: 0.125rem 0.125rem 0.125rem $color-gray;
     }
 
-    @media only screen and (max-width: 1200px) and (orientation: portrait) {
-        &:visible {
-            display: none;
-        }
-    }
-
-    &:visible {
-        display: block;
+    @media only screen and (max-width: 1200px) {
+        display: none;
     }
 }

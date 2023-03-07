@@ -36,6 +36,15 @@ function App() {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
+    const removePost = (post) => {
+        setPosts(posts.filter((p) => p.id !== post.id));
+    };
+
+    const scrollToTitle = () => {
+        const element = document.getElementsByTagName('h1')[0];
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
     async function fetchLocalPosts() {
         setIsPostsLoading(true);
         setTimeout(async () => {
@@ -58,10 +67,6 @@ function App() {
         }, 1000);
     }
 
-    const removePost = (post) => {
-        setPosts(posts.filter((p) => p.id !== post.id));
-    };
-
     return (
         <div className="App">
             <div className="controlPanel">
@@ -81,12 +86,16 @@ function App() {
 
                 <PostFilter filter={filter} setFilter={setFilter} />
             </div>
+
             {isPostsLoading ? (
                 <Loader />
             ) : (
                 <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Перелік питань:'} />
             )}
-            <MyFloatingButton>↑</MyFloatingButton>
+
+            <MyFloatingButton onClick={() => scrollToTitle()}>
+                <strong>↑</strong>
+            </MyFloatingButton>
         </div>
     );
 }
