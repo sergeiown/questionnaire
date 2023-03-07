@@ -28,7 +28,6 @@ function App() {
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
         setModal(false);
-        /* save posts to local storage */
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
@@ -37,7 +36,9 @@ function App() {
     };
 
     const removePost = (post) => {
-        setPosts(posts.filter((p) => p.id !== post.id));
+        const filteredPosts = posts.filter((p) => p.id !== post.id);
+        setPosts(filteredPosts);
+        localStorage.setItem('posts', JSON.stringify(filteredPosts));
     };
 
     const scrollToTitle = () => {
