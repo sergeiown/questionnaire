@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 4%;
   right: 16%;
+  display: none;
   padding: 0.3rem 1rem;
   color: #ff6600;
   background: #1c1c1c;
@@ -17,6 +18,11 @@
   border: 1px solid #a0a0a0;
   color: #0a0a0a;
   text-shadow: 0.125rem 0.125rem 0.125rem #a0a0a0;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .myBtn:visible {
+    display: none;
+  }
 }
 .myBtn:visible {
   display: block;

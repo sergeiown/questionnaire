@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 4%;
     right: 16%;
-    // display: none;
+    display: none;
     padding: 0.3rem 1rem;
     color: $color-orange;
     background: $color-dark;
@@ -20,6 +20,12 @@
         border: 1px solid $color-gray;
         color: $color-black;
         text-shadow: 0.125rem 0.125rem 0.125rem $color-gray;
+    }
+
+    @media only screen and (max-width: 1200px) and (orientation: portrait) {
+        &:visible {
+            display: none;
+        }
     }
 
     &:visible {
