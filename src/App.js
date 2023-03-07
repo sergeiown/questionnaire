@@ -26,8 +26,8 @@ function App() {
     }, []);
 
     const createPost = (newPost) => {
-        setPosts([...posts, newPost]);
         setModal(false);
+        setPosts([...posts, newPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
