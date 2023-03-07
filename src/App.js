@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
@@ -16,15 +16,37 @@ function App() {
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [isPostsLoading, setIsPostsLoading] = useState(false);
 
+    useEffect(() => {
+        document.title = `Questionnaire - ${posts.length} question(s)`;
+    });
+
+    useEffect(() => {
+        fetchLocalPosts();
+    }, []);
+
     const createPost = (newPost) => {
         setPosts([...posts, newPost]);
         setModal(false);
-
+        /* save posts to local storage */
+        localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
+
+    async function fetchLocalPosts() {
+        setIsPostsLoading(true);
+        setTimeout(async () => {
+            const localPosts = JSON.parse(localStorage.getItem('posts'));
+            if (localPosts) {
+                setPosts(localPosts);
+            } else {
+                setPosts([]);
+            }
+            setIsPostsLoading(false);
+        }, 1000);
+    }
 
     async function fetchPosts() {
         setIsPostsLoading(true);
