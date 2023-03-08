@@ -22,13 +22,14 @@ function App() {
     });
 
     useEffect(() => {
-        fetchLocalPosts();
+        fetchSavedPosts();
     }, []);
 
     const createPost = (newPost) => {
         setModal(false);
         setPosts([...posts, newPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
+        PostService.update(JSON.stringify([...posts, newPost]));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
@@ -39,6 +40,12 @@ function App() {
         const filteredPosts = posts.filter((p) => p.id !== post.id);
         setPosts(filteredPosts);
         localStorage.setItem('posts', JSON.stringify(filteredPosts));
+        PostService.update(JSON.stringify(filteredPosts));
+    };
+
+    const savePosts = () => {
+        localStorage.setItem('posts', JSON.stringify(posts));
+        PostService.update(JSON.stringify(posts));
     };
 
     const scrollToTitle = () => {
@@ -46,23 +53,23 @@ function App() {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    async function fetchLocalPosts() {
+    async function fetchSavedPosts() {
         setIsPostsLoading(true);
         setTimeout(async () => {
             const localPosts = JSON.parse(localStorage.getItem('posts'));
             if (localPosts) {
                 setPosts(localPosts);
             } else {
-                setPosts([]);
+                PostService.get();
             }
             setIsPostsLoading(false);
         }, 1000);
     }
 
-    async function fetchPosts() {
+    async function fetchNewPosts() {
         setIsPostsLoading(true);
         setTimeout(async () => {
-            const posts = await PostService.getAll();
+            const posts = await PostService.getNew();
             setPosts(posts);
             setIsPostsLoading(false);
         }, 1000);
@@ -74,9 +81,9 @@ function App() {
                 <div className="controlPanel__Buttons">
                     <MyButton onClick={() => setModal(true)}>Створити питання</MyButton>
 
-                    <MyButton onClick={() => fetchPosts()}>Новий перелік</MyButton>
+                    <MyButton onClick={() => fetchNewPosts()}>Новий перелік</MyButton>
 
-                    <MyButton>Зберегти перелік</MyButton>
+                    <MyButton onClick={() => savePosts()}>Зберегти перелік</MyButton>
                 </div>
 
                 <MyModal visible={modal} setVisible={setModal}>

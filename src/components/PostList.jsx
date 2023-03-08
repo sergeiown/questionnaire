@@ -10,8 +10,8 @@ const PostList = ({ posts, title, remove }) => {
         );
     }
 
-    console.clear();
-    console.table(posts);
+    // console.clear();
+    // console.table(posts);
 
     return (
         <div className="postList">
