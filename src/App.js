@@ -13,8 +13,9 @@ import PostService from './API/PostService';
 import Loader from './components/UI/Loader/Loader';
 
 function App() {
+    const newTitle = `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`;
     const [title, setTitle] = useState({
-        new: `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`,
+        new: newTitle,
         query: '',
     });
     const [posts, setPosts] = useState([]);
@@ -51,10 +52,10 @@ function App() {
     const removePost = (post) => {
         const filteredPosts = posts.filter((p) => p.id !== post.id);
         setPosts(filteredPosts);
-        localStorage.setItem('posts', JSON.stringify(filteredPosts));
+        /* localStorage.setItem('posts', JSON.stringify(filteredPosts));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
         PostService.update(JSON.stringify(filteredPosts));
-        TitleService.update(JSON.stringify(title.query || title.new));
+        TitleService.update(JSON.stringify(title.query || title.new)); */
     };
 
     const savePosts = () => {
@@ -86,9 +87,16 @@ function App() {
     async function fetchNewPosts() {
         setIsPostsLoading(true);
         setTimeout(async () => {
-            const posts = await PostService.getNew();
-            setPosts(posts);
-            setTitle({ new: `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`, query: '' });
+            const localNewPosts = JSON.parse(localStorage.getItem('newPosts'));
+            if (localNewPosts) {
+                setPosts(localNewPosts);
+                setTitle({ new: newTitle, query: '' });
+            } else {
+                const posts = await PostService.getNew();
+                setPosts(posts);
+                setTitle({ new: newTitle, query: '' });
+                localStorage.setItem('newPosts', JSON.stringify(posts));
+            }
             setIsPostsLoading(false);
         }, 1000);
     }
@@ -96,10 +104,10 @@ function App() {
     async function fetchSavedTitle() {
         const localTitle = JSON.parse(localStorage.getItem('title'));
         if (localTitle) {
-            setTitle({ query: localTitle });
+            setTitle({ new: newTitle, query: localTitle });
         } else {
             const title = await TitleService.get();
-            setTitle({ query: title });
+            setTitle({ new: newTitle, query: title });
         }
     }
 
