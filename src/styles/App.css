@@ -95,7 +95,7 @@ body .App {
   top: 0;
   left: 50;
   width: 50vw;
-  height: 11rem;
+  height: 13rem;
   padding: 1.5rem;
   border-radius: 0 0 0.5rem 0.5rem;
   background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
@@ -114,7 +114,7 @@ body .App {
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .controlPanel {
     width: 99vw;
-    height: 13rem;
+    height: 14rem;
   }
 }
 .controlPanel hr {
@@ -148,7 +148,7 @@ body .App {
 
 .postList {
   min-height: 15rem;
-  margin: 12rem 0 0 0;
+  margin: 14rem 0 0 0;
   padding: 1rem;
   text-shadow: 2px 2px 2px #0a0a0a;
   background: #1c1c1c url("../assets/logo/logo.svg") no-repeat bottom right/30%;
@@ -157,8 +157,15 @@ body .App {
 }
 .postList h1 {
   text-align: center;
+  font-size: 1.5rem;
   color: #fffff0;
   margin: 1rem 0;
+}
+.postList h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #a0a0a0;
+  margin: 0.5rem 0;
 }
 .postList .post {
   display: flex;

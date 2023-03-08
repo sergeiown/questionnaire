@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
+import PostListTitle from './components/PostlistTitle';
 import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import PostFilter from './components/PostFilter';
@@ -11,6 +12,10 @@ import PostService from './API/PostService';
 import Loader from './components/UI/Loader/Loader';
 
 function App() {
+    const [title, setTitle] = useState({
+        new: `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`,
+        query: '',
+    });
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({ sort: '', query: '' });
     const [modal, setModal] = useState(false);
@@ -92,13 +97,20 @@ function App() {
 
                 <hr />
 
+                <PostListTitle title={title} setTitle={setTitle} />
+
                 <PostFilter filter={filter} setFilter={setFilter} />
             </div>
 
             {isPostsLoading ? (
                 <Loader />
             ) : (
-                <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Перелік питань:'} />
+                <PostList
+                    postListTitle={title}
+                    title={'Перелік питань:'}
+                    posts={sortedAndSearchedPosts}
+                    remove={removePost}
+                />
             )}
 
             <MyFloatingButton onClick={() => scrollToTitle()}>
