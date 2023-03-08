@@ -49,7 +49,7 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `newPostsList(${
+                `PostsList(${
                     JSON.parse(data[1].data).length
                 }) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
             );

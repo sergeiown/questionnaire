@@ -8,6 +8,7 @@ import MyModal from './components/UI/MyModal/MyModal';
 import MyButton from './components/UI/button/MyButton';
 import MyFloatingButton from './components/UI/floatingButton/MyFloatingButton';
 import { usePosts } from './hooks/usePosts';
+import TitleService from './API/TitleService';
 import PostService from './API/PostService';
 import Loader from './components/UI/Loader/Loader';
 
@@ -30,11 +31,17 @@ function App() {
         fetchSavedPosts();
     }, []);
 
+    useEffect(() => {
+        fetchSavedTitle();
+    }, []);
+
     const createPost = (newPost) => {
         setModal(false);
         setPosts([...posts, newPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
+        localStorage.setItem('title', JSON.stringify(title.query || title.new));
         PostService.update(JSON.stringify([...posts, newPost]));
+        TitleService.update(JSON.stringify(title.query || title.new));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
@@ -45,12 +52,16 @@ function App() {
         const filteredPosts = posts.filter((p) => p.id !== post.id);
         setPosts(filteredPosts);
         localStorage.setItem('posts', JSON.stringify(filteredPosts));
+        localStorage.setItem('title', JSON.stringify(title.query || title.new));
         PostService.update(JSON.stringify(filteredPosts));
+        TitleService.update(JSON.stringify(title.query || title.new));
     };
 
     const savePosts = () => {
         localStorage.setItem('posts', JSON.stringify(posts));
+        localStorage.setItem('title', JSON.stringify(title.query || title.new));
         PostService.update(JSON.stringify(posts));
+        TitleService.update(JSON.stringify(title.query || title.new));
     };
 
     const scrollToTitle = () => {
@@ -65,7 +76,8 @@ function App() {
             if (localPosts) {
                 setPosts(localPosts);
             } else {
-                PostService.get();
+                const posts = await PostService.get();
+                setPosts(posts);
             }
             setIsPostsLoading(false);
         }, 1000);
@@ -76,8 +88,19 @@ function App() {
         setTimeout(async () => {
             const posts = await PostService.getNew();
             setPosts(posts);
+            setTitle({ new: `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`, query: '' });
             setIsPostsLoading(false);
         }, 1000);
+    }
+
+    async function fetchSavedTitle() {
+        const localTitle = JSON.parse(localStorage.getItem('title'));
+        if (localTitle) {
+            setTitle({ query: localTitle });
+        } else {
+            const title = await TitleService.get();
+            setTitle({ query: title });
+        }
     }
 
     return (
