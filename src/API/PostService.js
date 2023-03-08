@@ -33,9 +33,9 @@ export default class PostService {
             .set({ data: postsList })
             .then(() => {
                 console.log(
-                    `postsList ${postsList.length} successfully written to Firestore at ${new Date().toLocaleTimeString(
-                        'uk-UA'
-                    )}`
+                    `postsList(${
+                        JSON.parse(postsList).length
+                    }) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
                 );
             })
             .catch((error) => {
