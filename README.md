@@ -1,6 +1,6 @@
 # Questionnaire
 
-## An application for conducting surveys with clients/customers/focus group members in real life.
+## An application for conducting surveys with clients / customers / focus group members in real life.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
