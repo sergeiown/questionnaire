@@ -26,7 +26,7 @@ const PostItem = (props) => {
                 )}
 
                 <div>
-                    <span style={{ color: '#6d6d6d' }}>Питання обов'язкове:</span> {props.post.required}
+                    <span style={{ color: '#6d6d6d' }}>Питання обов&apos;язкове:</span> {props.post.required}
                 </div>
 
                 <div>

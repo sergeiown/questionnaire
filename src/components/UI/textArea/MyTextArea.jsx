@@ -5,4 +5,6 @@ const MyTextArea = React.forwardRef((props, ref) => {
     return <textarea ref={ref} {...props} className={classes.myText} />;
 });
 
+MyTextArea.displayName = 'MyTextArea';
+
 export default MyTextArea;
