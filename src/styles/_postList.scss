@@ -1,17 +1,84 @@
 @import '../styles/colors';
 
 .postList {
+    position: relative;
     min-height: 15rem;
     margin: 14rem 0 0 0;
     padding: 1rem;
     text-shadow: 2px 2px 2px $color-black;
-    background: $color-dark url('../assets/logo/logo.svg') no-repeat bottom right / 30%;
+    background: url('../assets/logo/logo.svg') no-repeat bottom right / 30% $color-dark;
     box-shadow: 0 0 0.2rem $color-gray-darker;
     border-radius: 0.5rem;
 
+    a {
+        display: block;
+        color: $color-orange;
+        text-align: right;
+        margin: 0 1rem 0 0;
+        font-size: small;
+        text-decoration: none;
+        text-shadow: none;
+        transition: color 0.3s;
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            font-size: smaller;
+            margin: 0 0.2rem 0 0;
+        }
+
+        &:hover {
+            color: $color-gray;
+        }
+    }
+
+    &Image {
+        position: relative;
+        width: 100%;
+        padding-top: calc(100% / 3);
+        border: 0.125rem solid $color-orange;
+        box-shadow: 0 0 0.5rem $color-black;
+        border-radius: 1rem 0.5rem;
+        cursor: pointer;
+
+        &::after {
+            color: $color-gray-dark;
+            text-shadow: none;
+            opacity: 0.5;
+            text-align: center;
+            content: 'Натисніть для вибору зображення (найкращий результат при співвідношенні сторін 3:1)';
+            position: absolute;
+            width: 80%;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 1rem 0.5rem;
+
+            @media only screen and (max-width: 1200px) and (orientation: portrait) {
+                width: 100%;
+                top: 85%;
+                font-size: small;
+            }
+
+            @media only screen and (max-width: 400px) and (orientation: portrait) {
+                top: 75%;
+                font-size: smaller;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+            border: none;
+            border-radius: 1rem 0.5rem;
+        }
+    }
+
     h1 {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         color: $color-ivory;
         margin: 1rem 0;
     }

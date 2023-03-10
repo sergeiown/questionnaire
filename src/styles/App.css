@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -100,6 +101,7 @@ body .App {
   border-radius: 0 0 0.5rem 0.5rem;
   background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
   box-shadow: 0 0 0.2rem #313131;
+  z-index: 1;
 }
 .controlPanel input,
 .controlPanel select,
@@ -147,17 +149,82 @@ body .App {
 }
 
 .postList {
+  position: relative;
   min-height: 15rem;
   margin: 14rem 0 0 0;
   padding: 1rem;
   text-shadow: 2px 2px 2px #0a0a0a;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat bottom right/30%;
+  background: url("../assets/logo/logo.svg") no-repeat bottom right/30% #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
 }
+.postList a {
+  display: block;
+  color: #ff6600;
+  text-align: right;
+  margin: 0 1rem 0 0;
+  font-size: small;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 0.3s;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .postList a {
+    font-size: smaller;
+    margin: 0 0.2rem 0 0;
+  }
+}
+.postList a:hover {
+  color: #a0a0a0;
+}
+.postListImage {
+  position: relative;
+  width: 100%;
+  padding-top: 33.3333333333%;
+  border: 0.125rem solid #ff6600;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+  border-radius: 1rem 0.5rem;
+  cursor: pointer;
+}
+.postListImage::after {
+  color: #6d6d6d;
+  text-shadow: none;
+  opacity: 0.5;
+  text-align: center;
+  content: "Натисніть для вибору зображення (найкращий результат при співвідношенні сторін 3:1)";
+  position: absolute;
+  width: 80%;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem 0.5rem;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .postListImage::after {
+    width: 100%;
+    top: 85%;
+    font-size: small;
+  }
+}
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+  .postListImage::after {
+    top: 75%;
+    font-size: smaller;
+  }
+}
+.postListImage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 1rem 0.5rem;
+}
 .postList h1 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #fffff0;
   margin: 1rem 0;
 }

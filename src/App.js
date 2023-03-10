@@ -23,6 +23,7 @@ function App() {
     const [modal, setModal] = useState(false);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [isPostsLoading, setIsPostsLoading] = useState(false);
+    const [baseImage, setBaseImage] = useState(true);
 
     useEffect(() => {
         document.title = `Questionnaire - ${posts.length} question(s)`;
@@ -65,13 +66,14 @@ function App() {
         TitleService.update(JSON.stringify(title.query || title.new));
     };
 
-    const scrollToTitle = () => {
-        const element = document.getElementsByTagName('h1')[0];
+    const scrollToTop = () => {
+        const element = document.getElementsByTagName('img')[0];
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
     async function fetchSavedPosts() {
         setIsPostsLoading(true);
+        setBaseImage(false);
         setTimeout(async () => {
             const localPosts = JSON.parse(localStorage.getItem('posts'));
             if (localPosts) {
@@ -86,6 +88,7 @@ function App() {
 
     async function fetchNewPosts() {
         setIsPostsLoading(true);
+        setBaseImage(true);
         setTimeout(async () => {
             const localNewPosts = JSON.parse(localStorage.getItem('newPosts'));
             if (localNewPosts) {
@@ -115,11 +118,11 @@ function App() {
         <div className="App">
             <div className="controlPanel">
                 <div className="controlPanel__Buttons">
-                    <MyButton onClick={() => setModal(true)}>Створити питання</MyButton>
+                    <MyButton onClick={() => setModal(true)}>Додати питання</MyButton>
 
-                    <MyButton onClick={() => fetchNewPosts()}>Новий перелік</MyButton>
+                    <MyButton onClick={() => fetchNewPosts()}>Нове опитування</MyButton>
 
-                    <MyButton onClick={() => savePosts()}>Зберегти перелік</MyButton>
+                    <MyButton onClick={() => savePosts()}>Зберегти опитування</MyButton>
                 </div>
 
                 <MyModal visible={modal} setVisible={setModal}>
@@ -141,10 +144,11 @@ function App() {
                     title={'Перелік питань:'}
                     posts={sortedAndSearchedPosts}
                     remove={removePost}
+                    baseImage={baseImage}
                 />
             )}
 
-            <MyFloatingButton onClick={() => scrollToTitle()}>
+            <MyFloatingButton onClick={() => scrollToTop()}>
                 <strong>↑</strong>
             </MyFloatingButton>
         </div>

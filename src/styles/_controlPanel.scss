@@ -10,6 +10,7 @@
     border-radius: 0 0 0.5rem 0.5rem;
     background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% -10% / 16%;
     box-shadow: 0 0 0.2rem $color-gray-darker;
+    z-index: 1;
 
     & input,
     select,
