@@ -4,4 +4,4 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![image](https://user-images.githubusercontent.com/112722061/223612778-6eec336e-c22c-4acf-9fee-a1cca110fa73.png)
+![image](https://user-images.githubusercontent.com/112722061/224300799-f6b6e9a6-bf5b-478d-b870-1f33c58b6678.png)
