@@ -54,7 +54,7 @@ export default class ImageService {
             await storageRef.delete();
             await imageRef.delete();
 
-            // Delete all other images except baseImage.png
+            /* Delete all other images except baseImage.png */
             const allImages = await firebase.storage().ref('Images').listAll();
             const filteredImages = allImages.items.filter((item) => {
                 return item.name !== 'baseImage.png';

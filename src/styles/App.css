@@ -186,9 +186,20 @@ body .App {
   border-radius: 1rem 0.5rem;
   cursor: pointer;
 }
+.postListImage::before {
+  color: #ff6600;
+  font-size: x-large;
+  opacity: 0.5;
+  text-align: center;
+  content: "In progress...";
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .postListImage::after {
   color: #6d6d6d;
-  text-shadow: none;
   opacity: 0.5;
   text-align: center;
   content: "Натисніть для вибору зображення (найкращий результат при співвідношенні сторін 3:1)";
@@ -197,7 +208,6 @@ body .App {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 1rem 0.5rem;
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .postListImage::after {
