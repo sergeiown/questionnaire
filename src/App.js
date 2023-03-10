@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.css';
-import AdminArea from './components/AdminArea';
+import AdminArea from './components/AdminArea/AdminArea';
 
 function App() {
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ImageService from '../API/ImageService';
+import ImageService from '../../API/ImageService';
 
 const ImageChanger = ({ baseImage }) => {
     const [imageUrl, setImageUrl] = useState(null);

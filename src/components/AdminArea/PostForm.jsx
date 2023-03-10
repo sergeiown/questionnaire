@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import MyTextArea from './UI/textArea/MyTextArea';
-import Myselect from './UI/select/Myselect';
-import MyButton from './UI/button/MyButton';
+import MyTextArea from '../UI/textArea/MyTextArea';
+import Myselect from '../UI/select/Myselect';
+import MyButton from '../UI/button/MyButton';
 import DynamicOption from './PostOptions';
 
 const PostForm = ({ create }) => {

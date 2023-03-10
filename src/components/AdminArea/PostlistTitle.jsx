@@ -1,5 +1,5 @@
 import React from 'react';
-import MyInput from './UI/input/MyInput';
+import MyInput from '../UI/input/MyInput';
 
 const PostListTitle = ({ title, setTitle }) => {
     return (

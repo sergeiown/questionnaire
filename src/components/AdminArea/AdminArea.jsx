@@ -3,13 +3,13 @@ import PostListTitle from './PostlistTitle';
 import PostList from './PostList';
 import PostForm from './PostForm';
 import PostFilter from './PostFilter';
-import MyModal from './UI/MyModal/MyModal';
-import MyButton from './UI/button/MyButton';
-import MyFloatingButton from './UI/floatingButton/MyFloatingButton';
-import { usePosts } from '../hooks/usePosts';
-import TitleService from '../API/TitleService';
-import PostService from '../API/PostService';
-import Loader from './UI/Loader/Loader';
+import MyModal from '../UI/MyModal/MyModal';
+import MyButton from '../UI/button/MyButton';
+import MyFloatingButton from '../UI/floatingButton/MyFloatingButton';
+import { usePosts } from '../../hooks/usePosts';
+import TitleService from '../../API/TitleService';
+import PostService from '../../API/PostService';
+import Loader from '../UI/Loader/Loader';
 
 function AdminArea() {
     const newTitle = `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`;
