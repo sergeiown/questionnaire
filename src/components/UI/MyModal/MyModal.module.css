@@ -18,18 +18,20 @@
   box-shadow: 0 0 0.2rem #313131;
   border: 0.125rem solid #ff6600;
   border-radius: 1rem;
-  width: 45vw;
-  min-width: 15rem;
-  max-height: 95vh;
+  width: 80vmin;
+  min-width: 240px;
+  min-height: 240px;
 }
 @media only screen and (max-width: 1200px) and (orientation: landscape) {
   .myModalContent {
-    width: 95vw;
+    width: 80vmin;
+    min-width: 240px;
+    min-height: 240px;
   }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .myModalContent {
-    width: 99vw;
+    width: 80vmin;
   }
 }
 .myModalContent form {

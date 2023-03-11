@@ -79,19 +79,13 @@ body .App {
   width: 50vw;
   height: 100vh;
   position: relative;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat center center;
 }
-@media only screen and (max-width: 1200px) and (orientation: landscape) {
+@media only screen and (max-width: 1400px) {
   body .App {
-    width: 100vw;
+    width: 95vw;
   }
 }
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
-  body .App {
-    width: 100vw;
-  }
-}
-body .App .welcomeButtons {
+body .App .welcomeItems {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -102,67 +96,112 @@ body .App .welcomeButtons {
   align-items: center;
   flex-direction: column;
   gap: 55vmin;
+  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat center center;
 }
-body .App .welcomeButtons :first-child {
+@media only screen and (max-width: 1400px) and (orientation: landscape) {
+  body .App .welcomeItems {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
+  body .App .welcomeItems {
+    width: 100vw;
+  }
+}
+body .App .welcomeItems :first-child {
   scale: 2.8;
   line-height: 3rem;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 1200px) {
-  body .App .welcomeButtons :first-child {
+  body .App .welcomeItems :first-child {
     scale: 1.5;
   }
 }
-body .App .welcomeButtons :last-child {
+body .App .welcomeItems :last-child {
   scale: 1.5;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 1200px) {
-  body .App .welcomeButtons :last-child {
+  body .App .welcomeItems :last-child {
     scale: 1;
   }
 }
 body .App .welcomeModal {
-  width: 100%;
-  height: 40vmin;
+  width: 50vmin;
+  margin: 0 auto;
+  padding: 15% 0 0 0;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding: 0 0 5vmin 0;
-  background: url("../assets/images/google.svg") no-repeat center 25%;
+  align-items: center;
+  background: url("../assets/images/google.svg") no-repeat center top/50%;
 }
 @media only screen and (max-width: 1200px) {
   body .App .welcomeModal {
+    background: url("../assets/images/google.svg") no-repeat center top/50%;
     width: 100%;
-    height: 50vmin;
-    background: url("../assets/images/google.svg") no-repeat center top;
+    padding: 20% 0 0 0;
   }
+}
+body .App .welcomeModal :first-child {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 body .App .welcomeModal h2 {
   text-align: center;
-  color: maroon;
-  margin: 1rem 0 0 0;
-  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
-}
-body .App .welcomeModal p {
-  text-align: center;
-  margin: 1rem;
-  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
-}
-@media only screen and (max-width: 1200px) {
-  body .App .welcomeModal p {
-    margin: 0.5rem;
-  }
+  text-shadow: 0.1rem 0.1rem 0.1rem maroon;
+  margin: 0 0 2rem 0;
 }
 body .App .welcomeModal button {
   line-height: 3rem;
-  margin: 0.5rem;
+  margin: 2rem;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 600px) and (orientation: portrait) {
   body .App .welcomeModal button {
-    margin: 0 0.5rem;
+    line-height: 2rem;
   }
+}
+body .App .welcomeModal .myAuthContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 240px;
+}
+@media screen and (max-width: 1200px) {
+  body .App .welcomeModal .myAuthContent {
+    gap: 0.6rem;
+  }
+}
+body .App .welcomeModal .myAuthContent img {
+  width: 40%;
+  height: 40%;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+}
+body .App .welcomeModal .myAuthContent p {
+  padding: 0 0.3rem;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .App .welcomeModal .myAuthContent div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .App .welcomeModal .myAuthContent div button {
+  line-height: 3rem;
+  margin: 0 0.5rem;
+  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 
 .controlPanel {
@@ -182,14 +221,14 @@ body .App .welcomeModal button {
 .controlPanel button {
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
-@media only screen and (max-width: 1200px) and (orientation: landscape) {
+@media only screen and (max-width: 1400px) and (orientation: landscape) {
   .controlPanel {
     width: 95vw;
   }
 }
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
   .controlPanel {
-    width: 99vw;
+    width: 95vw;
     height: 14rem;
   }
 }

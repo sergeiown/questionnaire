@@ -36,12 +36,12 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                         console.log('Welcome, ' + role + '!');
                         if (role !== 'Firebase Admin' && role !== 'Owner') {
                             console.log('Access denied!');
-                            setError('Access denied!');
+                            setError(`Користувачу ${user.displayName} доступ не дозволено!`);
                             setUser(null);
                         }
                     } else {
                         console.log('Access denied!');
-                        setError('Access denied!');
+                        setError(`Користувачу ${user.displayName} доступ не дозволено!`);
                         setUser(null);
                     }
                 })
@@ -70,17 +70,26 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                     {error && <h2>{error}</h2>}
                 </>
             ) : (
-                <div>
+                <>
                     {!confirmSignIn && (
-                        <>
+                        <div className="myAuthContent">
+                            <p>Ви увійшли як</p>
                             <p>
-                                Ви увійшли як <strong>{user.displayName}</strong>
+                                <strong>{user.displayName}</strong>
                             </p>
-                            <MyButton onClick={handleSignOut}>Вийти</MyButton>
-                            <MyButton onClick={() => setConfirmSignIn(true)}>Продовжити</MyButton>
-                        </>
+                            <img src={user.photoURL} alt="avatar" />
+                            <p>
+                                {' '}
+                                <strong>{user.email}</strong>{' '}
+                            </p>
+
+                            <div>
+                                <MyButton onClick={handleSignOut}>Вийти</MyButton>
+                                <MyButton onClick={() => setConfirmSignIn(true)}>Продовжити</MyButton>
+                            </div>
+                        </div>
                     )}
-                </div>
+                </>
             )}
         </div>
     );

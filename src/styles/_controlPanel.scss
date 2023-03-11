@@ -18,12 +18,12 @@
         box-shadow: 0 0 0.5rem $color-black;
     }
 
-    @media only screen and (max-width: 1200px) and (orientation: landscape) {
+    @media only screen and (max-width: 1400px) and (orientation: landscape) {
         width: 95vw;
     }
 
-    @media only screen and (max-width: 1200px) and (orientation: portrait) {
-        width: 99vw;
+    @media only screen and (max-width: 1400px) and (orientation: portrait) {
+        width: 95vw;
         height: 14rem;
     }
 

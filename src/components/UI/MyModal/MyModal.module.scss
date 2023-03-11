@@ -21,16 +21,18 @@
         box-shadow: 0 0 0.2rem $color-gray-darker;
         border: 0.125rem solid $color-orange;
         border-radius: 1rem;
-        width: 45vw;
-        min-width: 15rem;
-        max-height: 95vh;
+        width: 80vmin;
+        min-width: 240px;
+        min-height: 240px;
 
         @media only screen and (max-width: 1200px) and (orientation: landscape) {
-            width: 95vw;
+            width: 80vmin;
+            min-width: 240px;
+            min-height: 240px;
         }
 
         @media only screen and (max-width: 1200px) and (orientation: portrait) {
-            width: 99vw;
+            width: 80vmin;
         }
 
         form {
