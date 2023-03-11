@@ -1,55 +1,10 @@
-// import React from 'react';
-// import MyButton from '../components/UI/button/MyButton';
-// import { useState, useEffect } from 'react';
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
-
-// const MyAuth = ({ onSignIn, onSignOut }) => {
-//     const [user, setUser] = useState(null);
-
-//     useEffect(() => {
-//         const unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => {
-//             setUser(user);
-//             if (user) {
-//                 onSignIn(user);
-//             } else {
-//                 onSignOut();
-//             }
-//         });
-//         return () => unregisterAuthObserver();
-//     }, [onSignIn, onSignOut]);
-
-//     const handleSignIn = () => {
-//         const provider = new firebase.auth.GoogleAuthProvider();
-//         firebase.auth().signInWithPopup(provider);
-//     };
-
-//     const handleSignOut = () => {
-//         firebase.auth().signOut();
-//     };
-
-//     return (
-//         <div>
-//             {!user ? (
-//                 <MyButton onClick={handleSignIn}>Sign in with Google</MyButton>
-//             ) : (
-//                 <div>
-//                     <MyButton onClick={handleSignIn}>Sign in with Google</MyButton>
-//                     <p>You are signed in as {user.displayName}</p>
-//                     <MyButton onClick={handleSignOut}>Sign out</MyButton>
-//                 </div>
-//             )}
-//         </div>
-//     );
-// };
-
-// export default MyAuth;
-
 import React from 'react';
 import MyButton from '../components/UI/button/MyButton';
 import { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
+import db from '../API/FirebaseConfig';
 
 const MyAuth = ({ onSignIn, onSignOut }) => {
     const [user, setUser] = useState(null);
@@ -67,6 +22,29 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
         });
         return () => unregisterAuthObserver();
     }, [onSignIn, onSignOut, confirmSignIn]);
+
+    /* Check Firebase user role ! */
+    useEffect(() => {
+        if (user) {
+            db.collection('Users')
+                .doc(user.email)
+                .get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const role = doc.data().role;
+                        console.log('Welcome, ' + role + '!');
+                        if (role !== 'Firebase Admin' && role !== 'Owner') {
+                            console.log('Access denied!');
+                            setUser(null);
+                        }
+                    } else {
+                        console.log('Access denied!');
+                        setUser(null);
+                    }
+                })
+                .catch((error) => console.log(error));
+        }
+    }, [user]);
 
     const handleSignIn = () => {
         if (user) {
@@ -87,22 +65,12 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                 <MyButton onClick={handleSignIn}>Sign in with Google</MyButton>
             ) : (
                 <div>
-                    {!confirmSignIn ? (
+                    {!confirmSignIn && (
                         <>
                             <p>You are signed in as {user.displayName}</p>
                             <MyButton onClick={handleSignOut}>Sign out</MyButton>
                             <MyButton onClick={() => setConfirmSignIn(true)}>Confirm Sign In</MyButton>
                         </>
-                    ) : (
-                        <div>
-                            <p>You are about to sign in as {user.displayName}. Do you want to continue?</p>
-                            <MyButton
-                                onClick={() => firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())}
-                            >
-                                Continue
-                            </MyButton>
-                            <MyButton onClick={() => setConfirmSignIn(false)}>Cancel</MyButton>
-                        </div>
                     )}
                 </div>
             )}
