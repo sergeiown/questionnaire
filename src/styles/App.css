@@ -142,10 +142,12 @@ body .App .welcomeModal h2 {
   text-align: center;
   color: maroon;
   margin: 1rem 0 0 0;
+  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
 }
 body .App .welcomeModal p {
   text-align: center;
   margin: 1rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
 }
 @media only screen and (max-width: 1200px) {
   body .App .welcomeModal p {
@@ -155,6 +157,7 @@ body .App .welcomeModal p {
 body .App .welcomeModal button {
   line-height: 3rem;
   margin: 0.5rem;
+  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 1200px) {
   body .App .welcomeModal button {
