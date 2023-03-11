@@ -29,16 +29,16 @@ function App() {
 
     return (
         <div className="App">
-            {activeComponent === 'welcome' && !user && (
+            {activeComponent === 'welcome' && (
                 <div className="welcomeButtons">
-                    <MyButton onClick={() => setActiveComponent('modal')}>Sign In</MyButton>
-                    <MyButton onClick={handleUserAreaClick}>User Area</MyButton>
+                    <MyButton onClick={handleUserAreaClick}>Пройти опитування</MyButton>
+                    <MyButton onClick={() => setActiveComponent('modal')}>Вхід для адміністратора</MyButton>
                 </div>
             )}
 
             {activeComponent === 'modal' && (
-                <MyModal visible={!user} setVisible={handleModalClose}>
-                    <div>
+                <MyModal visible={true} setVisible={handleModalClose}>
+                    <div className="welcomeModal">
                         <MyAuth onSignIn={handleSignIn} onSignOut={handleSignOut} />
                     </div>
                 </MyModal>

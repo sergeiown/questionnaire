@@ -6,16 +6,16 @@
     background: $color-dark;
     border: 1px solid $color-orange;
     border-radius: 0.8rem 0.5rem;
-    text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
+    text-shadow: 0.1rem 0.1rem 0.1rem $color-black;
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s ease;
 
     &:hover {
-        background: rgba($color: $color-orange, $alpha: 0.8);
+        background: rgba($color: $color-orange, $alpha: 0.5);
         border: 1px solid $color-gray;
         color: $color-black;
-        text-shadow: 0.125rem 0.125rem 0.125rem $color-gray;
+        text-shadow: 0.1rem 0.1rem 0.1rem $color-gray-darker;
     }
 
     &:disabled {

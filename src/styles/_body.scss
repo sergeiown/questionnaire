@@ -18,13 +18,80 @@ body {
         width: 50vw;
         height: 100vh;
         position: relative;
+        background: $color-dark url('../assets/logo/logo.svg') no-repeat center center;
 
         @media only screen and (max-width: 1200px) and (orientation: landscape) {
-            width: 95vw;
+            width: 100vw;
         }
 
         @media only screen and (max-width: 1200px) and (orientation: portrait) {
-            width: 99vw;
+            width: 100vw;
+        }
+
+        .welcomeButtons {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 55vmin;
+
+            & :first-child {
+                scale: 2.8;
+                line-height: 3rem;
+                box-shadow: 0 0 0.5rem $color-black;
+
+                @media only screen and (max-width: 1200px) {
+                    scale: 1.5;
+                }
+            }
+
+            & :last-child {
+                scale: 1.5;
+                box-shadow: 0 0 0.5rem $color-black;
+
+                @media only screen and (max-width: 1200px) {
+                    scale: 1;
+                }
+            }
+        }
+
+        .welcomeModal {
+            width: 100%;
+            height: 40vmin;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 0 5vmin 0;
+            background: url('../assets/images/google.svg') no-repeat center 25%;
+
+            @media only screen and (max-width: 1200px) {
+                width: 100%;
+                height: 50vmin;
+                background: url('../assets/images/google.svg') no-repeat center top;
+            }
+
+            p {
+                text-align: center;
+                margin: 1rem;
+
+                @media only screen and (max-width: 1200px) {
+                    margin: 0.5rem;
+                }
+            }
+
+            button {
+                line-height: 3rem;
+                margin: 0.5rem;
+
+                @media only screen and (max-width: 1200px) {
+                    margin: 0 0.5rem;
+                }
+            }
         }
     }
 }

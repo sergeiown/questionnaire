@@ -62,7 +62,9 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
     return (
         <div>
             {!user ? (
-                <MyButton onClick={handleSignIn}>Sign in with Google</MyButton>
+                <>
+                    <MyButton onClick={handleSignIn}>Увійти з обліковим записом Google</MyButton>
+                </>
             ) : (
                 <div>
                     {!confirmSignIn && (
