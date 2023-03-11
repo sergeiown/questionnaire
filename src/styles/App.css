@@ -138,6 +138,11 @@ body .App .welcomeModal {
     background: url("../assets/images/google.svg") no-repeat center top;
   }
 }
+body .App .welcomeModal h2 {
+  text-align: center;
+  color: maroon;
+  margin: 1rem 0 0 0;
+}
 body .App .welcomeModal p {
   text-align: center;
   margin: 1rem;

@@ -9,6 +9,7 @@ import db from '../API/FirebaseConfig';
 const MyAuth = ({ onSignIn, onSignOut }) => {
     const [user, setUser] = useState(null);
     const [confirmSignIn, setConfirmSignIn] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => {
@@ -35,10 +36,12 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                         console.log('Welcome, ' + role + '!');
                         if (role !== 'Firebase Admin' && role !== 'Owner') {
                             console.log('Access denied!');
+                            setError('Access denied!');
                             setUser(null);
                         }
                     } else {
                         console.log('Access denied!');
+                        setError('Access denied!');
                         setUser(null);
                     }
                 })
@@ -64,14 +67,17 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
             {!user ? (
                 <>
                     <MyButton onClick={handleSignIn}>Увійти з обліковим записом Google</MyButton>
+                    {error && <h2>{error}</h2>}
                 </>
             ) : (
                 <div>
                     {!confirmSignIn && (
                         <>
-                            <p>You are signed in as {user.displayName}</p>
-                            <MyButton onClick={handleSignOut}>Sign out</MyButton>
-                            <MyButton onClick={() => setConfirmSignIn(true)}>Confirm Sign In</MyButton>
+                            <p>
+                                Ви увійшли як <strong>{user.displayName}</strong>
+                            </p>
+                            <MyButton onClick={handleSignOut}>Вийти</MyButton>
+                            <MyButton onClick={() => setConfirmSignIn(true)}>Продовжити</MyButton>
                         </>
                     )}
                 </div>

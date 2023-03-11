@@ -75,6 +75,12 @@ body {
                 background: url('../assets/images/google.svg') no-repeat center top;
             }
 
+            h2 {
+                text-align: center;
+                color: $color-red;
+                margin: 1rem 0 0 0;
+            }
+
             p {
                 text-align: center;
                 margin: 1rem;
