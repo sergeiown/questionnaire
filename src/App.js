@@ -19,6 +19,11 @@ function App() {
         setUser(null);
     };
 
+    const handlePostListSave = () => {
+        setUser(null);
+        setActiveComponent('welcome');
+    };
+
     const handleUserAreaClick = () => {
         setActiveComponent('userArea');
     };
@@ -44,7 +49,7 @@ function App() {
                 </MyModal>
             )}
 
-            {user && <AdminArea />}
+            {user && <AdminArea onSave={handlePostListSave} />}
             {activeComponent === 'userArea' && <UserArea />}
         </div>
     );

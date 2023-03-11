@@ -11,7 +11,7 @@ import TitleService from '../../API/TitleService';
 import PostService from '../../API/PostService';
 import Loader from '../UI/Loader/Loader';
 
-function AdminArea() {
+function AdminArea({ onSave }) {
     const newTitle = `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`;
     const [title, setTitle] = useState({
         new: newTitle,
@@ -23,6 +23,7 @@ function AdminArea() {
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [isPostsLoading, setIsPostsLoading] = useState(false);
     const [baseImage, setBaseImage] = useState(true);
+    // const [user, setUser] = useState(null);
 
     useEffect(() => {
         document.title = `Questionnaire - ${posts.length} question(s)`;
@@ -63,6 +64,7 @@ function AdminArea() {
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
         PostService.update(JSON.stringify(posts));
         TitleService.update(JSON.stringify(title.query || title.new));
+        onSave();
     };
 
     const scrollToTop = () => {
