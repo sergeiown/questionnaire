@@ -38,11 +38,11 @@ body {
             background: $color-dark url('../assets/logo/logo.svg') no-repeat center center;
 
             @media only screen and (max-width: 1400px) and (orientation: landscape) {
-                width: 100vw;
+                width: 100%;
             }
 
             @media only screen and (max-width: 1400px) and (orientation: portrait) {
-                width: 100vw;
+                width: 100%;
             }
 
             & :first-child {

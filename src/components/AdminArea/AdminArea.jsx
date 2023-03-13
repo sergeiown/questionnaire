@@ -60,9 +60,11 @@ function AdminArea({ onSave }) {
     };
 
     const savePosts = () => {
-        localStorage.setItem('posts', JSON.stringify(posts));
+        // localStorage.setItem('posts', JSON.stringify(posts));
+        localStorage.setItem('posts', JSON.stringify(sortedAndSearchedPosts));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
-        PostService.update(JSON.stringify(posts));
+        // PostService.update(JSON.stringify(posts));
+        PostService.update(JSON.stringify(sortedAndSearchedPosts));
         TitleService.update(JSON.stringify(title.query || title.new));
         onSave();
     };
@@ -123,7 +125,7 @@ function AdminArea({ onSave }) {
 
                     <MyButton onClick={() => fetchNewPosts()}>Нове опитування</MyButton>
 
-                    <MyButton onClick={() => savePosts()}>Зберегти опитування</MyButton>
+                    <MyButton onClick={() => savePosts()}>Зберегти і вийти</MyButton>
                 </div>
 
                 <MyModal visible={modal} setVisible={setModal}>

@@ -100,12 +100,12 @@ body .App .welcomeItems {
 }
 @media only screen and (max-width: 1400px) and (orientation: landscape) {
   body .App .welcomeItems {
-    width: 100vw;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 1400px) and (orientation: portrait) {
   body .App .welcomeItems {
-    width: 100vw;
+    width: 100%;
   }
 }
 body .App .welcomeItems :first-child {
@@ -312,8 +312,9 @@ body .App .welcomeModal .myAuthContent div button {
   transform: translate(-50%, -50%);
 }
 .postListImage::after {
-  color: #6d6d6d;
-  opacity: 0.5;
+  color: #a0a0a0;
+  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
+  opacity: 0.8;
   text-align: center;
   content: "Натисніть для вибору зображення (найкращий результат при співвідношенні сторін 3:1)";
   position: absolute;
