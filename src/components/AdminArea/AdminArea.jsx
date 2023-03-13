@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostListTitle from './PostlistTitle';
+import PostListColor from './PostlistColor';
 import PostListEmail from './PostlistEmail';
 import PostList from './PostList';
 import PostForm from './PostForm';
@@ -10,6 +11,7 @@ import MyFloatingButton from '../UI/floatingButton/MyFloatingButton';
 import { usePosts } from '../../hooks/usePosts';
 import TitleService from '../../API/TitleService';
 import EmailService from '../../API/EmailService';
+import ColorService from '../../API/ColorService';
 import PostService from '../../API/PostService';
 import Loader from '../UI/Loader/Loader';
 
@@ -23,6 +25,7 @@ function AdminArea({ onSave, currentEmail }) {
         new: `${currentEmail}`,
         query: '',
     });
+    const [color, setColor] = useState({ new: '#ff6600', query: '' });
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({ sort: '', query: '' });
     const [modal, setModal] = useState(false);
@@ -38,6 +41,7 @@ function AdminArea({ onSave, currentEmail }) {
         fetchSavedPosts();
         fetchSavedTitle();
         fetchSavedEmail();
+        fetchSavedColor();
     }, []);
 
     const createPost = (newPost) => {
@@ -46,9 +50,11 @@ function AdminArea({ onSave, currentEmail }) {
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
         localStorage.setItem('email', JSON.stringify(email.query || email.new));
+        localStorage.setItem('color', JSON.stringify(color.query || color.new));
         PostService.update(JSON.stringify([...posts, newPost]));
         TitleService.update(JSON.stringify(title.query || title.new));
         EmailService.update(JSON.stringify(email.query || email.new));
+        ColorService.update(JSON.stringify(color.query || color.new));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
@@ -69,10 +75,12 @@ function AdminArea({ onSave, currentEmail }) {
         localStorage.setItem('posts', JSON.stringify(sortedAndSearchedPosts));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
         localStorage.setItem('email', JSON.stringify(email.query || email.new));
+        localStorage.setItem('color', JSON.stringify(color.query || color.new));
         // PostService.update(JSON.stringify(posts));
         PostService.update(JSON.stringify(sortedAndSearchedPosts));
         TitleService.update(JSON.stringify(title.query || title.new));
         EmailService.update(JSON.stringify(email.query || email.new));
+        ColorService.update(JSON.stringify(color.query || color.new));
         onSave();
     };
 
@@ -105,11 +113,13 @@ function AdminArea({ onSave, currentEmail }) {
                 setPosts(localNewPosts);
                 setTitle({ new: newTitle, query: '' });
                 setEmail({ new: currentEmail, query: '' });
+                setColor({ new: '#ff6600', query: '' });
             } else {
                 const posts = await PostService.getNew();
                 setPosts(posts);
                 setTitle({ new: newTitle, query: '' });
                 setEmail({ new: currentEmail, query: '' });
+                setColor({ new: '#ff6600', query: '' });
                 localStorage.setItem('newPosts', JSON.stringify(posts));
             }
             setIsPostsLoading(false);
@@ -133,6 +143,16 @@ function AdminArea({ onSave, currentEmail }) {
         } else {
             const email = await EmailService.get();
             setEmail({ new: currentEmail, query: email });
+        }
+    }
+
+    async function fetchSavedColor() {
+        const localColor = JSON.parse(localStorage.getItem('color'));
+        if (localColor) {
+            setColor({ new: '#ff6600', query: localColor });
+        } else {
+            const color = await ColorService.get();
+            setColor({ new: '#ff6600', query: color });
         }
     }
 
@@ -160,7 +180,7 @@ function AdminArea({ onSave, currentEmail }) {
                     <div>
                         <PostListEmail email={email} setEmail={setEmail} />
 
-                        <PostListTitle title={title} setTitle={setTitle} />
+                        <PostListColor color={color} setColor={setColor} />
                     </div>
                 </div>
             </div>

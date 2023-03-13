@@ -25,11 +25,11 @@ export default class TitleService {
 
             console.log(
                 `PostsListTitle(${JSON.parse(
-                    data[3].data
+                    data[4].data
                 )}) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
-            return JSON.parse(data[3].data);
+            return JSON.parse(data[4].data);
         } catch (error) {
             console.error(`Error reading postsListTitle: ${error}`);
             return [];
