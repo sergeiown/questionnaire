@@ -9,7 +9,7 @@
     text-shadow: 0.1rem 0.1rem 0.1rem $color-black;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
 
     &:hover {
         background: rgba($color: $color-orange, $alpha: 0.5);
