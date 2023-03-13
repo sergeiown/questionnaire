@@ -194,6 +194,7 @@ function AdminArea({ onSave, currentEmail }) {
                     posts={sortedAndSearchedPosts}
                     remove={removePost}
                     baseImage={baseImage}
+                    color={color.query || color.new}
                 />
             )}
 

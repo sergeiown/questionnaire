@@ -3,7 +3,7 @@ import MyButton from '../UI/button/MyButton';
 
 const PostItem = (props) => {
     return (
-        <div className="post">
+        <div className="post" style={{ borderColor: props.color }}>
             <div className="post__content" id={props.id}>
                 <strong>
                     <span style={{ color: '#6d6d6d' }}>{props.number}. </span>
@@ -34,7 +34,9 @@ const PostItem = (props) => {
                 </div>
             </div>
             <div className="post__btns">
-                <MyButton onClick={() => props.remove(props.post)}>Видалити</MyButton>
+                <MyButton onClick={() => props.remove(props.post)} color={props.color}>
+                    Видалити
+                </MyButton>
             </div>
         </div>
     );

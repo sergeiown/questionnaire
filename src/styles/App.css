@@ -264,6 +264,9 @@ body .App .welcomeModal .myAuthContent div button {
 .controlPanel__Settings :nth-child(3) {
   flex-basis: 49%;
 }
+.controlPanel__Settings :nth-child(4) {
+  flex-basis: 49%;
+}
 
 .postList {
   position: relative;
@@ -274,6 +277,11 @@ body .App .welcomeModal .myAuthContent div button {
   background: url("../assets/logo/logo.svg") no-repeat bottom right/30% #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .postList {
+    background: url("../assets/logo/logo.svg") no-repeat bottom right/50% #1c1c1c;
+  }
 }
 .postList a {
   display: block;

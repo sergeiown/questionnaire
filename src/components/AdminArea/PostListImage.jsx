@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageService from '../../API/ImageService';
 
-const ImageChanger = ({ baseImage }) => {
+const ImageChanger = ({ baseImage, color }) => {
     const [imageUrl, setImageUrl] = useState(null);
 
     const handleClick = () => {
@@ -37,7 +37,7 @@ const ImageChanger = ({ baseImage }) => {
     }
 
     return (
-        <div onClick={handleClick} className="postListImage">
+        <div onClick={handleClick} className="postListImage" style={{ borderColor: color }}>
             {imageUrl ? <img src={imageUrl} alt="image" /> : <div></div>}
         </div>
     );
