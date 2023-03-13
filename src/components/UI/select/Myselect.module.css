@@ -9,6 +9,8 @@
   border: 1px solid #ff6600;
   border-radius: 0.8rem 0.5rem;
   background: #313131;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .mySelect:invalid {
   border: 1px solid maroon;

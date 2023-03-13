@@ -11,6 +11,8 @@
     border: 1px solid $color-orange;
     border-radius: 0.8rem 0.5rem;
     background: $color-gray-darker;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     &:invalid {
         border: 1px solid $color-red;

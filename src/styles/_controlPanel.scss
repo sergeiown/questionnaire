@@ -5,10 +5,10 @@
     top: 0;
     left: 50;
     width: 50vw;
-    height: 13rem;
-    padding: 1.5rem;
+    height: 13.2rem;
+    padding: 1rem;
     border-radius: 0 0 0.5rem 0.5rem;
-    background: $color-dark url('../assets/logo/logo.svg') no-repeat 100% -10% / 16%;
+    background: $color-dark;
     box-shadow: 0 0 0.2rem $color-gray-darker;
     z-index: 1;
 
@@ -20,11 +20,12 @@
 
     @media only screen and (max-width: 1400px) and (orientation: landscape) {
         width: 95vw;
+        box-shadow: 0 0 0.2rem $color-gray-darker;
     }
 
     @media only screen and (max-width: 1400px) and (orientation: portrait) {
         width: 95vw;
-        height: 14rem;
+        box-shadow: 0 0 0.2rem $color-gray-darker;
     }
 
     hr {
@@ -33,27 +34,35 @@
         box-shadow: 0 0 0.5rem $color-black;
     }
 
-    .controlPanel__Buttons {
-        margin: 0 25% 0 0;
+    &__Buttons {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 0.5rem;
 
-        @media only screen and (max-width: 1440px) and (orientation: landscape) {
-            margin: 0 15% 0 0;
-
-            button {
-                font-size: small;
-            }
-        }
-
-        @media only screen and (max-width: 1200px) and (orientation: portrait) {
-            margin: 0 15% 0 0;
-
-            button {
+        button {
+            @media only screen and (max-width: 1200px) and (orientation: portrait) {
                 font-size: smaller;
             }
+        }
+    }
+
+    &__Settings {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & :nth-child(1) {
+            flex-basis: 100%;
+        }
+
+        & :nth-child(2) {
+            flex-basis: 49%;
+        }
+
+        & :nth-child(3) {
+            flex-basis: 49%;
         }
     }
 }

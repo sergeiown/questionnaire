@@ -12,6 +12,13 @@ export default class ImageService {
         await storageRef.put(file);
         const url = await storageRef.getDownloadURL();
         await imageRef.set({ url });
+
+        console.log(
+            `postsListImage(${file.name}) successfully written to Firestorage at ${new Date().toLocaleTimeString(
+                'uk-UA'
+            )}`
+        );
+
         return url;
     }
 
@@ -23,6 +30,13 @@ export default class ImageService {
 
         if (doc.exists) {
             const url = doc.data().url;
+
+            console.log(
+                `postsListImage(baseImage.png) successfully read from Firestorage at ${new Date().toLocaleTimeString(
+                    'uk-UA'
+                )}`
+            );
+
             return url;
         }
     }
@@ -33,12 +47,26 @@ export default class ImageService {
 
         if (doc.exists) {
             const url = doc.data().url;
+
+            console.log(
+                `postsListImage(${
+                    url.split('%2F').pop().split('?')[0]
+                }) successfully read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
+            );
+
             return url;
         } else {
             const baseImageRef = images.doc('baseImage');
             const baseImageDoc = await baseImageRef.get();
             if (baseImageDoc.exists) {
                 const url = baseImageDoc.data().url;
+
+                console.log(
+                    `postsListImage(${
+                        url.split('%2F').pop().split('?')[0]
+                    }) successfully read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
+                );
+
                 return url;
             }
         }

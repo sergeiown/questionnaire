@@ -209,10 +209,10 @@ body .App .welcomeModal .myAuthContent div button {
   top: 0;
   left: 50;
   width: 50vw;
-  height: 13rem;
-  padding: 1.5rem;
+  height: 13.2rem;
+  padding: 1rem;
   border-radius: 0 0 0.5rem 0.5rem;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat 100% -10%/16%;
+  background: #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   z-index: 1;
 }
@@ -224,12 +224,13 @@ body .App .welcomeModal .myAuthContent div button {
 @media only screen and (max-width: 1400px) and (orientation: landscape) {
   .controlPanel {
     width: 95vw;
+    box-shadow: 0 0 0.2rem #313131;
   }
 }
 @media only screen and (max-width: 1400px) and (orientation: portrait) {
   .controlPanel {
     width: 95vw;
-    height: 14rem;
+    box-shadow: 0 0 0.2rem #313131;
   }
 }
 .controlPanel hr {
@@ -237,28 +238,31 @@ body .App .welcomeModal .myAuthContent div button {
   margin: 0.8rem 0 0.5rem 0;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
-.controlPanel .controlPanel__Buttons {
-  margin: 0 25% 0 0;
+.controlPanel__Buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
 }
-@media only screen and (max-width: 1440px) and (orientation: landscape) {
-  .controlPanel .controlPanel__Buttons {
-    margin: 0 15% 0 0;
-  }
-  .controlPanel .controlPanel__Buttons button {
-    font-size: small;
-  }
-}
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
-  .controlPanel .controlPanel__Buttons {
-    margin: 0 15% 0 0;
-  }
-  .controlPanel .controlPanel__Buttons button {
+  .controlPanel__Buttons button {
     font-size: smaller;
   }
+}
+.controlPanel__Settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.controlPanel__Settings :nth-child(1) {
+  flex-basis: 100%;
+}
+.controlPanel__Settings :nth-child(2) {
+  flex-basis: 49%;
+}
+.controlPanel__Settings :nth-child(3) {
+  flex-basis: 49%;
 }
 
 .postList {
@@ -310,6 +314,12 @@ body .App .welcomeModal .myAuthContent div button {
   top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+  .postListImage::before {
+    top: 10%;
+    font-size: smaller;
+  }
 }
 .postListImage::after {
   color: #a0a0a0;

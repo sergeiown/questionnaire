@@ -49,7 +49,8 @@ function App() {
                 </MyModal>
             )}
 
-            {user && <AdminArea onSave={handlePostListSave} />}
+            {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}
+
             {activeComponent === 'userArea' && <UserArea />}
         </div>
     );

@@ -2,19 +2,19 @@ import db from './FirebaseConfig';
 
 const StorageData = db.collection('StorageData');
 
-export default class TitleService {
-    static async update(postsListTitle) {
-        await StorageData.doc('postsListTitle')
-            .set({ data: postsListTitle })
+export default class EmailService {
+    static async update(postsListEmail) {
+        await StorageData.doc('postsListEmail')
+            .set({ data: postsListEmail })
             .then(() => {
                 console.log(
-                    `postsListTitle(${JSON.parse(
-                        postsListTitle
+                    `postsListEmail(${JSON.parse(
+                        postsListEmail
                     )}) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
                 );
             })
             .catch((error) => {
-                console.error(`Error writing postsListTitle: ${error}`);
+                console.error(`Error writing postsListEmail: ${error}`);
             });
     }
 
@@ -24,14 +24,14 @@ export default class TitleService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `PostsListTitle(${JSON.parse(
-                    data[3].data
+                `PostsListEmail(${JSON.parse(
+                    data[2].data
                 )}) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
-            return JSON.parse(data[3].data);
+            return JSON.parse(data[2].data);
         } catch (error) {
-            console.error(`Error reading postsListTitle: ${error}`);
+            console.error(`Error reading postsListEmail: ${error}`);
             return [];
         }
     }

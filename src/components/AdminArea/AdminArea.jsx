@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostListTitle from './PostlistTitle';
+import PostListEmail from './PostlistEmail';
 import PostList from './PostList';
 import PostForm from './PostForm';
 import PostFilter from './PostFilter';
@@ -8,13 +9,18 @@ import MyButton from '../UI/button/MyButton';
 import MyFloatingButton from '../UI/floatingButton/MyFloatingButton';
 import { usePosts } from '../../hooks/usePosts';
 import TitleService from '../../API/TitleService';
+import EmailService from '../../API/EmailService';
 import PostService from '../../API/PostService';
 import Loader from '../UI/Loader/Loader';
 
-function AdminArea({ onSave }) {
+function AdminArea({ onSave, currentEmail }) {
     const newTitle = `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`;
     const [title, setTitle] = useState({
         new: newTitle,
+        query: '',
+    });
+    const [email, setEmail] = useState({
+        new: `${currentEmail}`,
         query: '',
     });
     const [posts, setPosts] = useState([]);
@@ -23,7 +29,6 @@ function AdminArea({ onSave }) {
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [isPostsLoading, setIsPostsLoading] = useState(false);
     const [baseImage, setBaseImage] = useState(true);
-    // const [user, setUser] = useState(null);
 
     useEffect(() => {
         document.title = `Questionnaire - ${posts.length} question(s)`;
@@ -31,10 +36,8 @@ function AdminArea({ onSave }) {
 
     useEffect(() => {
         fetchSavedPosts();
-    }, []);
-
-    useEffect(() => {
         fetchSavedTitle();
+        fetchSavedEmail();
     }, []);
 
     const createPost = (newPost) => {
@@ -42,8 +45,10 @@ function AdminArea({ onSave }) {
         setPosts([...posts, newPost]);
         localStorage.setItem('posts', JSON.stringify([...posts, newPost]));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
+        localStorage.setItem('email', JSON.stringify(email.query || email.new));
         PostService.update(JSON.stringify([...posts, newPost]));
         TitleService.update(JSON.stringify(title.query || title.new));
+        EmailService.update(JSON.stringify(email.query || email.new));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
@@ -63,9 +68,11 @@ function AdminArea({ onSave }) {
         // localStorage.setItem('posts', JSON.stringify(posts));
         localStorage.setItem('posts', JSON.stringify(sortedAndSearchedPosts));
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
+        localStorage.setItem('email', JSON.stringify(email.query || email.new));
         // PostService.update(JSON.stringify(posts));
         PostService.update(JSON.stringify(sortedAndSearchedPosts));
         TitleService.update(JSON.stringify(title.query || title.new));
+        EmailService.update(JSON.stringify(email.query || email.new));
         onSave();
     };
 
@@ -97,10 +104,12 @@ function AdminArea({ onSave }) {
             if (localNewPosts) {
                 setPosts(localNewPosts);
                 setTitle({ new: newTitle, query: '' });
+                setEmail({ new: currentEmail, query: '' });
             } else {
                 const posts = await PostService.getNew();
                 setPosts(posts);
                 setTitle({ new: newTitle, query: '' });
+                setEmail({ new: currentEmail, query: '' });
                 localStorage.setItem('newPosts', JSON.stringify(posts));
             }
             setIsPostsLoading(false);
@@ -114,6 +123,16 @@ function AdminArea({ onSave }) {
         } else {
             const title = await TitleService.get();
             setTitle({ new: newTitle, query: title });
+        }
+    }
+
+    async function fetchSavedEmail() {
+        const localEmail = JSON.parse(localStorage.getItem('email'));
+        if (localEmail) {
+            setEmail({ new: currentEmail, query: localEmail });
+        } else {
+            const email = await EmailService.get();
+            setEmail({ new: currentEmail, query: email });
         }
     }
 
@@ -133,10 +152,17 @@ function AdminArea({ onSave }) {
                 </MyModal>
 
                 <hr />
+                <div className="controlPanel__Settings">
+                    <PostListTitle title={title} setTitle={setTitle} />
 
-                <PostListTitle title={title} setTitle={setTitle} />
+                    <PostFilter filter={filter} setFilter={setFilter} />
 
-                <PostFilter filter={filter} setFilter={setFilter} />
+                    <div>
+                        <PostListEmail email={email} setEmail={setEmail} />
+
+                        <PostListTitle title={title} setTitle={setTitle} />
+                    </div>
+                </div>
             </div>
 
             {isPostsLoading ? (
