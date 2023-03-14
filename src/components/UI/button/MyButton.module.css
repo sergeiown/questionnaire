@@ -1,8 +1,6 @@
 .myBtn {
   padding: 0.3rem 1rem;
-  color: #ff6600;
-  background: #1c1c1c;
-  border: 1px solid #ff6600;
+  border: 1px solid;
   border-radius: 0.8rem 0.5rem;
   text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
   text-transform: uppercase;
@@ -10,15 +8,9 @@
   transition: 0.3s ease-in-out;
 }
 .myBtn:hover {
-  background: rgba(255, 102, 0, 0.5);
-  border: 1px solid #a0a0a0;
-  color: #0a0a0a;
-  text-shadow: 0.1rem 0.1rem 0.1rem #313131;
+  text-shadow: 0 0 0.2rem #a0a0a0;
 }
 .myBtn:disabled {
-  background: #313131;
-  border: 1px solid #a0a0a0;
-  color: #6d6d6d;
   text-shadow: none;
   cursor: not-allowed;
 }

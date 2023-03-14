@@ -85,6 +85,17 @@ body .App {
     width: 95vw;
   }
 }
+body .App .message {
+  position: absolute;
+  top: 94%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  z-index: 1;
+}
 body .App .welcomeItems {
   position: absolute;
   bottom: 0;

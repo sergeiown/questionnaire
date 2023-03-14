@@ -18,7 +18,7 @@
   color: #0a0a0a;
   text-shadow: 0.125rem 0.125rem 0.125rem #a0a0a0;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1400px) {
   .myFloatingBtn {
     display: none;
   }

@@ -1,11 +1,14 @@
 import React from 'react';
 import classes from './MyButton.module.css';
 
-const MyButton = ({ children, color, ...props }) => {
+const MyButton = ({ children, color = '#ff6600', ...props }) => {
     const buttonStyle = {
         color: color,
-        borderColor: color,
+        borderColor: shadeColor(color, 20),
+        backgroundColor: shadeColor(color, 65),
     };
+    console.log(color);
+    console.log(shadeColor(color, 70));
 
     return (
         <button {...props} className={classes.myBtn} style={buttonStyle}>
@@ -15,3 +18,15 @@ const MyButton = ({ children, color, ...props }) => {
 };
 
 export default MyButton;
+
+function shadeColor(color, percent) {
+    const hex = color.slice(1);
+    const R = parseInt(hex.slice(0, 2), 16);
+    const G = parseInt(hex.slice(2, 4), 16);
+    const B = parseInt(hex.slice(4, 6), 16);
+    const shadeAmount = Math.round(2.55 * percent);
+    const newR = Math.max(Math.min(R - shadeAmount, 255), 0);
+    const newG = Math.max(Math.min(G - shadeAmount, 255), 0);
+    const newB = Math.max(Math.min(B - shadeAmount, 255), 0);
+    return `rgb(${newR}, ${newG}, ${newB})`;
+}

@@ -2,9 +2,7 @@
 
 .myBtn {
     padding: 0.3rem 1rem;
-    color: $color-orange;
-    background: $color-dark;
-    border: 1px solid $color-orange;
+    border: 1px solid;
     border-radius: 0.8rem 0.5rem;
     text-shadow: 0.1rem 0.1rem 0.1rem $color-black;
     text-transform: uppercase;
@@ -12,16 +10,10 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-        background: rgba($color: $color-orange, $alpha: 0.5);
-        border: 1px solid $color-gray;
-        color: $color-black;
-        text-shadow: 0.1rem 0.1rem 0.1rem $color-gray-darker;
+        text-shadow: 0 0 0.2rem $color-gray;
     }
 
     &:disabled {
-        background: $color-gray-darker;
-        border: 1px solid $color-gray;
-        color: $color-gray-dark;
         text-shadow: none;
         cursor: not-allowed;
     }

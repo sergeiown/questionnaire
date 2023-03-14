@@ -23,6 +23,17 @@ body {
             width: 95vw;
         }
 
+        .message {
+            position: absolute;
+            top: 94%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: fit-content;
+            text-align: center;
+            z-index: 1;
+        }
+
         .welcomeItems {
             position: absolute;
             bottom: 0;

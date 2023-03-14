@@ -10,6 +10,7 @@ import UserArea from './components/UserArea/UserArea';
 function App() {
     const [user, setUser] = useState(null);
     const [activeComponent, setActiveComponent] = useState('welcome');
+    const [copied, setCopied] = useState(false);
 
     const handleSignIn = (user) => {
         setUser(user);
@@ -20,6 +21,22 @@ function App() {
     };
 
     const handlePostListSave = () => {
+        const currentUrl = window.location.href;
+        navigator.clipboard.writeText(currentUrl).then(
+            () => {
+                console.log('Current URL is copied to the clipboard');
+                setTimeout(() => {
+                    setCopied(true);
+                }, 1000);
+                setTimeout(() => {
+                    setCopied(false);
+                }, 5000);
+            },
+            () => {
+                console.error('Failed to copy current URL to clipboard');
+            }
+        );
+
         setUser(null);
         setActiveComponent('welcome');
     };
@@ -47,6 +64,10 @@ function App() {
                         <MyAuth onSignIn={handleSignIn} onSignOut={handleSignOut} />
                     </div>
                 </MyModal>
+            )}
+
+            {copied && activeComponent === 'welcome' && (
+                <div className="message">Посилання на опитування скопійоване до буферу обміну</div>
             )}
 
             {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}

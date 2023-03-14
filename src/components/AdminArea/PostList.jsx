@@ -14,9 +14,6 @@ const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => 
         );
     }
 
-    // console.clear();
-    // console.table(posts);
-
     return (
         <div className="postList">
             <ImageChanger baseImage={baseImage} color={color} />
