@@ -5,7 +5,7 @@ const MyButton = ({ children, color = '#ff7f50', ...props }) => {
     const buttonStyle = {
         color: color,
         borderColor: shadeColor(color, 20),
-        backgroundColor: shadeColor(color, 65),
+        backgroundColor: shadeColor(color, 70),
     };
 
     return (
