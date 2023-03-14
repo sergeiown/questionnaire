@@ -130,8 +130,9 @@ body {
                 img {
                     width: 40%;
                     height: 40%;
-                    border: none;
-                    border-radius: 1rem;
+                    padding: 0.2rem;
+                    border: 1px solid $color-orange;
+                    border-radius: 1rem 0.5rem;
                     box-shadow: 0 0 0.5rem $color-black;
                 }
 

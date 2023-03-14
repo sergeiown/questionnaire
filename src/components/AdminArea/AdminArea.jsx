@@ -25,7 +25,8 @@ function AdminArea({ onSave, currentEmail }) {
         new: `${currentEmail}`,
         query: '',
     });
-    const [color, setColor] = useState({ new: '#ff6600', query: '' });
+    const newColor = '#ff7f50';
+    const [color, setColor] = useState({ new: newColor, query: '' });
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({ sort: '', query: '' });
     const [modal, setModal] = useState(false);
@@ -113,13 +114,13 @@ function AdminArea({ onSave, currentEmail }) {
                 setPosts(localNewPosts);
                 setTitle({ new: newTitle, query: '' });
                 setEmail({ new: currentEmail, query: '' });
-                setColor({ new: '#ff6600', query: '' });
+                setColor({ new: newColor, query: '' });
             } else {
                 const posts = await PostService.getNew();
                 setPosts(posts);
                 setTitle({ new: newTitle, query: '' });
                 setEmail({ new: currentEmail, query: '' });
-                setColor({ new: '#ff6600', query: '' });
+                setColor({ new: newColor, query: '' });
                 localStorage.setItem('newPosts', JSON.stringify(posts));
             }
             setIsPostsLoading(false);
@@ -149,10 +150,10 @@ function AdminArea({ onSave, currentEmail }) {
     async function fetchSavedColor() {
         const localColor = JSON.parse(localStorage.getItem('color'));
         if (localColor) {
-            setColor({ new: '#ff6600', query: localColor });
+            setColor({ new: newColor, query: localColor });
         } else {
             const color = await ColorService.get();
-            setColor({ new: '#ff6600', query: color });
+            setColor({ new: newColor, query: color });
         }
     }
 

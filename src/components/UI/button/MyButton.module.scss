@@ -10,7 +10,8 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-        text-shadow: 0 0 0.2rem $color-gray;
+        text-shadow: 0.1rem 0.1rem 0.1rem $color-dark;
+        opacity: 0.75;
     }
 
     &:disabled {

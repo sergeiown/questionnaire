@@ -192,8 +192,9 @@ body .App .welcomeModal .myAuthContent {
 body .App .welcomeModal .myAuthContent img {
   width: 40%;
   height: 40%;
-  border: none;
-  border-radius: 1rem;
+  padding: 0.2rem;
+  border: 1px solid #ff7f50;
+  border-radius: 1rem 0.5rem;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
 body .App .welcomeModal .myAuthContent p {
@@ -296,7 +297,7 @@ body .App .welcomeModal .myAuthContent div button {
 }
 .postList a {
   display: block;
-  color: #ff6600;
+  color: #ff7f50;
   text-align: right;
   margin: 0 1rem 0 0;
   font-size: small;
@@ -317,13 +318,13 @@ body .App .welcomeModal .myAuthContent div button {
   position: relative;
   width: 100%;
   padding-top: 33.3333333333%;
-  border: 0.125rem solid #ff6600;
+  border: 0.125rem solid #ff7f50;
   box-shadow: 0 0 0.5rem #0a0a0a;
   border-radius: 1rem 0.5rem;
   cursor: pointer;
 }
 .postListImage::before {
-  color: #ff6600;
+  color: #ff7f50;
   font-size: x-large;
   opacity: 0.5;
   text-align: center;
@@ -391,7 +392,7 @@ body .App .welcomeModal .myAuthContent div button {
   display: flex;
   padding: 15px;
   background: #0a0a0a;
-  border: 0.125rem solid #ff6600;
+  border: 0.125rem solid #ff7f50;
   box-shadow: 0 0 0.5rem #0a0a0a;
   border-radius: 1rem 0.5rem;
   margin: 15px 0 0 0;
