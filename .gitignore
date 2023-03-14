@@ -24,3 +24,4 @@ yarn-error.log*
 
 terms_of_reference.txt
 src/API/FirebaseConfig.js
+public/posts.json
