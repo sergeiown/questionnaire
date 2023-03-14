@@ -30,7 +30,7 @@ function App() {
                 }, 1000);
                 setTimeout(() => {
                     setCopied(false);
-                }, 5000);
+                }, 9000);
             },
             () => {
                 console.error('Failed to copy current URL to clipboard');

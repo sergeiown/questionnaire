@@ -8,8 +8,20 @@ const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => 
     if (!posts.length) {
         return (
             <div className="postList">
+                <ImageChanger baseImage={baseImage} color={color} />
+
                 <h1>{mainTitle}</h1>
+
                 <h2>Питання не знайдені...</h2>
+
+                <a
+                    href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ marginTop: '6rem' }}
+                >
+                    Copyright (c) 2023 Serhii I. Myshko
+                </a>
             </div>
         );
     }

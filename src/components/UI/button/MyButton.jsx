@@ -7,8 +7,6 @@ const MyButton = ({ children, color = '#ff6600', ...props }) => {
         borderColor: shadeColor(color, 20),
         backgroundColor: shadeColor(color, 65),
     };
-    console.log(color);
-    console.log(shadeColor(color, 70));
 
     return (
         <button {...props} className={classes.myBtn} style={buttonStyle}>
