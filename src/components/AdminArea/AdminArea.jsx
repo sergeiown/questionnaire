@@ -32,7 +32,7 @@ function AdminArea({ onSave, currentEmail }) {
     const [modal, setModal] = useState(false);
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const [isPostsLoading, setIsPostsLoading] = useState(false);
-    const [baseImage, setBaseImage] = useState(true);
+    const [baseImage, setBaseImage] = useState(false);
 
     useEffect(() => {
         document.title = `Questionnaire - ${posts.length} question(s)`;
