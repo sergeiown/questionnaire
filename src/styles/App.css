@@ -427,7 +427,7 @@ body .App .welcomeModal .myAuthContent div button {
   align-items: center;
   gap: 1rem;
   opacity: 0.2;
-  animation: fade-in 1.5s ease-in-out;
+  animation: fade-in 1s ease-in-out;
   animation-fill-mode: forwards;
   /* allow to move parts of words to a new line. */
 }

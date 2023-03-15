@@ -125,7 +125,7 @@
         align-items: center;
         gap: 1rem;
 
-        @include fade(1.5s);
+        @include fade(1s);
 
         @media only screen and (max-width: 1200px) and (orientation: portrait) {
             flex-direction: column;
