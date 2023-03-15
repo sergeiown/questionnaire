@@ -1,21 +1,22 @@
 @import '../../../styles/colors';
+@import '../../../styles/animations';
 
 .myBtn {
     padding: 0.3rem 1rem;
     border: 1px solid;
     border-radius: 0.8rem 0.5rem;
     text-shadow: 0.1rem 0.1rem 0.1rem $color-black;
+    box-shadow: 0 0 0.5rem $color-black;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
 
-    &:hover {
-        text-shadow: 0.1rem 0.1rem 0.1rem $color-dark;
-        opacity: 0.75;
-    }
+    @include hover-button(0.3s);
 
     &:disabled {
         text-shadow: none;
+        box-shadow: none;
         cursor: not-allowed;
+
+        @include fade(1.5s, 'out');
     }
 }

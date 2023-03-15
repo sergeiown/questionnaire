@@ -1,4 +1,5 @@
 @import '../../../styles/colors';
+@import '../../../styles/animations';
 
 .myModal {
     position: fixed;
@@ -10,10 +11,14 @@
     background: rgba($color: $color-black, $alpha: 0.9);
     z-index: 1;
 
+    @include fade(0.3s, 'out');
+
     &.active {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include fade(0.3s);
     }
 
     &Content {
@@ -43,10 +48,6 @@
             justify-content: center;
             gap: 1rem;
 
-            & * {
-                box-shadow: 0 0 0.5rem $color-black;
-            }
-
             & div:not(:last-child) {
                 display: flex;
                 flex-direction: column;
@@ -62,6 +63,8 @@
                 border: 1px solid $color-orange;
                 border-radius: 0.8rem 0.5rem;
                 background: $color-black;
+
+                @include fade(0.3s);
 
                 @media only screen and (max-width: 1200px) and (orientation: portrait) {
                     width: 98%;

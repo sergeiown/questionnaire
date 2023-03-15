@@ -3,15 +3,28 @@
   border: 1px solid;
   border-radius: 0.8rem 0.5rem;
   text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
+  box-shadow: 0 0 0.5rem #0a0a0a;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .myBtn:hover {
-  text-shadow: 0.1rem 0.1rem 0.1rem #1c1c1c;
-  opacity: 0.75;
+  text-shadow: 0 0 0.1rem #a0a0a0;
+  box-shadow: 0 0 0.5rem rgba(160, 160, 160, 0.5);
 }
 .myBtn:disabled {
   text-shadow: none;
+  box-shadow: none;
   cursor: not-allowed;
+  opacity: 1;
+  animation: fade-out 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
 }

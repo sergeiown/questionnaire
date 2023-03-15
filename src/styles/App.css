@@ -120,9 +120,21 @@ body .App .welcomeItems {
   }
 }
 body .App .welcomeItems :first-child {
-  scale: 2.8;
-  line-height: 3rem;
-  box-shadow: 0 0 0.5rem #0a0a0a;
+  scale: 2.7;
+  line-height: 2rem;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media only screen and (max-width: 1200px) {
   body .App .welcomeItems :first-child {
@@ -130,8 +142,20 @@ body .App .welcomeItems :first-child {
   }
 }
 body .App .welcomeItems :last-child {
-  scale: 1.5;
-  box-shadow: 0 0 0.5rem #0a0a0a;
+  scale: 1.4;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUp 2s ease-in-out 0.5s forwards;
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @media only screen and (max-width: 1200px) {
   body .App .welcomeItems :last-child {
@@ -169,7 +193,6 @@ body .App .welcomeModal h2 {
 body .App .welcomeModal button {
   line-height: 3rem;
   margin: 2rem;
-  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 600px) and (orientation: portrait) {
   body .App .welcomeModal button {
@@ -213,7 +236,6 @@ body .App .welcomeModal .myAuthContent div {
 body .App .welcomeModal .myAuthContent div button {
   line-height: 3rem;
   margin: 0 0.5rem;
-  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 
 .controlPanel {
@@ -227,11 +249,6 @@ body .App .welcomeModal .myAuthContent div button {
   background: #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   z-index: 1;
-}
-.controlPanel input,
-.controlPanel select,
-.controlPanel button {
-  box-shadow: 0 0 0.5rem #0a0a0a;
 }
 @media only screen and (max-width: 1400px) and (orientation: landscape) {
   .controlPanel {
@@ -325,19 +342,18 @@ body .App .welcomeModal .myAuthContent div button {
 }
 .postListImage::before {
   color: #ff7f50;
-  font-size: x-large;
+  font-size: large;
   opacity: 0.5;
   text-align: center;
   content: "Триває обробка...";
   position: absolute;
   width: 100%;
-  top: 10%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 400px) and (orientation: portrait) {
   .postListImage::before {
-    top: 10%;
     font-size: smaller;
   }
 }
@@ -375,6 +391,17 @@ body .App .welcomeModal .myAuthContent div button {
   padding: 0.2rem;
   border: none;
   border-radius: 1rem 0.5rem;
+  opacity: 0.2;
+  animation: fade-in 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .postList h1 {
   text-align: center;
@@ -399,7 +426,18 @@ body .App .welcomeModal .myAuthContent div button {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  opacity: 0.2;
+  animation: fade-in 1.5s ease-in-out;
+  animation-fill-mode: forwards;
   /* allow to move parts of words to a new line. */
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .postList .post {

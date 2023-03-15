@@ -8,6 +8,7 @@
   border: 1px solid #ff7f50;
   border-radius: 0.8rem 0.5rem;
   background: #313131;
+  box-shadow: 0 0 0.5rem #0a0a0a;
   cursor: pointer;
 }
 .myColPicker::after {

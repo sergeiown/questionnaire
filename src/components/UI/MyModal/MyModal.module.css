@@ -7,11 +7,33 @@
   display: none;
   background: rgba(10, 10, 10, 0.9);
   z-index: 1;
+  opacity: 1;
+  animation: fade-out 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
 }
 .myModal.active {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.2;
+  animation: fade-in 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .myModalContent {
   padding: 1.5rem;
@@ -42,9 +64,6 @@
   justify-content: center;
   gap: 1rem;
 }
-.myModalContent form * {
-  box-shadow: 0 0 0.5rem #0a0a0a;
-}
 .myModalContent form div:not(:last-child) {
   display: flex;
   flex-direction: column;
@@ -61,6 +80,17 @@
   border: 1px solid #ff7f50;
   border-radius: 0.8rem 0.5rem;
   background: #0a0a0a;
+  opacity: 0.2;
+  animation: fade-in 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
   .myModalContent form div:not(:last-child) {

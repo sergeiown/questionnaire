@@ -1,0 +1,62 @@
+@import '../styles/colors';
+
+@mixin fade($duration, $direction: 'in') {
+    $opacity-from: if($direction == 'out', 1, 0.2);
+    $opacity-to: if($direction == 'out', 0.2, 1);
+
+    opacity: $opacity-from;
+    animation: fade-#{$direction} $duration ease-in-out;
+    animation-fill-mode: forwards;
+
+    @keyframes fade-#{$direction} {
+        from {
+            opacity: $opacity-from;
+        }
+        to {
+            opacity: $opacity-to;
+        }
+    }
+}
+
+@mixin animate-slide-down($duration, $delay) {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn $duration ease-in-out $delay forwards;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin animate-slide-up($duration, $delay) {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUp $duration ease-in-out $delay forwards;
+
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin hover-button($duration) {
+    transition: all $duration ease-in-out;
+
+    &:hover {
+        text-shadow: 0 0 0.1rem $color-gray;
+        box-shadow: 0 0 0.5rem rgba($color-gray, 0.5);
+    }
+}
