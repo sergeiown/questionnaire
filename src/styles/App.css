@@ -506,12 +506,17 @@ body .App .welcomeItems :last-child {
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) and (orientation: landscape) {
+  .userArea {
+    background: url("../assets/logo/logo.svg") no-repeat bottom right/40vmin #1c1c1c;
+  }
+}
+@media only screen and (max-width: 600px) and (orientation: portrait) {
   .userArea {
     background: url("../assets/logo/logo.svg") no-repeat bottom right/30vmin #1c1c1c;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) and (orientation: portrait) {
   .userArea {
     background: url("../assets/logo/logo.svg") no-repeat bottom right/35vmin #1c1c1c;
   }
@@ -550,7 +555,7 @@ body .App .welcomeItems :last-child {
   display: block;
   color: #ff7f50;
   text-align: right;
-  margin: 0 0.5rem 0 0;
+  margin: 0 1vmin 0 0;
   font-size: small;
   text-decoration: none;
   text-shadow: none;

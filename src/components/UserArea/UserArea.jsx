@@ -1,10 +1,13 @@
 import React from 'react';
-import UserImage from './UserImage';
+import SurveyImage from './SurveyImage';
+import SurveyTitle from './SurveyTitle';
 
 const UserArea = () => {
     return (
         <div className="userArea">
-            <UserImage />
+            <SurveyImage />
+
+            <SurveyTitle />
 
             <a href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md" target="_blank" rel="noreferrer">
                 Copyright (c) 2023 Serhii I. Myshko

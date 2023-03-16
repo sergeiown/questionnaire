@@ -13,11 +13,15 @@
     box-shadow: 0 0 0.2rem $color-gray-darker;
     border-radius: 0.5rem;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 1200px) and (orientation: landscape) {
+        background: url('../assets/logo/logo.svg') no-repeat bottom right / 40vmin $color-dark;
+    }
+
+    @media only screen and (max-width: 600px) and (orientation: portrait) {
         background: url('../assets/logo/logo.svg') no-repeat bottom right / 30vmin $color-dark;
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) and (orientation: portrait) {
         background: url('../assets/logo/logo.svg') no-repeat bottom right / 35vmin $color-dark;
     }
 
@@ -48,7 +52,7 @@
         display: block;
         color: $color-orange;
         text-align: right;
-        margin: 0 0.5rem 0 0;
+        margin: 0 1vmin 0 0;
         font-size: small;
         text-decoration: none;
         text-shadow: none;
