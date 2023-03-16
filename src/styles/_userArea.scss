@@ -2,6 +2,7 @@
 @import '../styles/animations';
 
 .userArea {
+    user-select: none;
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -44,6 +45,17 @@
             border-radius: 1rem 0.5rem;
 
             @include fade(1.5s);
+        }
+    }
+
+    .titleWrapper {
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        h1 {
+            text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
+            font-size: 1.6rem;
         }
     }
 

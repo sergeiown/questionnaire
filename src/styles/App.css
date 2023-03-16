@@ -495,6 +495,9 @@ body .App .welcomeItems :last-child {
 }
 
 .userArea {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -549,6 +552,15 @@ body .App .welcomeItems :last-child {
   to {
     opacity: 1;
   }
+}
+.userArea .titleWrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.userArea .titleWrapper h1 {
+  text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
+  font-size: 1.6rem;
 }
 .userArea a {
   align-self: flex-end;
