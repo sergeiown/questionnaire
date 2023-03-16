@@ -57,7 +57,13 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
             provider.addScope('https://www.googleapis.com/auth/userinfo.profile');
             provider.addScope('https://www.googleapis.com/auth/userinfo.email');
             auth.useDeviceLanguage();
-            auth.signInWithPopup(provider);
+            auth.signInWithPopup(provider)
+                .then(() => {
+                    console.log('Sign in successful!');
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 

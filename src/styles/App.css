@@ -87,7 +87,7 @@ body .App {
 }
 body .App .message {
   position: absolute;
-  top: 94%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -95,6 +95,11 @@ body .App .message {
   height: fit-content;
   text-align: center;
   z-index: 1;
+}
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
+  body .App .message {
+    top: 80%;
+  }
 }
 body .App .welcomeItems {
   position: absolute;

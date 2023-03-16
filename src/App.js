@@ -1,4 +1,5 @@
 import React from 'react';
+import { writeText } from 'clipboard-polyfill';
 import './styles/App.css';
 import { useState } from 'react';
 import MyAuth from './Auth/MyAuth';
@@ -22,15 +23,15 @@ function App() {
 
     const handlePostListSave = () => {
         const currentUrl = window.location.href;
-        navigator.clipboard.writeText(currentUrl).then(
+        writeText(currentUrl).then(
             () => {
                 console.log('Current URL is copied to the clipboard');
                 setTimeout(() => {
                     setCopied(true);
-                }, 1500);
+                }, 2000);
                 setTimeout(() => {
                     setCopied(false);
-                }, 8500);
+                }, 8000);
             },
             () => {
                 console.error('Failed to copy current URL to clipboard');
