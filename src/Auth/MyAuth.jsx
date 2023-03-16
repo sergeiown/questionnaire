@@ -2,9 +2,9 @@ import React from 'react';
 import MyButton from '../components/UI/button/MyButton';
 import { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import 'firebase/firestore';
 import db from '../API/FirebaseConfig';
+import { auth } from '../API/FirebaseConfig';
 
 const MyAuth = ({ onSignIn, onSignOut }) => {
     const [user, setUser] = useState(null);
@@ -12,7 +12,7 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const unregisterAuthObserver = firebase.auth().onAuthStateChanged((user) => {
+        const unregisterAuthObserver = auth.onAuthStateChanged((user) => {
             setUser(user);
             if (user && confirmSignIn) {
                 onSignIn(user);
@@ -54,12 +54,15 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
             setConfirmSignIn(true);
         } else {
             const provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider);
+            provider.addScope('https://www.googleapis.com/auth/userinfo.profile');
+            provider.addScope('https://www.googleapis.com/auth/userinfo.email');
+            auth.useDeviceLanguage();
+            auth.signInWithPopup(provider);
         }
     };
 
     const handleSignOut = () => {
-        firebase.auth().signOut();
+        auth.signOut();
     };
 
     return (
