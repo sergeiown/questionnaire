@@ -1,0 +1,66 @@
+@import '../styles/colors';
+@import '../styles/animations';
+
+.userArea {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: url('../assets/logo/logo.svg') no-repeat bottom right / 25vmin $color-dark;
+    box-shadow: 0 0 0.2rem $color-gray-darker;
+    border-radius: 0.5rem;
+
+    @media only screen and (max-width: 600px) {
+        background: url('../assets/logo/logo.svg') no-repeat bottom right / 30vmin $color-dark;
+    }
+
+    @media only screen and (max-width: 400px) {
+        background: url('../assets/logo/logo.svg') no-repeat bottom right / 35vmin $color-dark;
+    }
+
+    .imageWrapper {
+        position: relative;
+        width: 100%;
+        padding-top: calc(100% / 3);
+        border: 0.125rem solid $color-orange;
+        box-shadow: 0 0 0.5rem $color-black;
+        border-radius: 1rem 0.5rem;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0.2rem;
+            border: none;
+            border-radius: 1rem 0.5rem;
+
+            @include fade(1.5s);
+        }
+    }
+
+    a {
+        align-self: flex-end;
+        display: block;
+        color: $color-orange;
+        text-align: right;
+        margin: 0 0.5rem 0 0;
+        font-size: small;
+        text-decoration: none;
+        text-shadow: none;
+        transition: color 0.3s;
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            font-size: smaller;
+            margin: 0 0.2rem 0 0;
+        }
+
+        &:hover {
+            color: $color-gray;
+        }
+    }
+}

@@ -62,6 +62,82 @@ ul li {
   font-family: "Inter", sans-serif;
 }
 
+.welcomeModal {
+  width: 50vmin;
+  margin: 0 auto;
+  padding: 15% 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/images/google.svg") no-repeat center top/50%;
+}
+@media only screen and (max-width: 1200px) {
+  .welcomeModal {
+    background: url("../assets/images/google.svg") no-repeat center top/50%;
+    width: 100%;
+    padding: 20% 0 0 0;
+  }
+}
+.welcomeModal :first-child {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeModal h2 {
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.1rem maroon;
+  margin: 0 0 2rem 0;
+}
+.welcomeModal button {
+  line-height: 3rem;
+  margin: 2rem;
+}
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .welcomeModal button {
+    line-height: 2rem;
+  }
+}
+.welcomeModal .myAuthContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 240px;
+}
+@media screen and (max-width: 1200px) {
+  .welcomeModal .myAuthContent {
+    gap: 0.6rem;
+  }
+}
+.welcomeModal .myAuthContent img {
+  width: 40%;
+  height: 40%;
+  padding: 0.2rem;
+  border: 1px solid #ff7f50;
+  border-radius: 1rem 0.5rem;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+}
+.welcomeModal .myAuthContent p {
+  padding: 0 0.3rem;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.welcomeModal .myAuthContent div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeModal .myAuthContent div button {
+  line-height: 3rem;
+  margin: 0 0.5rem;
+}
+
 body {
   overflow-x: hidden;
   width: 100vw;
@@ -166,81 +242,6 @@ body .App .welcomeItems :last-child {
   body .App .welcomeItems :last-child {
     scale: 1;
   }
-}
-body .App .welcomeModal {
-  width: 50vmin;
-  margin: 0 auto;
-  padding: 15% 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url("../assets/images/google.svg") no-repeat center top/50%;
-}
-@media only screen and (max-width: 1200px) {
-  body .App .welcomeModal {
-    background: url("../assets/images/google.svg") no-repeat center top/50%;
-    width: 100%;
-    padding: 20% 0 0 0;
-  }
-}
-body .App .welcomeModal :first-child {
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body .App .welcomeModal h2 {
-  text-align: center;
-  text-shadow: 0.1rem 0.1rem 0.1rem maroon;
-  margin: 0 0 2rem 0;
-}
-body .App .welcomeModal button {
-  line-height: 3rem;
-  margin: 2rem;
-}
-@media only screen and (max-width: 600px) and (orientation: portrait) {
-  body .App .welcomeModal button {
-    line-height: 2rem;
-  }
-}
-body .App .welcomeModal .myAuthContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  min-width: 240px;
-}
-@media screen and (max-width: 1200px) {
-  body .App .welcomeModal .myAuthContent {
-    gap: 0.6rem;
-  }
-}
-body .App .welcomeModal .myAuthContent img {
-  width: 40%;
-  height: 40%;
-  padding: 0.2rem;
-  border: 1px solid #ff7f50;
-  border-radius: 1rem 0.5rem;
-  box-shadow: 0 0 0.5rem #0a0a0a;
-}
-body .App .welcomeModal .myAuthContent p {
-  padding: 0 0.3rem;
-  text-align: center;
-  text-shadow: 0.1rem 0.1rem 0.1rem #0a0a0a;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-body .App .welcomeModal .myAuthContent div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body .App .welcomeModal .myAuthContent div button {
-  line-height: 3rem;
-  margin: 0 0.5rem;
 }
 
 .controlPanel {
@@ -491,6 +492,78 @@ body .App .welcomeModal .myAuthContent div button {
 
 ::-webkit-scrollbar-button {
   display: none;
+}
+
+.userArea {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: url("../assets/logo/logo.svg") no-repeat bottom right/25vmin #1c1c1c;
+  box-shadow: 0 0 0.2rem #313131;
+  border-radius: 0.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .userArea {
+    background: url("../assets/logo/logo.svg") no-repeat bottom right/30vmin #1c1c1c;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .userArea {
+    background: url("../assets/logo/logo.svg") no-repeat bottom right/35vmin #1c1c1c;
+  }
+}
+.userArea .imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 33.3333333333%;
+  border: 0.125rem solid #ff7f50;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+  border-radius: 1rem 0.5rem;
+}
+.userArea .imageWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 1rem 0.5rem;
+  opacity: 0.2;
+  animation: fade-in 1.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.userArea a {
+  align-self: flex-end;
+  display: block;
+  color: #ff7f50;
+  text-align: right;
+  margin: 0 0.5rem 0 0;
+  font-size: small;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 0.3s;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .userArea a {
+    font-size: smaller;
+    margin: 0 0.2rem 0 0;
+  }
+}
+.userArea a:hover {
+  color: #a0a0a0;
 }
 
 html {
