@@ -1,9 +1,10 @@
 import React from 'react';
+import UserImage from './UserImage';
 
 const UserArea = () => {
     return (
         <div>
-            <h1>User Area is under construction</h1>
+            <UserImage />
         </div>
     );
 };
