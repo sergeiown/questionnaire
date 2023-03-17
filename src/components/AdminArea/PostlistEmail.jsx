@@ -8,6 +8,7 @@ const PostListEmail = ({ email, setEmail }) => {
                 value={email.query}
                 onChange={(e) => setEmail({ ...email, query: e.target.value })}
                 placeholder={email.new}
+                type="email"
             />
         </div>
     );

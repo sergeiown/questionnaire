@@ -33,6 +33,7 @@
         padding-top: calc(100% / 3);
         border: 0.125rem solid $color-orange;
         box-shadow: 0 0 0.5rem $color-black;
+        background-color: $color-black;
         border-radius: 1rem 0.5rem;
 
         @include fade(1s, 'in', 0.5s);
@@ -46,6 +47,23 @@
             padding: 0.2rem;
             border: none;
             border-radius: 1rem 0.5rem;
+
+            &::before {
+                color: $color-orange;
+                font-size: large;
+                opacity: 0.5;
+                text-align: center;
+                content: 'Завантаження...';
+                position: absolute;
+                width: 100%;
+                top: 15%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                @media only screen and (max-width: 400px) and (orientation: portrait) {
+                    font-size: smaller;
+                }
+            }
         }
     }
 
@@ -77,8 +95,8 @@
 
         .questAnswerGroup {
             width: 100%;
-            height: 16rem;
-            min-height: 16rem;
+            height: calc(100vmin / 3);
+            min-height: calc(100vmin / 3);
             overflow: auto;
             padding: 2rem 1.5rem;
             color: $color-gray-dark;
@@ -86,6 +104,11 @@
             box-shadow: 0 0 0.5rem $color-black;
             background-color: $color-black;
             border-radius: 1rem 0.5rem;
+
+            @media screen and (max-width: 900px) {
+                height: calc(100vmin / 2);
+                min-height: calc(100vmin / 2);
+            }
 
             @include fade(1s, 'in', 1.5s);
 
