@@ -25,14 +25,14 @@
     }
 
     &::-webkit-scrollbar {
-        width: 1rem;
-        background-color: rgba($color: $color-dark, $alpha: 0.5);
-        border-radius: 0.8rem;
+        width: 0.8rem;
+        background-color: rgba($color: $color-gray-darker, $alpha: 0.5);
+        border-radius: 0.8rem 0.5rem;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $color-black;
-        border-radius: 0.8rem;
+        background-color: $color-dark;
+        border-radius: 0.8rem 0.5rem;
     }
 
     &:invalid {

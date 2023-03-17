@@ -8,7 +8,7 @@
   background: rgba(10, 10, 10, 0.9);
   z-index: 1;
   opacity: 1;
-  animation: fade-out 0.3s ease-in-out;
+  animation: fade-out 0.3s 0s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-out {
@@ -23,13 +23,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.2;
-  animation: fade-in 0.3s ease-in-out;
+  opacity: 0;
+  animation: fade-in 0.3s 0s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {
   from {
-    opacity: 0.2;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -40,7 +40,7 @@
   background: #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border: 0.125rem solid #ff7f50;
-  border-radius: 1rem;
+  border-radius: 1rem 0.5rem;
   width: 80vmin;
   min-width: 240px;
   min-height: 240px;
@@ -80,13 +80,13 @@
   border: 1px solid #ff7f50;
   border-radius: 0.8rem 0.5rem;
   background: #0a0a0a;
-  opacity: 0.2;
-  animation: fade-in 0.3s ease-in-out;
+  opacity: 0;
+  animation: fade-in 0.3s 0s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {
   from {
-    opacity: 0.2;
+    opacity: 0;
   }
   to {
     opacity: 1;

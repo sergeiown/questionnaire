@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostService from '../../API/PostService';
 import MyButton from '../UI/button/MyButton';
-import RadioGroup from '../UI/radioGroup';
 
 const SurveyQuestions = () => {
     const [questions, setQuestions] = useState([]);
@@ -22,18 +21,14 @@ const SurveyQuestions = () => {
         }
     };
 
-    const options = ['Вариант 1', 'Вариант 2', 'Власний варіант'];
-
-    const handleValueChange = (newValue) => {
-        console.log(newValue);
-    };
-
     return (
         <div className="questionsWrapper">
-            <div className="questions">{questions.length > 0 && <h2>{questions[currentQuestionIndex].title}</h2>}</div>
+            <div className="questAnswerGroup">
+                <div className="questions">
+                    {questions.length > 0 && <h2>{questions[currentQuestionIndex].title}</h2>}
+                </div>
 
-            <div className="answers">
-                <RadioGroup options={options} onChange={handleValueChange} required />
+                <div className="answers"></div>
             </div>
 
             <div className="buttons">

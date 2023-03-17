@@ -1,11 +1,11 @@
 @import '../styles/colors';
 
-@mixin fade($duration, $direction: 'in') {
-    $opacity-from: if($direction == 'out', 1, 0.2);
+@mixin fade($duration, $direction: 'in', $delay: 0s) {
+    $opacity-from: if($direction == 'out', 1, 0);
     $opacity-to: if($direction == 'out', 0.2, 1);
 
     opacity: $opacity-from;
-    animation: fade-#{$direction} $duration ease-in-out;
+    animation: fade-#{$direction} $duration $delay ease-in-out;
     animation-fill-mode: forwards;
 
     @keyframes fade-#{$direction} {
