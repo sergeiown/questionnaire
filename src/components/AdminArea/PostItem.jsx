@@ -15,7 +15,8 @@ const PostItem = (props) => {
                     <div>
                         <span style={{ color: '#6d6d6d' }}>Варіанти відповідей:</span>
                         <ul className="optionsList">
-                            {props.post.options[0].map((option, index) => (
+                            {/* {props.post.options[0].map((option, index) => ( */}
+                            {props.post.options.map((option, index) => (
                                 <li key={index}>
                                     <span style={{ color: '#6d6d6d' }}>{index + 1}. </span>
                                     {option}

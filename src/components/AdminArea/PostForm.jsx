@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyTextArea from '../UI/textArea/MyTextArea';
 import Myselect from '../UI/select/Myselect';
 import MyButton from '../UI/button/MyButton';
@@ -7,12 +7,18 @@ import DynamicOption from './PostOptions';
 const PostForm = ({ create }) => {
     const [post, setPost] = useState({ title: '', type: '', options: [], required: '' });
 
-    const [options, setOptions] = useState([]);
+    const [options, setOptions] = useState('');
 
     const [selected, setSelected] = useState('');
 
+    useEffect(() => {
+        if (selected === 'boolean') {
+            setOptions(['Так', 'Ні']);
+        }
+    }, [selected]);
+
     const createOptions = (newOptions) => {
-        setOptions([...options, newOptions]);
+        setOptions(...options, newOptions);
         setSelected('');
     };
 
