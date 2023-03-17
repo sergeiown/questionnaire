@@ -84,12 +84,3 @@ const RadioGroup = ({ options, onChange, required, color = '#ff7f50' }) => {
 };
 
 export default RadioGroup;
-
-/* 
-const options = ['Вариант 1', 'Вариант 2', 'Власний варіант'];
-const handleValueChange = (newValue) => {
-    console.log(newValue);
-};
-
-<RadioGroup options={options} onChange={handleValueChange} required />
-*/

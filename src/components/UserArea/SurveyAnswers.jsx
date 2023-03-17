@@ -1,10 +1,10 @@
 import React from 'react';
 import RadioGroup from '../UI/RadioGroup/RadioGroup';
 import MyInput from '../UI/input/MyInput';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import MyTextArea from '../UI/textArea/MyTextArea';
 
-const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color = '#ff7f50' }) => {
+const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color }) => {
     const questions = quests;
     const currentQuestionIndex = currentIndex;
     const inputRef = useRef(null);
@@ -15,8 +15,12 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color = '#
         valueChange(event.target.value);
     };
 
+    useEffect(() => {
+        setCustomValue('');
+    }, [currentQuestionIndex]);
+
     return (
-        <div className="answers">
+        <form className="answers">
             {(questions[currentQuestionIndex].type === 'boolean' ||
                 questions[currentQuestionIndex].type === 'select') && (
                 <RadioGroup
@@ -30,6 +34,7 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color = '#
             {questions[currentQuestionIndex].type === 'email' && (
                 <MyInput
                     type="email"
+                    value={customValue}
                     placeholder="Введіть email..."
                     onChange={handleCustomValueChange}
                     required={required === 'true' ? 'required' : ''}
@@ -42,7 +47,7 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color = '#
 
             {questions[currentQuestionIndex].type === 'text' && (
                 <MyTextArea
-                    type="email"
+                    value={customValue}
                     onChange={handleCustomValueChange}
                     required={required === 'true' ? 'required' : ''}
                     style={{
@@ -51,7 +56,7 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, required, color = '#
                     ref={inputRef}
                 />
             )}
-        </div>
+        </form>
     );
 };
 
