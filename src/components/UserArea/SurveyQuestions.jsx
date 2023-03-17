@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PostService from '../../API/PostService';
 import MyButton from '../UI/button/MyButton';
-import RadioGroup from '../UI/RadioGroup/RadioGroup';
-// import MyInput from '../UI/input/MyInput';
-// import MyTextArea from '../UI/textArea/MyTextArea';
+import SurveyAnswers from './SurveyAnswers';
 
-const SurveyQuestions = () => {
+const SurveyQuestions = ({ color }) => {
     const [questions, setQuestions] = useState([]);
+
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const fetchSavedQuestions = async () => {
@@ -38,24 +37,21 @@ const SurveyQuestions = () => {
         <div className="questionsWrapper">
             {questions.length > 0 ? (
                 <>
-                    <div className="questAnswerGroup">
+                    <div className="questAnswerGroup" style={{ borderColor: color }}>
                         <div className="questions">
                             <h2>{questions[currentQuestionIndex].title}</h2>
                         </div>
 
-                        <div className="answers">
-                            {(questions[currentQuestionIndex].type === 'boolean' ||
-                                questions[currentQuestionIndex].type === 'select') && (
-                                <RadioGroup
-                                    options={questions[currentQuestionIndex].options}
-                                    onChange={handleValueChange}
-                                    required
-                                />
-                            )}
-                        </div>
+                        <SurveyAnswers
+                            quests={questions}
+                            currentIndex={currentQuestionIndex}
+                            valueChange={handleValueChange}
+                            required={questions[currentQuestionIndex].required}
+                            color={color}
+                        />
                     </div>
                     <div className="buttons">
-                        <MyButton onClick={handleNextQuestion}>
+                        <MyButton color={color} onClick={handleNextQuestion}>
                             {currentQuestionIndex === questions.length - 1
                                 ? 'Завершити опитування'
                                 : 'Наступне питання'}
