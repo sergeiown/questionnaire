@@ -20,10 +20,12 @@
   height: 1rem;
   min-height: 1rem;
   margin: 0.8rem 0;
+  cursor: pointer;
 }
 .radioGroup label span {
   margin: 0 0.5rem;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 .radioGroup label textarea {
   flex-basis: 100%;
