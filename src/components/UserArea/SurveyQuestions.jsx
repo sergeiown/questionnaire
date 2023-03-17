@@ -2,14 +2,22 @@ import React, { useEffect, useState } from 'react';
 import PostService from '../../API/PostService';
 import MyButton from '../UI/button/MyButton';
 import RadioGroup from '../UI/RadioGroup/RadioGroup';
+// import MyInput from '../UI/input/MyInput';
+// import MyTextArea from '../UI/textArea/MyTextArea';
 
 const SurveyQuestions = () => {
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const fetchSavedQuestions = async () => {
-        const questions = await PostService.get();
-        setQuestions(questions);
+        const savedQuestions = localStorage.getItem('questions');
+        if (savedQuestions) {
+            setQuestions(JSON.parse(savedQuestions));
+        } else {
+            const questions = await PostService.get();
+            setQuestions(questions);
+            localStorage.setItem('questions', JSON.stringify(questions));
+        }
     };
 
     useEffect(() => {
@@ -28,19 +36,26 @@ const SurveyQuestions = () => {
 
     return (
         <div className="questionsWrapper">
-            <div className="questAnswerGroup">
-                <div className="questions">
-                    {questions.length > 0 && <h2>{questions[currentQuestionIndex].title}</h2>}
-                </div>
+            {questions.length > 0 ? (
+                <div className="questAnswerGroup">
+                    <div className="questions">
+                        <h2>{questions[currentQuestionIndex].title}</h2>
+                    </div>
 
-                <div className="answers">
-                    <RadioGroup
-                        options={questions[currentQuestionIndex].options}
-                        onChange={handleValueChange}
-                        required
-                    />
+                    <div className="answers">
+                        {(questions[currentQuestionIndex].type === 'boolean' ||
+                            questions[currentQuestionIndex].type === 'select') && (
+                            <RadioGroup
+                                options={questions[currentQuestionIndex].options}
+                                onChange={handleValueChange}
+                                required
+                            />
+                        )}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <p style={{ textAlign: 'center' }}>Питання не знайдені!</p>
+            )}
 
             <div className="buttons">
                 <MyButton onClick={handleNextQuestion}>
