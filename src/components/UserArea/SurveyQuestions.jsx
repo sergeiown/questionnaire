@@ -37,31 +37,36 @@ const SurveyQuestions = () => {
     return (
         <div className="questionsWrapper">
             {questions.length > 0 ? (
-                <div className="questAnswerGroup">
-                    <div className="questions">
-                        <h2>{questions[currentQuestionIndex].title}</h2>
-                    </div>
+                <>
+                    <div className="questAnswerGroup">
+                        <div className="questions">
+                            <h2>{questions[currentQuestionIndex].title}</h2>
+                        </div>
 
-                    <div className="answers">
-                        {(questions[currentQuestionIndex].type === 'boolean' ||
-                            questions[currentQuestionIndex].type === 'select') && (
-                            <RadioGroup
-                                options={questions[currentQuestionIndex].options}
-                                onChange={handleValueChange}
-                                required
-                            />
-                        )}
+                        <div className="answers">
+                            {(questions[currentQuestionIndex].type === 'boolean' ||
+                                questions[currentQuestionIndex].type === 'select') && (
+                                <RadioGroup
+                                    options={questions[currentQuestionIndex].options}
+                                    onChange={handleValueChange}
+                                    required
+                                />
+                            )}
+                        </div>
                     </div>
-                </div>
+                    <div className="buttons">
+                        <MyButton onClick={handleNextQuestion}>
+                            {currentQuestionIndex === questions.length - 1
+                                ? 'Завершити опитування'
+                                : 'Наступне питання'}
+                        </MyButton>
+                    </div>
+                </>
             ) : (
-                <p style={{ textAlign: 'center' }}>Питання не знайдені!</p>
+                <div className="emptyQuestions">
+                    <h2>Питання не знайдені...</h2>
+                </div>
             )}
-
-            <div className="buttons">
-                <MyButton onClick={handleNextQuestion}>
-                    {currentQuestionIndex === questions.length - 1 ? 'Завершити опитування' : 'Наступне питання'}
-                </MyButton>
-            </div>
         </div>
     );
 };

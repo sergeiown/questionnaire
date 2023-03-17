@@ -44,9 +44,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            padding: 0.2rem;
+            padding: 1rem;
             border: none;
-            border-radius: 1rem 0.5rem;
+            border-radius: 1.8rem 1.3rem;
 
             &::before {
                 color: $color-orange;
@@ -98,12 +98,16 @@
             height: calc(100vmin / 3);
             min-height: calc(100vmin / 3);
             overflow: auto;
-            padding: 2rem 1.5rem;
+            padding: 2rem;
             color: $color-gray-dark;
             border: 0.125rem solid $color-orange;
             box-shadow: 0 0 0.5rem $color-black;
             background-color: $color-black;
             border-radius: 1rem 0.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0.5rem;
 
             @media screen and (max-width: 900px) {
                 height: calc(100vmin / 2);
@@ -119,6 +123,13 @@
             .answers {
                 width: 100%;
             }
+        }
+
+        .emptyQuestions {
+            width: 100%;
+            text-align: center;
+
+            @include fade(1s, 'in', 1.5s);
         }
 
         .buttons {
