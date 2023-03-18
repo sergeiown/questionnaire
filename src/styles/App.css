@@ -215,6 +215,8 @@ ul li {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: -moz-max-content;
+  width: max-content;
   max-width: 80%;
   height: -moz-fit-content;
   height: fit-content;
@@ -225,9 +227,6 @@ ul li {
   background-color: #1c1c1c;
   box-shadow: 0 0 0.5rem #0a0a0a;
   z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   opacity: 0;
   animation: fade-in 0.5s 0s ease-in-out;
   animation-fill-mode: forwards;
@@ -616,6 +615,7 @@ body .App {
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.5rem;
+  position: relative;
   opacity: 0;
   animation: fade-in 1s 1.5s ease-in-out;
   animation-fill-mode: forwards;
@@ -659,6 +659,17 @@ body .App {
   to {
     opacity: 1;
   }
+}
+.questionsWrapper .questAnswerGroup .progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 1rem 0.5rem;
+  width: 100%;
+}
+.questionsWrapper .questAnswerGroup .progressBar .progress {
+  height: 1rem;
+  border-radius: 1rem 0.5rem;
 }
 .questionsWrapper .emptyQuestions {
   width: 100%;

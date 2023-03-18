@@ -49,6 +49,16 @@ const SurveyQuestions = ({ color }) => {
                             required={questions[currentQuestionIndex].required}
                             color={color}
                         />
+
+                        <div className="progressBar">
+                            <div
+                                className="progress"
+                                style={{
+                                    width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
+                                    backgroundColor: color,
+                                }}
+                            ></div>
+                        </div>
                     </div>
                 </>
             ) : (
