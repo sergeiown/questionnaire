@@ -52,7 +52,8 @@ body {
             align-items: center;
             flex-direction: column;
             gap: 55vmin;
-
+            box-shadow: 0 0 0.2rem $color-gray-darker;
+            border-radius: 0.5rem;
             background: $color-dark url('../assets/logo/logo.svg') no-repeat center center;
 
             @media only screen and (max-width: 1400px) and (orientation: landscape) {
