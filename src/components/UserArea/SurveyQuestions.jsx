@@ -38,7 +38,7 @@ const SurveyQuestions = ({ color }) => {
                 <>
                     <div className="questAnswerGroup" style={{ borderColor: color }}>
                         <div className="questions">
-                            <h2>{questions[currentQuestionIndex].title}</h2>
+                            <h3>{questions[currentQuestionIndex].title}</h3>
                         </div>
 
                         <SurveyAnswers

@@ -508,7 +508,7 @@ body .App .welcomeItems :last-child {
   padding: 1.5rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
@@ -542,6 +542,12 @@ body .App .welcomeItems :last-child {
   padding: 1rem;
   border: none;
   border-radius: 1.8rem 1.3rem;
+}
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .userArea .imageWrapper img {
+    padding: 0.5rem;
+    border-radius: 1rem 0.7rem;
+  }
 }
 .userArea .imageWrapper img::before {
   color: #ff7f50;
@@ -592,7 +598,7 @@ body .App .welcomeItems :last-child {
   height: -moz-fit-content;
   height: fit-content;
   padding: 3rem;
-  color: #6d6d6d;
+  color: #a0a0a0;
   border: 0.125rem solid #ff7f50;
   box-shadow: 0 0 0.5rem #0a0a0a;
   background-color: #0a0a0a;
@@ -600,7 +606,7 @@ body .App .welcomeItems :last-child {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
   opacity: 0;
   animation: fade-in 1s 1.5s ease-in-out;
   animation-fill-mode: forwards;
@@ -622,6 +628,7 @@ body .App .welcomeItems :last-child {
   width: 100%;
 }
 .userArea .questionsWrapper .questAnswerGroup form {
+  color: #6d6d6d;
   width: 100%;
   display: flex;
   flex-direction: column;
