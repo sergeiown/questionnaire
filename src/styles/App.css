@@ -62,6 +62,76 @@ ul li {
   font-family: "Inter", sans-serif;
 }
 
+.welcomeItems {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50vmin;
+  box-shadow: 0 0 0.2rem #313131;
+  border-radius: 0.5rem;
+  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat center center;
+}
+@media only screen and (max-width: 1400px) and (orientation: landscape) {
+  .welcomeItems {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
+  .welcomeItems {
+    width: 100%;
+  }
+}
+.welcomeItems :first-child {
+  scale: 2.7;
+  line-height: 2rem;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .welcomeItems :first-child {
+    scale: 1.5;
+  }
+}
+.welcomeItems :last-child {
+  margin: 0 0 1rem 0;
+  scale: 1.4;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slideUp 2s ease-in-out 0.5s forwards;
+}
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .welcomeItems :last-child {
+    scale: 1;
+  }
+}
+
 .welcomeModal {
   width: 50vmin;
   margin: 0 auto;
@@ -138,6 +208,44 @@ ul li {
   margin: 0 0.5rem;
 }
 
+.message {
+  color: #6d6d6d;
+  font-size: larger;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid #ff7f50;
+  border-radius: 1rem 0.5rem;
+  background-color: #1c1c1c;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  animation: fade-in 0.5s 0s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
+  .message {
+    top: 80%;
+  }
+}
+
 body {
   overflow-x: hidden;
   width: 100vw;
@@ -160,90 +268,6 @@ body .App {
 @media only screen and (max-width: 1400px) {
   body .App {
     width: 95vw;
-  }
-}
-body .App .message {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  z-index: 1;
-}
-@media only screen and (max-width: 1400px) and (orientation: portrait) {
-  body .App .message {
-    top: 80%;
-  }
-}
-body .App .welcomeItems {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 55vmin;
-  box-shadow: 0 0 0.2rem #313131;
-  border-radius: 0.5rem;
-  background: #1c1c1c url("../assets/logo/logo.svg") no-repeat center center;
-}
-@media only screen and (max-width: 1400px) and (orientation: landscape) {
-  body .App .welcomeItems {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 1400px) and (orientation: portrait) {
-  body .App .welcomeItems {
-    width: 100%;
-  }
-}
-body .App .welcomeItems :first-child {
-  scale: 2.7;
-  line-height: 2rem;
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: fadeIn 1s ease-in-out 0.5s forwards;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media only screen and (max-width: 1200px) {
-  body .App .welcomeItems :first-child {
-    scale: 1.5;
-  }
-}
-body .App .welcomeItems :last-child {
-  scale: 1.4;
-  opacity: 0;
-  transform: translateY(100px);
-  animation: slideUp 2s ease-in-out 0.5s forwards;
-}
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media only screen and (max-width: 1200px) {
-  body .App .welcomeItems :last-child {
-    scale: 1;
   }
 }
 
@@ -306,40 +330,6 @@ body .App .welcomeItems :last-child {
   flex-basis: 49%;
 }
 
-.postList {
-  position: relative;
-  min-height: 15rem;
-  margin: 14rem 0 0 0;
-  padding: 1rem;
-  text-shadow: 2px 2px 2px #0a0a0a;
-  background: url("../assets/logo/logo.svg") no-repeat bottom right/30% #1c1c1c;
-  box-shadow: 0 0 0.2rem #313131;
-  border-radius: 0.5rem;
-}
-@media only screen and (max-width: 600px) {
-  .postList {
-    background: url("../assets/logo/logo.svg") no-repeat bottom right/50% #1c1c1c;
-  }
-}
-.postList a {
-  display: block;
-  color: #ff7f50;
-  text-align: right;
-  margin: 0 1rem 0 0;
-  font-size: small;
-  text-decoration: none;
-  text-shadow: none;
-  transition: color 0.3s;
-}
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
-  .postList a {
-    font-size: smaller;
-    margin: 0 0.2rem 0 0;
-  }
-}
-.postList a:hover {
-  color: #a0a0a0;
-}
 .postListImage {
   position: relative;
   width: 100%;
@@ -413,19 +403,8 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.postList h1 {
-  text-align: center;
-  font-size: 1.7rem;
-  color: #fffff0;
-  margin: 2rem 0 1rem 0;
-}
-.postList h2 {
-  text-align: center;
-  font-size: 1.3rem;
-  color: #a0a0a0;
-  margin: 0.5rem 0;
-}
-.postList .post {
+
+.post {
   display: flex;
   padding: 15px;
   background: #0a0a0a;
@@ -450,37 +429,80 @@ body .App .welcomeItems :last-child {
   }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
-  .postList .post {
+  .post {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
-  .postList .post__btns {
+  .post__btns {
     align-self: flex-end;
   }
 }
-.postList .post__content {
+.post__content {
   line-height: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.postList .post__content ul {
+.post__content ul {
   font-size: smaller;
 }
-.postList .post:nth-last-of-type(1) {
+.post:nth-last-of-type(1) {
   margin-bottom: 20vh;
 }
-.postList .post > * :not(button) {
+.post > * :not(button) {
   -webkit-hyphens: auto;
   hyphens: auto;
   word-wrap: break-word;
 }
 @media only screen and (max-width: 600px) and (orientation: portrait) {
-  .postList .post > * :not(button) {
+  .post > * :not(button) {
     word-break: break-all;
   }
+}
+
+.postList {
+  position: relative;
+  min-height: 15rem;
+  margin: 14rem 0 0 0;
+  padding: 1rem;
+  text-shadow: 2px 2px 2px #0a0a0a;
+  background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
+  box-shadow: 0 0 0.2rem #313131;
+  border-radius: 0.5rem;
+}
+.postList h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #fffff0;
+  margin: 2rem 0 1rem 0;
+}
+.postList h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #a0a0a0;
+  margin: 0.5rem 0;
+}
+.postList a {
+  position: absolute;
+  bottom: 1vmin;
+  right: 4vmin;
+  display: block;
+  color: #ff7f50;
+  font-size: small;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 0.3s;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .postList a {
+    font-size: smaller;
+    margin: 0 0.2rem 0 0;
+  }
+}
+.postList a:hover {
+  color: #a0a0a0;
 }
 
 ::-webkit-scrollbar {
@@ -498,22 +520,7 @@ body .App .welcomeItems :last-child {
   display: none;
 }
 
-.userArea {
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  width: 100%;
-  min-height: 100%;
-  padding: 1.5rem 1rem 0 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
-  box-shadow: 0 0 0.2rem #313131;
-  border-radius: 0.5rem;
-}
-.userArea .imageWrapper {
+.imageWrapper {
   position: relative;
   width: 100%;
   padding-top: 33.3333333333%;
@@ -533,7 +540,7 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.userArea .imageWrapper img {
+.imageWrapper img {
   position: absolute;
   top: 0;
   left: 0;
@@ -544,12 +551,12 @@ body .App .welcomeItems :last-child {
   border-radius: 1.8rem 1.3rem;
 }
 @media only screen and (max-width: 600px) and (orientation: portrait) {
-  .userArea .imageWrapper img {
+  .imageWrapper img {
     padding: 0.5rem;
     border-radius: 1rem 0.7rem;
   }
 }
-.userArea .imageWrapper img::before {
+.imageWrapper img::before {
   color: #ff7f50;
   font-size: large;
   opacity: 0.5;
@@ -562,11 +569,12 @@ body .App .welcomeItems :last-child {
   transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 400px) and (orientation: portrait) {
-  .userArea .imageWrapper img::before {
+  .imageWrapper img::before {
     font-size: smaller;
   }
 }
-.userArea .titleWrapper {
+
+.titleWrapper {
   width: 100%;
   text-align: center;
   opacity: 0;
@@ -581,11 +589,12 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.userArea .titleWrapper h1 {
+.titleWrapper h1 {
   text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
   font-size: 1.6rem;
 }
-.userArea .questionsWrapper {
+
+.questionsWrapper {
   width: 100%;
   padding: 0 0 25vmin 0;
   display: flex;
@@ -593,7 +602,7 @@ body .App .welcomeItems :last-child {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.userArea .questionsWrapper .questAnswerGroup {
+.questionsWrapper .questAnswerGroup {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
@@ -612,7 +621,7 @@ body .App .welcomeItems :last-child {
   animation-fill-mode: forwards;
 }
 @media screen and (max-width: 900px) {
-  .userArea .questionsWrapper .questAnswerGroup {
+  .questionsWrapper .questAnswerGroup {
     padding: 2rem;
   }
 }
@@ -624,20 +633,20 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.userArea .questionsWrapper .questAnswerGroup .questions {
+.questionsWrapper .questAnswerGroup .questions {
   width: 100%;
 }
-.userArea .questionsWrapper .questAnswerGroup form {
+.questionsWrapper .questAnswerGroup form {
   color: #6d6d6d;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
-.userArea .questionsWrapper .questAnswerGroup .answers {
+.questionsWrapper .questAnswerGroup .answers {
   width: 100%;
 }
-.userArea .questionsWrapper .questAnswerGroup .buttons {
+.questionsWrapper .questAnswerGroup .buttons {
   align-self: flex-end;
   opacity: 0;
   animation: fade-in 1s 2s ease-in-out;
@@ -651,7 +660,7 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.userArea .questionsWrapper .emptyQuestions {
+.questionsWrapper .emptyQuestions {
   width: 100%;
   text-align: center;
   opacity: 0;
@@ -665,6 +674,22 @@ body .App .welcomeItems :last-child {
   to {
     opacity: 1;
   }
+}
+
+.userArea {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 100%;
+  min-height: 100%;
+  padding: 1.5rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
+  box-shadow: 0 0 0.2rem #313131;
+  border-radius: 0.5rem;
 }
 .userArea a {
   position: absolute;

@@ -1,0 +1,59 @@
+@import '../styles/colors';
+@import '../styles/animations';
+
+.questionsWrapper {
+    width: 100%;
+    padding: 0 0 25vmin 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .questAnswerGroup {
+        width: 100%;
+        height: fit-content;
+        padding: 3rem;
+        color: $color-gray;
+        border: 0.125rem solid $color-orange;
+        box-shadow: 0 0 0.5rem $color-black;
+        background-color: $color-black;
+        border-radius: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.5rem;
+
+        @media screen and (max-width: 900px) {
+            padding: 2rem;
+        }
+
+        @include fade(1s, 'in', 1.5s);
+
+        .questions {
+            width: 100%;
+        }
+
+        form {
+            color: $color-gray-dark;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .answers {
+            width: 100%;
+        }
+
+        .buttons {
+            align-self: flex-end;
+            @include fade(1s, 'in', 2s);
+        }
+    }
+
+    .emptyQuestions {
+        width: 100%;
+        text-align: center;
+
+        @include fade(1s, 'in', 1.5s);
+    }
+}

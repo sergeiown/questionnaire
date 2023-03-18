@@ -1,0 +1,67 @@
+@import '../styles/colors';
+@import '../styles/animations';
+
+.postListImage {
+    position: relative;
+    width: 100%;
+    padding-top: calc(100% / 3);
+    border: 0.125rem solid $color-orange;
+    box-shadow: 0 0 0.5rem $color-black;
+    background-color: $color-black;
+    border-radius: 1rem 0.5rem;
+    cursor: pointer;
+
+    &::before {
+        color: $color-orange;
+        font-size: large;
+        opacity: 0.5;
+        text-align: center;
+        content: 'Триває обробка...';
+        position: absolute;
+        width: 100%;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: 400px) and (orientation: portrait) {
+            font-size: smaller;
+        }
+    }
+
+    &::after {
+        color: $color-gray;
+        text-shadow: 0.1rem 0.1rem 0.1rem $color-black;
+        opacity: 0.8;
+        text-align: center;
+        content: 'Натисніть для вибору зображення (найкращий результат при співвідношенні сторін 3:1)';
+        position: absolute;
+        width: 80%;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            width: 100%;
+            top: 85%;
+            font-size: small;
+        }
+
+        @media only screen and (max-width: 400px) and (orientation: portrait) {
+            top: 75%;
+            font-size: smaller;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0.2rem;
+        border: none;
+        border-radius: 1rem 0.5rem;
+
+        @include fade(1.5s);
+    }
+}

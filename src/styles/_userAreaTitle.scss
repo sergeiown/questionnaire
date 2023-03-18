@@ -1,0 +1,14 @@
+@import '../styles/colors';
+@import '../styles/animations';
+
+.titleWrapper {
+    width: 100%;
+    text-align: center;
+
+    @include fade(1s, 'in', 1s);
+
+    h1 {
+        text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
+        font-size: 1.6rem;
+    }
+}

@@ -12,20 +12,17 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, nextQuestion, requir
 
     const handleRadioValueChange = (event) => {
         setCustomValue(event);
-        console.log(event);
-        valueChange(event);
     };
 
     const handleCustomValueChange = (event) => {
         setCustomValue(event.target.value);
-        valueChange(event.target.value);
     };
 
     const handleNextQuestion = (e) => {
         e.preventDefault();
         nextQuestion();
 
-        console.log('Submitted: ', customValue);
+        valueChange(customValue);
 
         const checkedRadio = document.querySelector('input[type="radio"]:checked');
         if (checkedRadio) {

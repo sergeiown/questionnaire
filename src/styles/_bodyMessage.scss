@@ -1,0 +1,29 @@
+@import '../styles/colors';
+@import '../styles/animations';
+
+.message {
+    color: $color-gray-dark;
+    font-size: larger;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    height: fit-content;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid $color-orange;
+    border-radius: 1rem 0.5rem;
+    background-color: $color-dark;
+    box-shadow: 0 0 0.5rem $color-black;
+    z-index: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include fade(0.5s, 'in', 0s);
+
+    @media only screen and (max-width: 1400px) and (orientation: portrait) {
+        top: 80%;
+    }
+}
