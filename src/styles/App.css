@@ -596,17 +596,13 @@ body .App .welcomeItems :last-child {
 }
 .userArea .questionsWrapper {
   width: 100%;
-  padding: 0 0 6rem 0;
+  padding: 0 0 12rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-}
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
-  .userArea .questionsWrapper {
-    padding: 0 0 12rem 0;
-  }
+  position: relative;
 }
 .userArea .questionsWrapper .questAnswerGroup {
   width: 100%;
@@ -647,11 +643,13 @@ body .App .welcomeItems :last-child {
 .userArea .questionsWrapper .questAnswerGroup .answers {
   width: 100%;
 }
-.userArea .questionsWrapper .emptyQuestions {
-  width: 100%;
-  text-align: center;
+.userArea .questionsWrapper .questAnswerGroup .answers .buttons {
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  animation: fade-in 1s 1.5s ease-in-out;
+  animation: fade-in 1s 2s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {
@@ -662,10 +660,11 @@ body .App .welcomeItems :last-child {
     opacity: 1;
   }
 }
-.userArea .questionsWrapper .buttons {
-  align-self: center;
+.userArea .questionsWrapper .emptyQuestions {
+  width: 100%;
+  text-align: center;
   opacity: 0;
-  animation: fade-in 1s 2s ease-in-out;
+  animation: fade-in 1s 1.5s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {

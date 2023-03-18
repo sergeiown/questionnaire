@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PostService from '../../API/PostService';
-import MyButton from '../UI/button/MyButton';
 import SurveyAnswers from './SurveyAnswers';
 
 const SurveyQuestions = ({ color }) => {
@@ -46,16 +45,10 @@ const SurveyQuestions = ({ color }) => {
                             quests={questions}
                             currentIndex={currentQuestionIndex}
                             valueChange={handleValueChange}
+                            nextQuestion={handleNextQuestion}
                             required={questions[currentQuestionIndex].required}
                             color={color}
                         />
-                    </div>
-                    <div className="buttons">
-                        <MyButton color={color} onClick={handleNextQuestion}>
-                            {currentQuestionIndex === questions.length - 1
-                                ? 'Завершити опитування'
-                                : 'Наступне питання'}
-                        </MyButton>
                     </div>
                 </>
             ) : (

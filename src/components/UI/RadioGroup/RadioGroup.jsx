@@ -28,9 +28,10 @@ const RadioGroup = ({ options, onChange, required, color = '#ff7f50' }) => {
     };
 
     const scrollToInput = () => {
-        //scroll to selected input without timeout
         const input = document.querySelector('input:checked');
-        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (input) {
+            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     };
 
     return (
@@ -60,7 +61,7 @@ const RadioGroup = ({ options, onChange, required, color = '#ff7f50' }) => {
                                     display: showCustomInput ? 'flex' : 'none',
                                     borderColor: customValue && customValue.length > 0 ? color : '#800000ff',
                                 }}
-                                required={showCustomInput || required}
+                                required={showCustomInput}
                             />
                         </>
                     ) : (
