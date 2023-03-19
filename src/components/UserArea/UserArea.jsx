@@ -8,13 +8,11 @@ const UserArea = () => {
     const [color, setColor] = useState('#ff7f50');
 
     const fetchSavedColor = async () => {
-        const savedColor = localStorage.getItem('userColor');
-        if (savedColor) {
-            setColor(JSON.parse(savedColor));
-        } else {
+        try {
             const color = await ColorService.get();
             setColor(color);
-            localStorage.setItem('userColor', JSON.stringify(color));
+        } catch (e) {
+            console.log(e);
         }
     };
 

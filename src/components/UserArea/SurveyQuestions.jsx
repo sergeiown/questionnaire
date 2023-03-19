@@ -8,14 +8,8 @@ const SurveyQuestions = ({ color }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const fetchSavedQuestions = async () => {
-        const savedQuestions = localStorage.getItem('questions');
-        if (savedQuestions) {
-            setQuestions(JSON.parse(savedQuestions));
-        } else {
-            const questions = await PostService.get();
-            setQuestions(questions);
-            localStorage.setItem('questions', JSON.stringify(questions));
-        }
+        const questions = await PostService.get();
+        setQuestions(questions);
     };
 
     useEffect(() => {
