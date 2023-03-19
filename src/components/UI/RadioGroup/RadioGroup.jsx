@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './RadioGroup.module.css';
 import MyTextArea from '../textArea/MyTextArea';
 
 const RadioGroup = ({ options, onChange, required, color = '#ff7f50' }) => {
     const [showCustomInput, setShowCustomInput] = useState(false);
     const [customValue, setCustomValue] = useState('');
+
+    useEffect(() => {
+        setShowCustomInput(false);
+        setCustomValue('');
+    }, [options]);
 
     const handleCustomValueChange = (event) => {
         setCustomValue(event.target.value);
