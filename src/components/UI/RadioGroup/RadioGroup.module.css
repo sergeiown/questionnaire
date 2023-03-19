@@ -9,10 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.5rem;
 }
 .radioGroup label input[type=radio] {
+  flex-basis: 1fr;
   width: 1rem;
   min-width: 1rem;
   height: 1rem;
@@ -21,12 +22,12 @@
   cursor: pointer;
 }
 .radioGroup label span {
+  text-align: justify;
   margin: 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 .radioGroup label textarea {
-  flex-basis: 100%;
   opacity: 0;
   animation: fade-in 1s 0s ease-in-out;
   animation-fill-mode: forwards;

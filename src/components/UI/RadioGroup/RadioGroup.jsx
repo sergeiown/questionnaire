@@ -55,6 +55,7 @@ const RadioGroup = ({ options, onChange, required, color = '#ff7f50' }) => {
                                 style={{ accentColor: color }}
                             />
                             <span onClick={() => scrollToTextArea()}>{option}</span>
+
                             <MyTextArea
                                 value={customValue}
                                 onChange={handleCustomValueChange}

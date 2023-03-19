@@ -24,6 +24,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-around;
+            gap: 0.5rem;
 
             @media screen and (max-width: 900px) and (orientation: landscape) {
                 height: 53vmin;
@@ -32,13 +33,20 @@
 
             @media screen and (max-width: 900px) and (orientation: portrait) {
                 height: 63vmin;
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
             }
 
             .questions {
                 color: $color-gray;
                 width: 100%;
                 max-height: 50%;
+
+                h3 {
+                    display: table;
+                    margin: 0 auto;
+                    text-align: justify;
+                    text-indent: 2rem;
+                }
 
                 span {
                     color: $color-gray-dark;
@@ -50,7 +58,11 @@
                 color: $color-gray-dark;
                 width: 100%;
                 max-height: 50%;
-                padding: 0 0 1rem 0;
+                padding: 1.5rem 0;
+
+                @media screen and (max-width: 900px) and (orientation: portrait) {
+                    padding: 3rem 0;
+                }
 
                 p {
                     margin: 0 0 0.5rem 0;
