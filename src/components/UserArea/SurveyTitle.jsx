@@ -21,15 +21,15 @@ const SurveyTitle = () => {
 
     useEffect(() => {
         fetchSavedTitle();
-    }, []);
+        setTimeout(() => {
+            adjustFontSize();
+        }, 100);
 
-    useEffect(() => {
-        adjustFontSize();
         window.addEventListener('resize', adjustFontSize);
         return () => {
             window.removeEventListener('resize', adjustFontSize);
         };
-    }, [title]);
+    }, []);
 
     return <div className="titleWrapper">{title ? <h1>{title}</h1> : <h1></h1>}</div>;
 };
