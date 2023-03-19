@@ -592,38 +592,19 @@ body .App {
   text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .titleWrapper h1 {
+    font-size: 1.2rem;
+  }
+}
 
 .questionsWrapper {
   width: 100%;
-  padding: 0 0 25vmin 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.questionsWrapper .questAnswerGroup {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 3rem;
-  color: #a0a0a0;
-  border: 0.125rem solid #ff7f50;
-  box-shadow: 0 0 0.5rem #0a0a0a;
-  background-color: #0a0a0a;
-  border-radius: 1rem 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1.5rem;
+  padding: 0 0 15vmin 0;
   position: relative;
   opacity: 0;
   animation: fade-in 1s 1.5s ease-in-out;
   animation-fill-mode: forwards;
-}
-@media screen and (max-width: 900px) {
-  .questionsWrapper .questAnswerGroup {
-    padding: 2rem;
-  }
 }
 @keyframes fade-in {
   from {
@@ -633,21 +614,71 @@ body .App {
     opacity: 1;
   }
 }
-.questionsWrapper .questAnswerGroup .questions {
+.questionsWrapper form {
   width: 100%;
 }
-.questionsWrapper .questAnswerGroup form {
-  color: #6d6d6d;
+.questionsWrapper form .questionsAndAnswers {
+  border: 0.125rem solid #ff7f50;
+  box-shadow: 0 0 0.5rem #0a0a0a;
+  background-color: #0a0a0a;
+  border-radius: 1rem 0.5rem;
+  overflow: auto;
   width: 100%;
+  height: 33vmin;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-around;
 }
-.questionsWrapper .questAnswerGroup .answers {
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .questionsWrapper form .questionsAndAnswers {
+    height: 53vmin;
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .questionsWrapper form .questionsAndAnswers {
+    height: 63vmin;
+    padding: 1.5rem;
+  }
+}
+.questionsWrapper form .questionsAndAnswers .questions {
+  color: #a0a0a0;
+  width: 100%;
+  max-height: 50%;
+}
+.questionsWrapper form .questionsAndAnswers .answers {
+  color: #6d6d6d;
+  width: 100%;
+  max-height: 50%;
+  padding: 0 0 1rem 0;
+}
+.questionsWrapper form .questionsAndAnswers .progressBar {
+  position: absolute;
+  top: 31vmin;
+  left: 0;
+  padding: 0 1rem 0 0;
+  border-radius: 1rem 0.5rem;
   width: 100%;
 }
-.questionsWrapper .questAnswerGroup .buttons {
-  align-self: flex-end;
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .questionsWrapper form .questionsAndAnswers .progressBar {
+    top: 51vmin;
+  }
+}
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .questionsWrapper form .questionsAndAnswers .progressBar {
+    top: 61vmin;
+  }
+}
+.questionsWrapper form .questionsAndAnswers .progressBar .progress {
+  height: 2vmin;
+  border-radius: 1rem 0.5rem;
+}
+.questionsWrapper form .buttons {
+  padding: 2rem 0 0 0;
+  text-align: center;
   opacity: 0;
   animation: fade-in 1s 2s ease-in-out;
   animation-fill-mode: forwards;
@@ -659,17 +690,6 @@ body .App {
   to {
     opacity: 1;
   }
-}
-.questionsWrapper .questAnswerGroup .progressBar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 1rem 0.5rem;
-  width: 100%;
-}
-.questionsWrapper .questAnswerGroup .progressBar .progress {
-  height: 1rem;
-  border-radius: 1rem 0.5rem;
 }
 .questionsWrapper .emptyQuestions {
   width: 100%;
@@ -694,10 +714,10 @@ body .App {
           user-select: none;
   width: 100%;
   min-height: 100%;
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;

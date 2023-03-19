@@ -10,5 +10,9 @@
     h1 {
         text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
         font-size: 1.6rem;
+
+        @media screen and (max-width: 900px) and (orientation: portrait) {
+            font-size: 1.2rem;
+        }
     }
 }

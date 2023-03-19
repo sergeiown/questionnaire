@@ -36,40 +36,56 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, nextQuestion, requir
 
     return (
         <form onSubmit={handleNextQuestion}>
-            <div className="answers">
-                {(questions[currentQuestionIndex].type === 'boolean' ||
-                    questions[currentQuestionIndex].type === 'select') && (
-                    <RadioGroup
-                        options={questions[currentQuestionIndex].options}
-                        onChange={handleRadioValueChange}
-                        required={required === 'true' ? 'required' : ''}
-                        color={color}
-                    />
-                )}
+            <div className="questionsAndAnswers" style={{ borderColor: color }}>
+                <div className="questions">
+                    <h3>{questions[currentQuestionIndex].title}</h3>
+                </div>
 
-                {questions[currentQuestionIndex].type === 'email' && (
-                    <MyInput
-                        type="email"
-                        value={customValue}
-                        placeholder="Введіть email..."
-                        onChange={handleCustomValueChange}
-                        required={required === 'true' ? 'required' : ''}
-                        style={{
-                            borderColor: customValue && customValue.length > 0 ? color : '#800000ff',
-                        }}
-                    />
-                )}
+                <div className="answers">
+                    {(questions[currentQuestionIndex].type === 'boolean' ||
+                        questions[currentQuestionIndex].type === 'select') && (
+                        <RadioGroup
+                            options={questions[currentQuestionIndex].options}
+                            onChange={handleRadioValueChange}
+                            required={required === 'true' ? 'required' : ''}
+                            color={color}
+                        />
+                    )}
 
-                {questions[currentQuestionIndex].type === 'text' && (
-                    <MyTextArea
-                        value={customValue}
-                        onChange={handleCustomValueChange}
-                        required={required === 'true' ? 'required' : ''}
+                    {questions[currentQuestionIndex].type === 'email' && (
+                        <MyInput
+                            type="email"
+                            value={customValue}
+                            placeholder="Введіть email..."
+                            onChange={handleCustomValueChange}
+                            required={required === 'true' ? 'required' : ''}
+                            style={{
+                                borderColor: customValue && customValue.length > 0 ? color : '#800000ff',
+                            }}
+                        />
+                    )}
+
+                    {questions[currentQuestionIndex].type === 'text' && (
+                        <MyTextArea
+                            value={customValue}
+                            onChange={handleCustomValueChange}
+                            required={required === 'true' ? 'required' : ''}
+                            style={{
+                                borderColor: customValue && customValue.length > 0 ? color : '#800000ff',
+                            }}
+                        />
+                    )}
+                </div>
+
+                <div className="progressBar">
+                    <div
+                        className="progress"
                         style={{
-                            borderColor: customValue && customValue.length > 0 ? color : '#800000ff',
+                            width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
+                            backgroundColor: color,
                         }}
-                    />
-                )}
+                    ></div>
+                </div>
             </div>
 
             <div className="buttons">

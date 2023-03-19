@@ -36,30 +36,14 @@ const SurveyQuestions = ({ color }) => {
         <div className="questionsWrapper">
             {questions.length > 0 ? (
                 <>
-                    <div className="questAnswerGroup" style={{ borderColor: color }}>
-                        <div className="questions">
-                            <h3>{questions[currentQuestionIndex].title}</h3>
-                        </div>
-
-                        <SurveyAnswers
-                            quests={questions}
-                            currentIndex={currentQuestionIndex}
-                            valueChange={handleValueChange}
-                            nextQuestion={handleNextQuestion}
-                            required={questions[currentQuestionIndex].required}
-                            color={color}
-                        />
-
-                        <div className="progressBar">
-                            <div
-                                className="progress"
-                                style={{
-                                    width: `${((currentQuestionIndex + 1) / questions.length) * 100}%`,
-                                    backgroundColor: color,
-                                }}
-                            ></div>
-                        </div>
-                    </div>
+                    <SurveyAnswers
+                        quests={questions}
+                        currentIndex={currentQuestionIndex}
+                        valueChange={handleValueChange}
+                        nextQuestion={handleNextQuestion}
+                        required={questions[currentQuestionIndex].required}
+                        color={color}
+                    />
                 </>
             ) : (
                 <div className="emptyQuestions">
