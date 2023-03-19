@@ -32,6 +32,17 @@
         flex-direction: column;
         gap: 0.5rem;
 
+        strong {
+            display: flex;
+
+            h3 {
+                // display: table;
+                // margin: 0 auto;
+                text-align: justify;
+                text-indent: 1.5rem;
+            }
+        }
+
         ul {
             font-size: smaller;
         }
@@ -39,16 +50,5 @@
 
     &:nth-last-of-type(1) {
         margin-bottom: 20vh;
-    }
-
-    /* allow to move parts of words to a new line. */
-    & > * :not(button) {
-        -webkit-hyphens: auto;
-        hyphens: auto;
-        word-wrap: break-word;
-
-        @media only screen and (max-width: 600px) and (orientation: portrait) {
-            word-break: break-all;
-        }
     }
 }

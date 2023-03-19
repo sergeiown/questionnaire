@@ -417,7 +417,6 @@ body .App {
   opacity: 0;
   animation: fade-in 1s 0s ease-in-out;
   animation-fill-mode: forwards;
-  /* allow to move parts of words to a new line. */
 }
 @keyframes fade-in {
   from {
@@ -444,21 +443,18 @@ body .App {
   flex-direction: column;
   gap: 0.5rem;
 }
+.post__content strong {
+  display: flex;
+}
+.post__content strong h3 {
+  text-align: justify;
+  text-indent: 1.5rem;
+}
 .post__content ul {
   font-size: smaller;
 }
 .post:nth-last-of-type(1) {
   margin-bottom: 20vh;
-}
-.post > * :not(button) {
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  word-wrap: break-word;
-}
-@media only screen and (max-width: 600px) and (orientation: portrait) {
-  .post > * :not(button) {
-    word-break: break-all;
-  }
 }
 
 .postList {
@@ -471,11 +467,18 @@ body .App {
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;
 }
-.postList h1 {
+.postList .titleWrapper {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-size: 1.7rem;
+  padding: 2rem 0 1rem 0;
+}
+.postList .titleWrapper h1 {
   color: #fffff0;
-  margin: 2rem 0 1rem 0;
+  text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
 }
 .postList h2 {
   text-align: center;
@@ -545,9 +548,9 @@ body .App {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
   border: none;
-  border-radius: 1.8rem 1.3rem;
+  border-radius: 2.2rem 1.7rem;
 }
 @media only screen and (max-width: 600px) and (orientation: portrait) {
   .imageWrapper img {
@@ -651,7 +654,7 @@ body .App {
   display: table;
   margin: 0 auto;
   text-align: justify;
-  text-indent: 2rem;
+  text-indent: 1.5rem;
 }
 .questionsWrapper form .questionsAndAnswers .questions span {
   color: #6d6d6d;
@@ -661,11 +664,16 @@ body .App {
   color: #6d6d6d;
   width: 100%;
   max-height: 50%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+}
+@media screen and (max-width: 1440px) and (orientation: landscape) {
+  .questionsWrapper form .questionsAndAnswers .answers {
+    padding: 2rem 0;
+  }
 }
 @media screen and (max-width: 900px) and (orientation: portrait) {
   .questionsWrapper form .questionsAndAnswers .answers {
-    padding: 3rem 0;
+    padding: 5rem 0;
   }
 }
 .questionsWrapper form .questionsAndAnswers .answers p {
@@ -697,7 +705,14 @@ body .App {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.5rem 1.5rem 0 0;
+  margin: 0.5rem 1.5rem 0 0;
+  padding: 0 0 0 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 1rem;
+  background-color: rgba(10, 10, 10, 0.6);
 }
 .questionsWrapper form .questionsAndAnswers .counter p {
   font-size: 1rem;
@@ -748,7 +763,7 @@ body .App {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   background: url("../assets/logo/logo.svg") no-repeat bottom right/33vmin #1c1c1c;
   box-shadow: 0 0 0.2rem #313131;
   border-radius: 0.5rem;

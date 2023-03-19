@@ -7,7 +7,7 @@ const PostItem = (props) => {
             <div className="post__content" id={props.id}>
                 <strong>
                     <span style={{ color: '#6d6d6d' }}>{props.number}. </span>
-                    {props.post.title}
+                    <h3>{props.post.title}</h3>
                 </strong>
 
                 {/* Show post.options */}
