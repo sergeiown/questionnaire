@@ -6,4 +6,4 @@ The version with the Ukrainian interface is currently available. The development
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<img width="820" alt="image" src="https://user-images.githubusercontent.com/112722061/225991816-709be33a-3538-427d-8cb2-8511fc61b797.png">
+![image](https://user-images.githubusercontent.com/112722061/226437403-2758f238-086c-42eb-ab10-54d447e4325e.png)
