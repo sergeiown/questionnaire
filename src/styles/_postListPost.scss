@@ -30,21 +30,28 @@
         line-height: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
 
         strong {
             display: flex;
-
             h3 {
-                // display: table;
-                // margin: 0 auto;
                 text-align: justify;
-                text-indent: 1.5rem;
+                text-indent: 1rem;
+                font-weight: normal;
             }
         }
 
-        ul {
-            font-size: smaller;
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            ul {
+                font-size: smaller;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     }
 

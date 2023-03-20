@@ -12,7 +12,7 @@ const PostItem = (props) => {
 
                 {/* Show post.options */}
                 {props.post.options.length > 0 && (
-                    <div>
+                    <div className="options">
                         <span style={{ color: '#6d6d6d' }}>Варіанти відповідей:</span>
                         <ul className="optionsList">
                             {props.post.options.map((option, index) => (
