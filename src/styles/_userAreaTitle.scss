@@ -12,8 +12,8 @@
     @include fade(1s, 'in', 1s);
 
     h1 {
-        display: block;
-        width: fit-content;
+        color: $color-ivory;
         text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
+        font-size: 1.3rem;
     }
 }

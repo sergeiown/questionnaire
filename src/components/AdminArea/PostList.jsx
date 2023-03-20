@@ -1,27 +1,9 @@
 import React from 'react';
 import ImageChanger from './PostListImage.jsx';
 import PostItem from './PostItem.jsx';
-import { useEffect } from 'react';
 
 const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => {
     const mainTitle = postListTitle.query || postListTitle.new;
-
-    const adjustFontSize = () => {
-        const titleWrapper = document.querySelector('.titleWrapper');
-        const title = document.querySelector('.titleWrapper h1');
-        const titleWrapperWidth = titleWrapper.offsetWidth;
-        const titleWidth = title.offsetWidth;
-        const fontSize = (titleWrapperWidth / titleWidth) * 100;
-        title.style.fontSize = fontSize + '%';
-    };
-
-    useEffect(() => {
-        adjustFontSize();
-        window.addEventListener('resize', adjustFontSize);
-        return () => {
-            window.removeEventListener('resize', adjustFontSize);
-        };
-    }, [mainTitle]);
 
     if (!posts.length) {
         return (

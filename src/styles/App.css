@@ -295,7 +295,7 @@ body .App {
   }
 }
 .controlPanel hr {
-  border: #fffff0 1px solid;
+  border: #c0c0c0 1px solid;
   margin: 0.8rem 0 0.5rem 0;
   box-shadow: 0 0 0.5rem #0a0a0a;
 }
@@ -474,18 +474,16 @@ body .App {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem 0 1rem 0;
+  margin: 1rem 0;
 }
 .postList .titleWrapper h1 {
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-  color: #fffff0;
+  color: #c0c0c0;
   text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
+  font-size: 1.3rem;
 }
 .postList h2 {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #a0a0a0;
   margin: 0.5rem 0;
 }
@@ -599,10 +597,9 @@ body .App {
   }
 }
 .titleWrapper h1 {
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
+  color: #c0c0c0;
   text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
+  font-size: 1.3rem;
 }
 
 .questionsWrapper {
@@ -799,13 +796,43 @@ html {
   font-size: 100%;
 }
 
+@media only screen and (max-width: 1440px) {
+  html {
+    font-size: 90%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 70%;
+  }
+}
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 75%;
+    font-size: 60%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  html {
+    font-size: 30%;
   }
 }
 @media only screen and (max-width: 320px) {
   html {
-    font-size: 50%;
+    font-size: 20%;
   }
 }
