@@ -208,43 +208,6 @@ ul li {
   margin: 0 0.5rem;
 }
 
-.message {
-  color: #6d6d6d;
-  font-size: larger;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 80%;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-  padding: 0.5rem;
-  border: 1px solid #ff7f50;
-  border-radius: 1rem 0.5rem;
-  background-color: #1c1c1c;
-  box-shadow: 0 0 0.5rem #0a0a0a;
-  z-index: 1;
-  opacity: 0;
-  animation: fade-in 0.5s 0s ease-in-out;
-  animation-fill-mode: forwards;
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@media only screen and (max-width: 1400px) and (orientation: portrait) {
-  .message {
-    top: 80%;
-  }
-}
-
 body {
   overflow-x: hidden;
   width: 100vw;

@@ -12,6 +12,7 @@ function App() {
     const [user, setUser] = useState(null);
     const [activeComponent, setActiveComponent] = useState('welcome');
     const [copied, setCopied] = useState(false);
+    const [goodBye, setGoodBye] = useState(false);
 
     const handleSignIn = (user) => {
         setUser(user);
@@ -28,12 +29,10 @@ function App() {
         writeText(currentUrl).then(
             () => {
                 console.log('Current URL is copied to the clipboard');
-                setTimeout(() => {
-                    setCopied(true);
-                }, 2000);
+                setCopied(true);
                 setTimeout(() => {
                     setCopied(false);
-                }, 8000);
+                }, 10000);
             },
             () => {
                 console.error('Failed to copy current URL to clipboard');
@@ -46,6 +45,13 @@ function App() {
 
     const handleAnswersSave = (answers) => {
         console.log(answers);
+
+        setGoodBye(true);
+        setTimeout(() => {
+            setGoodBye(false);
+        }, 10000);
+
+        setActiveComponent('welcome');
     };
 
     const handleUserAreaClick = () => {
@@ -73,13 +79,21 @@ function App() {
                 </MyModal>
             )}
 
-            {copied && activeComponent === 'welcome' && (
-                <div className="message">Посилання на опитування скопійоване до буферу обміну</div>
-            )}
-
             {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}
 
+            {copied && activeComponent === 'welcome' && (
+                <MyModal visible={true} setVisible={handleModalClose}>
+                    <h2>Посилання на опитування скопійоване до буферу обміну.</h2>
+                </MyModal>
+            )}
+
             {activeComponent === 'userArea' && <UserArea onSave={handleAnswersSave} />}
+
+            {goodBye && activeComponent === 'welcome' && (
+                <MyModal visible={true} setVisible={handleModalClose}>
+                    <h2>Щиро дякуємо за участь в опитуванні!</h2>
+                </MyModal>
+            )}
         </div>
     );
 }
