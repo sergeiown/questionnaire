@@ -11,6 +11,7 @@ import UserArea from './components/UserArea/UserArea';
 function App() {
     const [user, setUser] = useState(null);
     const [activeComponent, setActiveComponent] = useState('welcome');
+    const [visible, setVisible] = useState(false);
     const [copied, setCopied] = useState(false);
     const [goodBye, setGoodBye] = useState(false);
 
@@ -30,7 +31,9 @@ function App() {
             () => {
                 console.log('Current URL is copied to the clipboard');
                 setCopied(true);
+                setVisible(true);
                 setTimeout(() => {
+                    setVisible(false);
                     setCopied(false);
                 }, 10000);
             },
@@ -47,7 +50,9 @@ function App() {
         console.log(answers);
 
         setGoodBye(true);
+        setVisible(true);
         setTimeout(() => {
+            setVisible(false);
             setGoodBye(false);
         }, 10000);
 
@@ -59,6 +64,7 @@ function App() {
     };
 
     const handleModalClose = () => {
+        setVisible(false);
         setActiveComponent('welcome');
     };
 
@@ -82,7 +88,7 @@ function App() {
             {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}
 
             {copied && activeComponent === 'welcome' && (
-                <MyModal visible={true} setVisible={handleModalClose}>
+                <MyModal visible={visible} setVisible={handleModalClose}>
                     <h2>Посилання на опитування скопійоване до буферу обміну.</h2>
                 </MyModal>
             )}
@@ -90,7 +96,7 @@ function App() {
             {activeComponent === 'userArea' && <UserArea onSave={handleAnswersSave} />}
 
             {goodBye && activeComponent === 'welcome' && (
-                <MyModal visible={true} setVisible={handleModalClose}>
+                <MyModal visible={visible} setVisible={handleModalClose}>
                     <h2>Щиро дякуємо за участь в опитуванні!</h2>
                 </MyModal>
             )}

@@ -60,6 +60,9 @@
     width: 80vmin;
   }
 }
+.myModalContent h2 {
+  text-align: center;
+}
 .myModalContent form {
   display: flex;
   flex-direction: column;
