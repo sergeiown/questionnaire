@@ -21,7 +21,9 @@ function App() {
         setUser(null);
     };
 
-    const handlePostListSave = () => {
+    const handlePostListSave = (questions) => {
+        console.log(questions);
+
         const currentUrl = window.location.href;
         writeText(currentUrl).then(
             () => {
@@ -40,6 +42,10 @@ function App() {
 
         setUser(null);
         setActiveComponent('welcome');
+    };
+
+    const handleAnswersSave = (answers) => {
+        console.log(answers);
     };
 
     const handleUserAreaClick = () => {
@@ -73,7 +79,7 @@ function App() {
 
             {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}
 
-            {activeComponent === 'userArea' && <UserArea />}
+            {activeComponent === 'userArea' && <UserArea onSave={handleAnswersSave} />}
         </div>
     );
 }

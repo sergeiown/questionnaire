@@ -81,7 +81,11 @@ function AdminArea({ onSave, currentEmail }) {
         TitleService.update(JSON.stringify(title.query || title.new));
         EmailService.update(JSON.stringify(email.query || email.new));
         ColorService.update(JSON.stringify(color.query || color.new));
-        onSave();
+
+        const questions = sortedAndSearchedPosts.map((p) => p.title);
+        questions.unshift('Час');
+        questions.unshift('Дата');
+        onSave(questions);
     };
 
     const scrollToTop = () => {

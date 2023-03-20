@@ -4,7 +4,7 @@ import SurveyImage from './SurveyImage';
 import SurveyTitle from './SurveyTitle';
 import SurveyQuestions from './SurveyQuestions';
 
-const UserArea = () => {
+const UserArea = ({ onSave }) => {
     const [color, setColor] = useState('#ff7f50');
 
     const fetchSavedColor = async () => {
@@ -14,6 +14,10 @@ const UserArea = () => {
         } catch (e) {
             console.log(e);
         }
+    };
+
+    const handleSurveyQuestionsSubmit = (answers) => {
+        onSave(answers);
     };
 
     useEffect(() => {
@@ -28,7 +32,7 @@ const UserArea = () => {
 
                     <SurveyTitle />
 
-                    <SurveyQuestions color={color} />
+                    <SurveyQuestions color={color} questionsSubmit={handleSurveyQuestionsSubmit} />
 
                     <a
                         href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md"

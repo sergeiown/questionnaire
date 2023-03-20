@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react';
 import PostService from '../../API/PostService';
 import SurveyAnswers from './SurveyAnswers';
 
-const SurveyQuestions = ({ color }) => {
+const SurveyQuestions = ({ color, questionsSubmit }) => {
     const [questions, setQuestions] = useState([]);
+    const date = new Date().toLocaleDateString('uk-UA');
+    const time = new Date().toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' });
+    const [answers, setAnswers] = useState([date, time]);
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
@@ -12,10 +15,6 @@ const SurveyQuestions = ({ color }) => {
         setQuestions(questions);
     };
 
-    useEffect(() => {
-        fetchSavedQuestions();
-    }, []);
-
     const handleNextQuestion = () => {
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -23,8 +22,18 @@ const SurveyQuestions = ({ color }) => {
     };
 
     const handleValueChange = (newValue) => {
-        console.log(newValue);
+        setAnswers([...answers, newValue]);
     };
+
+    useEffect(() => {
+        fetchSavedQuestions();
+    }, []);
+
+    useEffect(() => {
+        if (answers.length > 2 && answers.length === questions.length + 2) {
+            questionsSubmit(answers);
+        }
+    }, [answers]);
 
     return (
         <div className="questionsWrapper">
