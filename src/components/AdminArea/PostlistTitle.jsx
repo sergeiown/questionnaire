@@ -6,7 +6,7 @@ const PostListTitle = ({ title, setTitle }) => {
         <div>
             <MyInput
                 type="text"
-                maxlength="180"
+                maxLength="180"
                 value={title.query}
                 onChange={(e) => setTitle({ ...title, query: e.target.value })}
                 placeholder="Заголовок опитування..."

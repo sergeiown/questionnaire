@@ -72,12 +72,11 @@ function AdminArea({ onSave, currentEmail }) {
     };
 
     const savePosts = () => {
-        // localStorage.setItem('posts', JSON.stringify(posts));
-        localStorage.setItem('posts', JSON.stringify(sortedAndSearchedPosts));
-        localStorage.setItem('title', JSON.stringify(title.query || title.new));
-        localStorage.setItem('email', JSON.stringify(email.query || email.new));
-        localStorage.setItem('color', JSON.stringify(color.query || color.new));
-        // PostService.update(JSON.stringify(posts));
+        localStorage.removeItem('posts');
+        localStorage.removeItem('title');
+        localStorage.removeItem('email');
+        localStorage.removeItem('color');
+
         PostService.update(JSON.stringify(sortedAndSearchedPosts));
         TitleService.update(JSON.stringify(title.query || title.new));
         EmailService.update(JSON.stringify(email.query || email.new));
