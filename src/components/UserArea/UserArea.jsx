@@ -4,7 +4,7 @@ import SurveyImage from './SurveyImage';
 import SurveyTitle from './SurveyTitle';
 import SurveyQuestions from './SurveyQuestions';
 
-const UserArea = ({ onSave }) => {
+const UserArea = ({ onSaveAnswers }) => {
     const [color, setColor] = useState('#ff7f50');
 
     const fetchSavedColor = async () => {
@@ -17,7 +17,7 @@ const UserArea = ({ onSave }) => {
     };
 
     const handleSurveyQuestionsSubmit = (answers) => {
-        onSave(answers);
+        onSaveAnswers(answers);
     };
 
     useEffect(() => {

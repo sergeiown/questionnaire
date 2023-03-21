@@ -82,10 +82,13 @@ function AdminArea({ onSave, currentEmail }) {
         EmailService.update(JSON.stringify(email.query || email.new));
         ColorService.update(JSON.stringify(color.query || color.new));
 
+        const fileName = `${new Date().toISOString().slice(0, 10)}_${new Date().toISOString().slice(11, 19)}_${(
+            title.query || title.new
+        ).replace(/\s/g, '_')}`;
         const questions = sortedAndSearchedPosts.map((p) => p.title);
         questions.unshift('Час');
         questions.unshift('Дата');
-        onSave(questions);
+        onSave(fileName, questions);
     };
 
     const scrollToTop = () => {

@@ -27,10 +27,12 @@ Main interface language: Ukrainian.
 ### Implementation details in order of priority:
 
 -   Implement survey creation and management for administrators.
+-   Provide the ability to create multiple types of questions.
+-   Implement a mechanism for choosing design colors.
+-   Provide the ability to add an image.
 -   Implement an authorization mechanism for administrators.
 -   Implement the ability to answer questions for ordinary users.
 -   Implement the ability to receive survey results for administrators.
--   Implement protection against multiple voting from one user in one poll.
 -   Implement interface localization for different languages (eng, etc.).
 
 ---
@@ -64,8 +66,10 @@ Main interface language: Ukrainian.
 ### Деталі реалізації в порядку пріоритетності:
 
 -   Реалізувати створення та управління опитуваннями для адміністраторів.
+-   Забезпечити можливість створення декількох видів питань.
+-   Реалізувати механізм вибору кольорів оформлення.
+-   Забезпечити можлівість додавання зображення.
 -   Реалізувати механізм авторизації для адміністраторів.
 -   Реалізувати можливість відповіді на запитання для звичайних користувачів.
 -   Реалізувати можливість отримання результатів опитувань для адміністраторів.
--   Реалізувати захист від множинного голосування від одного користувача в одному опитуванні.
 -   Реалізувати локалізацію інтерфейсу для різних мов (eng, etc.).

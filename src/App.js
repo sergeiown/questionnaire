@@ -23,7 +23,8 @@ function App() {
         setUser(null);
     };
 
-    const handlePostListSave = (questions) => {
+    const handlePostListSave = (fileName, questions) => {
+        console.log(fileName);
         console.log(questions);
 
         const currentUrl = window.location.href;
@@ -93,7 +94,7 @@ function App() {
                 </MyModal>
             )}
 
-            {activeComponent === 'userArea' && <UserArea onSave={handleAnswersSave} />}
+            {activeComponent === 'userArea' && <UserArea onSaveAnswers={handleAnswersSave} />}
 
             {goodBye && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>
