@@ -7,6 +7,7 @@ import MyButton from './components/UI/button/MyButton';
 import MyModal from './components/UI/MyModal/MyModal';
 import AdminArea from './components/AdminArea/AdminArea';
 import UserArea from './components/UserArea/UserArea';
+import ExcelFileManager from './services/Excel';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -26,6 +27,8 @@ function App() {
     const handlePostListSave = (fileName, questions) => {
         console.log(fileName);
         console.log(questions);
+
+        ExcelFileManager.create(fileName, questions);
 
         const currentUrl = window.location.href;
         writeText(currentUrl).then(
