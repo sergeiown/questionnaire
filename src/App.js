@@ -25,9 +25,6 @@ function App() {
     };
 
     const handlePostListSave = (fileName, questions) => {
-        console.log(fileName);
-        console.log(questions);
-
         ExcelFileManager.create(fileName, questions);
 
         const currentUrl = window.location.href;
@@ -50,7 +47,7 @@ function App() {
         setActiveComponent('welcome');
     };
 
-    const handleAnswersSave = (answers) => {
+    const handleAnswersSave = (fileName, answers) => {
         console.log(answers);
 
         setGoodBye(true);
@@ -93,7 +90,7 @@ function App() {
 
             {copied && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>
-                    <h2>Посилання на опитування скопійоване до буферу обміну.</h2>
+                    <h2>Посилання на створене опитування скопійоване до буферу обміну.</h2>
                 </MyModal>
             )}
 

@@ -20,6 +20,12 @@ export default class ExcelFileManager {
             name: fileName,
             url: fileUrl,
         });
+
+        console.log(
+            `ExcelFile(${fileName}.xlsx) successfully written to Firestorage at ${new Date().toLocaleTimeString(
+                'uk-UA'
+            )}`
+        );
     };
 
     static update = async (fileName, answers) => {

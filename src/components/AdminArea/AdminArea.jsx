@@ -13,6 +13,7 @@ import TitleService from '../../API/TitleService';
 import EmailService from '../../API/EmailService';
 import ColorService from '../../API/ColorService';
 import PostService from '../../API/PostService';
+import fileNameService from '../../API/fileNameService';
 import Loader from '../UI/Loader/Loader';
 
 function AdminArea({ onSave, currentEmail }) {
@@ -82,12 +83,16 @@ function AdminArea({ onSave, currentEmail }) {
         EmailService.update(JSON.stringify(email.query || email.new));
         ColorService.update(JSON.stringify(color.query || color.new));
 
-        const fileName = `${new Date().toISOString().slice(0, 10)}_${new Date().toISOString().slice(11, 19)}_${(
-            title.query || title.new
-        ).replace(/\s/g, '_')}`;
+        const now = new Date();
+        const date = now.toLocaleDateString('uk-UA');
+        const time = now.toLocaleTimeString('uk-UA').replace(/:/g, '.');
+        const fileName = `${date}_${time}_${(title.query || title.new).replace(/\s/g, '_')}`;
+        fileNameService.update(JSON.stringify(fileName));
+
         const questions = sortedAndSearchedPosts.map((p) => p.title);
         questions.unshift('Час');
         questions.unshift('Дата');
+
         onSave(fileName, questions);
     };
 
