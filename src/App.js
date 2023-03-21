@@ -48,6 +48,7 @@ function App() {
     };
 
     const handleAnswersSave = (fileName, answers) => {
+        console.log(fileName);
         console.log(answers);
 
         setGoodBye(true);
