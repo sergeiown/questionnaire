@@ -7,7 +7,68 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+
+    .fileList {
+        width: 100%;
+        max-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 1rem;
+            background-color: rgba($color: $color-gray-darker, $alpha: 0.5);
+            border-radius: 1rem 0.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-black;
+            border-radius: 1rem 0.5rem;
+        }
+
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        li {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+
+            .fileName {
+                width: 85%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+                text-shadow: 0.125rem 0.125rem 0.125rem $color-black;
+
+                span {
+                    color: $color-gray-dark;
+                }
+
+                p {
+                    color: $color-gray;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            button {
+                max-width: 15%;
+            }
+        }
+    }
 
     .buttons {
         width: 100%;
@@ -17,6 +78,10 @@
         gap: 1rem;
 
         @media only screen and (orientation: portrait) {
+            flex-direction: column;
+        }
+
+        @media screen and (max-width: 768px) {
             flex-direction: column;
         }
     }

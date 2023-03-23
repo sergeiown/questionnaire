@@ -26,7 +26,7 @@ export default class ExcelFileManager {
 
         await Promise.all(
             listResult.items.map(async (itemRef) => {
-                const name = itemRef.name.split('.')[0];
+                const name = itemRef.name.split('.xlsx')[0];
                 const url = await itemRef.getDownloadURL();
                 files.push({ name, url });
             })

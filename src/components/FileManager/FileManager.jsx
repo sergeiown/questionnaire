@@ -20,7 +20,7 @@ const FileManager = ({ onExit, onGoOn }) => {
     return (
         <MyModal visible={visible} setVisible={handleModalCloseOnExit}>
             <div className="fileManager">
-                <h2>Результати опитувань</h2>
+                <h2>Результати опитувань:</h2>
 
                 <FileList />
 

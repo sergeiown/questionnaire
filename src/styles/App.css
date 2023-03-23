@@ -245,7 +245,59 @@ body .App {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+.fileManager .fileList {
+  width: 100%;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  overflow-y: auto;
+}
+.fileManager .fileList::-webkit-scrollbar {
+  width: 1rem;
+  background-color: rgba(49, 49, 49, 0.5);
+  border-radius: 1rem 0.5rem;
+}
+.fileManager .fileList::-webkit-scrollbar-thumb {
+  background-color: #0a0a0a;
+  border-radius: 1rem 0.5rem;
+}
+.fileManager .fileList::-webkit-scrollbar-button {
+  display: none;
+}
+.fileManager .fileList li {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.fileManager .fileList li .fileName {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
+}
+.fileManager .fileList li .fileName span {
+  color: #6d6d6d;
+}
+.fileManager .fileList li .fileName p {
+  color: #a0a0a0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fileManager .fileList li button {
+  max-width: 15%;
 }
 .fileManager .buttons {
   width: 100%;
@@ -255,6 +307,11 @@ body .App {
   gap: 1rem;
 }
 @media only screen and (orientation: portrait) {
+  .fileManager .buttons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
   .fileManager .buttons {
     flex-direction: column;
   }

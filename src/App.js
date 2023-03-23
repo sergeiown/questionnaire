@@ -109,7 +109,11 @@ function App() {
 
             {copied && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>
-                    <h2>Посилання на опитування {fileName} скопійоване до буферу обміну.</h2>
+                    <h2>
+                        <span>Посилання на опитування </span>
+                        {fileName}
+                        <span> скопійоване до буферу обміну.</span>
+                    </h2>
                 </MyModal>
             )}
 
