@@ -10,7 +10,7 @@ export default class EmailService {
                 console.log(
                     `postsListEmail(${JSON.parse(
                         postsListEmail
-                    )}) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                    )}) written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
                 );
             })
             .catch((error) => {
@@ -24,9 +24,9 @@ export default class EmailService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `PostsListEmail(${JSON.parse(
-                    data[3].data
-                )}) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                `PostsListEmail(${JSON.parse(data[3].data)}) read from Firestore at ${new Date().toLocaleTimeString(
+                    'uk-UA'
+                )}`
             );
 
             return JSON.parse(data[3].data);

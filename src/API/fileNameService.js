@@ -8,9 +8,9 @@ export default class fileNameService {
             .set({ data: fileName })
             .then(() => {
                 console.log(
-                    `fileName(${JSON.parse(
-                        fileName
-                    )}) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                    `fileName(${JSON.parse(fileName)}) written to Firestore at ${new Date().toLocaleTimeString(
+                        'uk-UA'
+                    )}`
                 );
             })
             .catch((error) => {
@@ -24,9 +24,7 @@ export default class fileNameService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `fileName(${JSON.parse(
-                    data[5].data
-                )}) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                `fileName(${JSON.parse(data[5].data)}) read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
             return JSON.parse(data[5].data);

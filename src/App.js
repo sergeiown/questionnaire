@@ -3,6 +3,7 @@ import { writeText } from 'clipboard-polyfill';
 import './styles/App.css';
 import { useState } from 'react';
 import MyAuth from './Auth/MyAuth';
+import SurveyService from './API/SurveyService';
 import MyButton from './components/UI/button/MyButton';
 import MyModal from './components/UI/MyModal/MyModal';
 import AdminArea from './components/AdminArea/AdminArea';
@@ -14,6 +15,7 @@ function App() {
     const [visible, setVisible] = useState(false);
     const [copied, setCopied] = useState(false);
     const [goodBye, setGoodBye] = useState(false);
+    const [fileName, setFileName] = useState('');
 
     const handleSignIn = (user) => {
         setUser(user);
@@ -24,8 +26,8 @@ function App() {
     };
 
     const handlePostListSave = (fileName, questions) => {
-        console.log(fileName);
-        console.log(questions);
+        setFileName(fileName);
+        SurveyService.create(JSON.stringify(questions));
 
         const currentUrl = window.location.href;
         writeText(currentUrl).then(
@@ -48,7 +50,7 @@ function App() {
     };
 
     const handleAnswersSave = (answers) => {
-        console.log(answers);
+        SurveyService.add(JSON.stringify(answers));
 
         setGoodBye(true);
         setVisible(true);
@@ -90,7 +92,7 @@ function App() {
 
             {copied && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>
-                    <h2>Посилання на створене опитування скопійоване до буферу обміну.</h2>
+                    <h2>Посилання на опитування {fileName} скопійоване до буферу обміну.</h2>
                 </MyModal>
             )}
 

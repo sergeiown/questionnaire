@@ -10,7 +10,7 @@ export default class TitleService {
                 console.log(
                     `postsListTitle(${JSON.parse(
                         postsListTitle
-                    )}) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                    )}) written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
                 );
             })
             .catch((error) => {
@@ -24,9 +24,9 @@ export default class TitleService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `PostsListTitle(${JSON.parse(
-                    data[4].data
-                )}) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                `PostsListTitle(${JSON.parse(data[4].data)}) read from Firestore at ${new Date().toLocaleTimeString(
+                    'uk-UA'
+                )}`
             );
 
             return JSON.parse(data[4].data);

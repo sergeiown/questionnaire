@@ -18,7 +18,7 @@ export default class PostService {
             console.log(
                 `newPostsList(${
                     JSON.parse(data[0].data).length
-                }) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                }) read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
             return JSON.parse(data[0].data);
@@ -33,9 +33,9 @@ export default class PostService {
             .set({ data: postsList })
             .then(() => {
                 console.log(
-                    `postsList(${
-                        JSON.parse(postsList).length
-                    }) successfully written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                    `postsList(${JSON.parse(postsList).length}) written to Firestore at ${new Date().toLocaleTimeString(
+                        'uk-UA'
+                    )}`
                 );
             })
             .catch((error) => {
@@ -49,9 +49,9 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `PostsList(${
-                    JSON.parse(data[1].data).length
-                }) successfully read from Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                `PostsList(${JSON.parse(data[1].data).length}) read from Firestore at ${new Date().toLocaleTimeString(
+                    'uk-UA'
+                )}`
             );
 
             return JSON.parse(data[1].data);

@@ -13,11 +13,7 @@ export default class ImageService {
         const url = await storageRef.getDownloadURL();
         await imageRef.set({ url });
 
-        console.log(
-            `postsListImage(${file.name}) successfully written to Firestorage at ${new Date().toLocaleTimeString(
-                'uk-UA'
-            )}`
-        );
+        console.log(`postsListImage(${file.name}) written to Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`);
 
         return url;
     }
@@ -32,9 +28,7 @@ export default class ImageService {
             const url = doc.data().url;
 
             console.log(
-                `postsListImage(baseImage.png) successfully read from Firestorage at ${new Date().toLocaleTimeString(
-                    'uk-UA'
-                )}`
+                `postsListImage(baseImage.png) read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
             return url;
@@ -51,7 +45,7 @@ export default class ImageService {
             console.log(
                 `postsListImage(${
                     url.split('%2F').pop().split('?')[0]
-                }) successfully read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
+                }) read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
             );
 
             return url;
@@ -64,7 +58,7 @@ export default class ImageService {
                 console.log(
                     `postsListImage(${
                         url.split('%2F').pop().split('?')[0]
-                    }) successfully read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
+                    }) read from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`
                 );
 
                 return url;
