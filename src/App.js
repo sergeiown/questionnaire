@@ -6,6 +6,7 @@ import MyAuth from './Auth/MyAuth';
 import SurveyService from './API/SurveyService';
 import MyButton from './components/UI/button/MyButton';
 import MyModal from './components/UI/MyModal/MyModal';
+import FileManager from './components/FileManager/FileManager';
 import AdminArea from './components/AdminArea/AdminArea';
 import UserArea from './components/UserArea/UserArea';
 
@@ -19,6 +20,7 @@ function App() {
 
     const handleSignIn = (user) => {
         setUser(user);
+        setActiveComponent('fileManager');
     };
 
     const handleSignOut = () => {
@@ -62,6 +64,15 @@ function App() {
         setActiveComponent('welcome');
     };
 
+    const handleFileManagerExit = () => {
+        setUser(null);
+        setActiveComponent('welcome');
+    };
+
+    const handleFileManagerGoOn = () => {
+        setActiveComponent('adminArea');
+    };
+
     const handleUserAreaClick = () => {
         setActiveComponent('userArea');
     };
@@ -88,7 +99,13 @@ function App() {
                 </MyModal>
             )}
 
-            {user && <AdminArea onSave={handlePostListSave} currentEmail={user.email} />}
+            {user && activeComponent === 'fileManager' && (
+                <FileManager onExit={handleFileManagerExit} onGoOn={handleFileManagerGoOn} />
+            )}
+
+            {user && activeComponent === 'adminArea' && (
+                <AdminArea onSave={handlePostListSave} currentEmail={user.email} />
+            )}
 
             {copied && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>

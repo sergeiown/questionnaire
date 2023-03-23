@@ -61,7 +61,11 @@
   }
 }
 .myModalContent h2 {
+  width: 100%;
   text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-shadow: 0.125rem 0.125rem 0.125rem #0a0a0a;
 }
 .myModalContent form {
   display: flex;
