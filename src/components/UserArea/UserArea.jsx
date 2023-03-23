@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ColorService from '../../API/ColorService';
-import fileNameService from '../../API/fileNameService';
 import SurveyImage from './SurveyImage';
 import SurveyTitle from './SurveyTitle';
 import SurveyQuestions from './SurveyQuestions';
 
 const UserArea = ({ onSaveAnswers }) => {
     const [color, setColor] = useState('');
-    const [fileName, setFileName] = useState('');
 
     const fetchSavedColor = async () => {
         try {
@@ -18,22 +16,12 @@ const UserArea = ({ onSaveAnswers }) => {
         }
     };
 
-    const fetchSavedFileName = async () => {
-        try {
-            const fileName = await fileNameService.get();
-            setFileName(fileName);
-        } catch (e) {
-            console.log(e);
-        }
-    };
-
     const handleSurveyQuestionsSubmit = (answers) => {
-        onSaveAnswers(fileName, answers);
+        onSaveAnswers(answers);
     };
 
     useEffect(() => {
         fetchSavedColor();
-        fetchSavedFileName();
     }, []);
 
     return (
