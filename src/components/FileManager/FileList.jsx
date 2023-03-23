@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ExcelFileManager from '../../services/Excel';
 import fileNameService from '../../API/fileNameService';
 import MyButton from '../UI/button/MyButton';
+import Loader from '../UI/Loader/Loader';
 
 const FileList = () => {
     const [files, setFiles] = useState([]);
@@ -32,29 +33,34 @@ const FileList = () => {
     }, []);
 
     useEffect(() => {
-        if (!isLoading && fileName && files.some((file) => file.name === fileName)) {
-            setIsFileName(true);
-        } else if (!isLoading && fileName) {
+        if (!isLoading && fileName) {
             ExcelFileManager.create(fileName).then(() => fetchFiles());
+            setIsFileName(true);
         }
-    }, [fileName, files, isLoading]);
+    }, [fileName, isLoading]);
 
     useEffect(() => {
         if (files.length > 0 && fileName !== '') {
-            setIsLoading(false);
+            setTimeout(() => setIsLoading(false), 1000);
         }
     }, [files, fileName]);
 
-    return (
+    return isLoading ? (
+        <div className="loader">
+            <Loader />
+        </div>
+    ) : (
         <>
             {isFileName && (
                 <ul className="fileList">
                     {files.map((file, index) => (
                         <li key={file.name}>
-                            <div className="fileName">
-                                <span>{index + 1}. </span>
-                                <p>{file.name}</p>
-                            </div>
+                            <a className="downloadUrl" href={file.url} download>
+                                <div className="fileName">
+                                    <span>{index + 1}. </span>
+                                    <p>{file.name}</p>
+                                </div>
+                            </a>
                             <MyButton title="Видалити" onClick={() => handleFileDelete(file.url)}>
                                 &#9940;
                             </MyButton>
