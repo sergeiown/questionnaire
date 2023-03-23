@@ -37,11 +37,13 @@ const FileList = () => {
             ExcelFileManager.create(fileName).then(() => fetchFiles());
             setIsFileName(true);
         }
-    }, [fileName, isLoading]);
+    }, [fileName, files, isLoading]);
 
     useEffect(() => {
         if (files.length > 0 && fileName !== '') {
             setTimeout(() => setIsLoading(false), 1000);
+        } else {
+            setIsLoading(true);
         }
     }, [files, fileName]);
 
