@@ -10,7 +10,7 @@ export default class ExcelFileManager {
 
         const worksheet = XLSX.utils.aoa_to_sheet(parsedData);
         const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, 'survey' + fileName);
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'survey');
 
         const storageRef = firebase.storage().ref(`XLSX/${fileName}.xlsx`);
         const blob = new Blob([XLSX.write(workbook, { type: 'array', bookType: 'xlsx' })]);
@@ -19,7 +19,7 @@ export default class ExcelFileManager {
         console.log(`ExcelFile(${fileName}.xlsx) written to Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`);
     };
 
-    async getAll() {
+    static getAll = async () => {
         const storageRef = firebase.storage().ref('XLSX');
         const listResult = await storageRef.listAll();
         const files = [];
@@ -33,5 +33,11 @@ export default class ExcelFileManager {
         );
 
         return files;
-    }
+    };
+
+    static delete = async (fileUrl) => {
+        const storageRef = firebase.storage().refFromURL(fileUrl);
+        await storageRef.delete();
+        console.log(`ExcelFile(${fileUrl}) deleted from Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`);
+    };
 }
