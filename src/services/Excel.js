@@ -16,6 +16,22 @@ export default class ExcelFileManager {
         const blob = new Blob([XLSX.write(workbook, { type: 'array', bookType: 'xlsx' })]);
         await storageRef.put(blob);
 
-        console.log(`ExcelFile(${fileName}.xlsx)  written to Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`);
+        console.log(`ExcelFile(${fileName}.xlsx) written to Firestorage at ${new Date().toLocaleTimeString('uk-UA')}`);
     };
+
+    async getAll() {
+        const storageRef = firebase.storage().ref('XLSX');
+        const listResult = await storageRef.listAll();
+        const files = [];
+
+        await Promise.all(
+            listResult.items.map(async (itemRef) => {
+                const name = itemRef.name.split('.')[0];
+                const url = await itemRef.getDownloadURL();
+                files.push({ name, url });
+            })
+        );
+
+        return files;
+    }
 }
