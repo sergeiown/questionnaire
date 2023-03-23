@@ -54,15 +54,4 @@ export default class SurveyService {
             throw error;
         }
     }
-
-    static async delete() {
-        try {
-            await SurveyData.doc('survey').delete();
-
-            console.log(`Survey deleted at ${new Date().toLocaleTimeString('uk-UA')}`);
-        } catch (error) {
-            console.error('Error deleting survey', error);
-            throw error;
-        }
-    }
 }
