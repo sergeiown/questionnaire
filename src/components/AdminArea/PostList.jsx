@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageChanger from './PostListImage.jsx';
 import PostItem from './PostItem.jsx';
+import MyCopyright from '../UI/copyright/MyCopyright.jsx';
 
 const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => {
     const mainTitle = postListTitle.query || postListTitle.new;
@@ -42,9 +43,7 @@ const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => 
                 <PostItem key={post.id} id={post.id} remove={remove} number={index + 1} post={post} color={color} />
             ))}
 
-            <a href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md" target="_blank" rel="noreferrer">
-                Copyright (c) 2023 Serhii I. Myshko
-            </a>
+            <MyCopyright />
         </div>
     );
 };

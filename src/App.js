@@ -2,6 +2,7 @@ import React from 'react';
 import { writeText } from 'clipboard-polyfill';
 import './styles/App.css';
 import { useState } from 'react';
+import MyCopyright from './components/UI/copyright/MyCopyright';
 import MyAuth from './Auth/MyAuth';
 import SurveyService from './API/SurveyService';
 import MyButton from './components/UI/button/MyButton';
@@ -95,13 +96,7 @@ function App() {
                         <MyButton onClick={handleUserAreaClick}>Пройти опитування</MyButton>
                         <MyButton onClick={() => setActiveComponent('modal')}>Вхід для адміністратора</MyButton>
                     </div>
-                    <a
-                        href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Copyright (c) 2023 Serhii I. Myshko
-                    </a>
+                    <MyCopyright />
                 </>
             )}
 

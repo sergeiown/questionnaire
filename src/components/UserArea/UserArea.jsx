@@ -3,6 +3,7 @@ import ColorService from '../../API/ColorService';
 import SurveyImage from './SurveyImage';
 import SurveyTitle from './SurveyTitle';
 import SurveyQuestions from './SurveyQuestions';
+import MyCopyright from '../UI/copyright/MyCopyright';
 
 const UserArea = ({ onSaveAnswers }) => {
     const [color, setColor] = useState('');
@@ -34,13 +35,7 @@ const UserArea = ({ onSaveAnswers }) => {
 
                     <SurveyQuestions color={color} questionsSubmit={handleSurveyQuestionsSubmit} />
 
-                    <a
-                        href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        Copyright (c) 2023 Serhii I. Myshko
-                    </a>
+                    <MyCopyright />
                 </>
             )}
         </div>

@@ -1,0 +1,19 @@
+.myCopyright {
+  position: absolute;
+  bottom: 1vmin;
+  right: 4vmin;
+  display: block;
+  font-size: small;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 0.3s;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  .myCopyright {
+    font-size: smaller;
+    margin: 0 0.2rem 0 0;
+  }
+}
+.myCopyright:hover {
+  text-decoration: underline;
+}
