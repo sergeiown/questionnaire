@@ -41,7 +41,11 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                         }
                     } else {
                         console.log('Access denied!');
-                        setError(`Користувачу ${user.displayName} доступ не дозволено!`);
+                        setError(`Користувач ${user.displayName} не має прав доступу!`);
+                        setTimeout(() => {
+                            setError(null);
+                        }, 5000);
+
                         setUser(null);
                     }
                 })
