@@ -90,10 +90,19 @@ function App() {
     return (
         <div className="App">
             {activeComponent === 'welcome' && !user && (
-                <div className="welcomeItems">
-                    <MyButton onClick={handleUserAreaClick}>Пройти опитування</MyButton>
-                    <MyButton onClick={() => setActiveComponent('modal')}>Вхід для адміністратора</MyButton>
-                </div>
+                <>
+                    <div className="welcomeItems">
+                        <MyButton onClick={handleUserAreaClick}>Пройти опитування</MyButton>
+                        <MyButton onClick={() => setActiveComponent('modal')}>Вхід для адміністратора</MyButton>
+                    </div>
+                    <a
+                        href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Copyright (c) 2023 Serhii I. Myshko
+                    </a>
+                </>
             )}
 
             {activeComponent === 'modal' && !user && (
@@ -133,10 +142,6 @@ function App() {
                     <h2>Щиро дякуємо за участь в опитуванні!</h2>
                 </MyModal>
             )}
-
-            <a href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md" target="_blank" rel="noreferrer">
-                Copyright (c) 2023 Serhii I. Myshko
-            </a>
         </div>
     );
 }
