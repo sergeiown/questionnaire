@@ -37,7 +37,7 @@ const FileList = () => {
             ExcelFileManager.create(fileName).then(() => fetchFiles());
             setIsFileName(true);
         }
-    }, [fileName, files, isLoading]);
+    }, [fileName, isLoading]);
 
     useEffect(() => {
         if (files.length > 0 && fileName !== '') {
@@ -63,9 +63,16 @@ const FileList = () => {
                                     <p>{file.name}</p>
                                 </div>
                             </a>
-                            <MyButton title="Видалити" onClick={() => handleFileDelete(file.url)}>
-                                &#9940;
-                            </MyButton>
+                            {index === 0 && (
+                                <MyButton title="Видалити" disabled>
+                                    &#9940;
+                                </MyButton>
+                            )}
+                            {index > 0 && (
+                                <MyButton title="Видалити" onClick={() => handleFileDelete(file.url)}>
+                                    &#9940;
+                                </MyButton>
+                            )}
                         </li>
                     ))}
                 </ul>
