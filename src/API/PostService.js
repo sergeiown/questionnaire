@@ -1,16 +1,9 @@
-// import axios from 'axios';
 import db from './FirebaseConfig';
 
 const StorageData = db.collection('StorageData');
 
 export default class PostService {
     static async getNew() {
-        /*   try {
-            const response = await axios.get('/posts.json');
-            return response.data;
-        } catch (e) {
-            console.log(e);
-        } */
         try {
             const querySnapshot = await StorageData.get();
             const data = querySnapshot.docs.map((doc) => doc.data());
