@@ -33,7 +33,7 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                 .then((doc) => {
                     if (doc.exists) {
                         const role = doc.data().role;
-                        console.log('Welcome, ' + role + '!');
+                        console.log(`${new Date().toLocaleTimeString('uk-UA')} welcome, ${role}!`);
                         if (role !== 'Firebase Admin' && role !== 'Owner') {
                             console.log(`${new Date().toLocaleTimeString('uk-UA')} ${user.displayName} access denied`);
                             setError(`Користувач ${user.displayName} не має прав доступу!`);
@@ -80,7 +80,7 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
             {!user ? (
                 <>
                     <MyButton onClick={handleSignIn}>Увійти з обліковим записом Google</MyButton>
-                    {error && <h2>{error}</h2>}
+                    {error && <h2 style={{ textShadow: '0.05rem 0.05rem 0.05rem gray' }}>{error}</h2>}
                 </>
             ) : (
                 <>
