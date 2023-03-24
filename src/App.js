@@ -27,6 +27,11 @@ function App() {
         setUser(null);
     };
 
+    const handlePostListWithoutSave = () => {
+        setUser(null);
+        setActiveComponent('welcome');
+    };
+
     const handlePostListSave = (fileName, questions) => {
         setFileName(fileName);
         SurveyService.create(JSON.stringify(questions));
@@ -104,7 +109,11 @@ function App() {
             )}
 
             {user && activeComponent === 'adminArea' && (
-                <AdminArea onSave={handlePostListSave} currentEmail={user.email} />
+                <AdminArea
+                    onSave={handlePostListSave}
+                    withoutSave={handlePostListWithoutSave}
+                    currentEmail={user.email}
+                />
             )}
 
             {copied && activeComponent === 'welcome' && (

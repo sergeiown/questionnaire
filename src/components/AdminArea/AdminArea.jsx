@@ -16,7 +16,7 @@ import PostService from '../../API/PostService';
 import fileNameService from '../../API/fileNameService';
 import Loader from '../UI/Loader/Loader';
 
-function AdminArea({ onSave, currentEmail }) {
+function AdminArea({ onSave, withoutSave, currentEmail }) {
     const newTitle = `Нове опитування від ${new Date().toLocaleDateString('uk-UA')} року`;
     const [title, setTitle] = useState({
         new: newTitle,
@@ -177,6 +177,8 @@ function AdminArea({ onSave, currentEmail }) {
                     <MyButton onClick={() => fetchNewPosts()}>Нове опитування</MyButton>
 
                     <MyButton onClick={() => savePosts()}>Зберегти і вийти</MyButton>
+
+                    <MyButton onClick={() => withoutSave()}>Вийти без збереження</MyButton>
                 </div>
 
                 <MyModal visible={modal} setVisible={setModal}>

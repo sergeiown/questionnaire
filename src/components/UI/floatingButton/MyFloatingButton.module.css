@@ -1,7 +1,7 @@
 .myFloatingBtn {
   position: fixed;
   bottom: 7vh;
-  right: 16vw;
+  right: 17vw;
   padding: 0.3rem 1rem;
   color: #ff7f50;
   background: #1c1c1c;
@@ -18,7 +18,12 @@
   color: #0a0a0a;
   text-shadow: 0.125rem 0.125rem 0.125rem #a0a0a0;
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1440px) {
+  .myFloatingBtn {
+    right: 14vw;
+  }
+}
+@media only screen and (max-width: 1360px) {
   .myFloatingBtn {
     display: none;
   }

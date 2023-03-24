@@ -230,7 +230,12 @@ body .App {
   height: 100vh;
   position: relative;
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1440px) {
+  body .App {
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 1360px) {
   body .App {
     width: 95vw;
   }
@@ -337,14 +342,23 @@ body .App {
   box-shadow: 0 0 0.2rem #313131;
   z-index: 1;
 }
-@media only screen and (max-width: 1400px) and (orientation: landscape) {
+@media only screen and (max-width: 1440px) and (orientation: landscape) {
   .controlPanel {
+    width: 60vw;
+    box-shadow: 0 0 0.2rem #313131;
+  }
+}
+@media only screen and (max-width: 1360px) and (orientation: landscape) {
+  .controlPanel {
+    height: 13.3rem;
+    padding: 0.5rem 1rem;
     width: 95vw;
     box-shadow: 0 0 0.2rem #313131;
   }
 }
-@media only screen and (max-width: 1400px) and (orientation: portrait) {
+@media only screen and (max-width: 1360px) and (orientation: portrait) {
   .controlPanel {
+    height: 13.4rem;
     width: 95vw;
     box-shadow: 0 0 0.2rem #313131;
   }
