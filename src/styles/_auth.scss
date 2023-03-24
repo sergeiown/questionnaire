@@ -26,7 +26,8 @@
 
     h2 {
         text-align: center;
-        text-shadow: 0.1rem 0.1rem 0.1rem $color-red;
+        color: $color-red;
+        text-shadow: 0.1rem 0.1rem 0.1rem $color-gray;
         margin: 0 0 2rem 0;
     }
 

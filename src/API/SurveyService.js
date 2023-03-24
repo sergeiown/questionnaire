@@ -9,7 +9,7 @@ export default class SurveyService {
 
             await SurveyData.doc('survey').set(surveyData);
 
-            console.log(`Survey created at ${new Date().toLocaleTimeString('uk-UA')}`);
+            console.log(`${new Date().toLocaleTimeString('uk-UA')} new survey created and saved to Firestore`);
         } catch (error) {
             console.error('Error creating survey', error);
             throw error;
@@ -26,7 +26,7 @@ export default class SurveyService {
                 surveyData.data.push(answers);
                 await surveyRef.set(surveyData);
 
-                console.log(`Answers added at ${new Date().toLocaleTimeString('uk-UA')}`);
+                console.log(`${new Date().toLocaleTimeString('uk-UA')} answers added to survey and saved to Firestore`);
             } else {
                 throw new Error('Survey document not found');
             }
@@ -43,7 +43,7 @@ export default class SurveyService {
             if (surveyDoc.exists) {
                 const surveyData = surveyDoc.data();
 
-                console.log(`Survey data retrieved at ${new Date().toLocaleTimeString('uk-UA')}`);
+                console.log(`${new Date().toLocaleTimeString('uk-UA')} survey data read from Firestore`);
 
                 return surveyData.data;
             } else {

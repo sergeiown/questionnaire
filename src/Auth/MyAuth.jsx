@@ -35,12 +35,12 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
                         const role = doc.data().role;
                         console.log('Welcome, ' + role + '!');
                         if (role !== 'Firebase Admin' && role !== 'Owner') {
-                            console.log('Access denied!');
-                            setError(`Користувачу ${user.displayName} доступ не дозволено!`);
+                            console.log(`${new Date().toLocaleTimeString('uk-UA')} ${user.displayName} access denied`);
+                            setError(`Користувач ${user.displayName} не має прав доступу!`);
                             setUser(null);
                         }
                     } else {
-                        console.log('Access denied!');
+                        console.log(`${new Date().toLocaleTimeString('uk-UA')} ${user.displayName} access denied`);
                         setError(`Користувач ${user.displayName} не має прав доступу!`);
                         setTimeout(() => {
                             setError(null);
@@ -63,7 +63,7 @@ const MyAuth = ({ onSignIn, onSignOut }) => {
             auth.useDeviceLanguage();
             auth.signInWithPopup(provider)
                 .then(() => {
-                    console.log('Sign in successful!');
+                    console.log(`${new Date().toLocaleTimeString('uk-UA')} access granted`);
                 })
                 .catch((error) => {
                     console.log(error);

@@ -8,9 +8,9 @@ export default class EmailService {
             .set({ data: postsListEmail })
             .then(() => {
                 console.log(
-                    `postsListEmail(${JSON.parse(
+                    `${new Date().toLocaleTimeString('uk-UA')} postsListEmail(${JSON.parse(
                         postsListEmail
-                    )}) written to Firestore at ${new Date().toLocaleTimeString('uk-UA')}`
+                    )}) written to Firestore`
                 );
             })
             .catch((error) => {
@@ -24,9 +24,9 @@ export default class EmailService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `PostsListEmail(${JSON.parse(data[3].data)}) read from Firestore at ${new Date().toLocaleTimeString(
-                    'uk-UA'
-                )}`
+                `${new Date().toLocaleTimeString('uk-UA')} postsListEmail(${JSON.parse(
+                    data[3].data
+                )}) read from Firestore`
             );
 
             return JSON.parse(data[3].data);

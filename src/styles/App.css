@@ -160,7 +160,8 @@ ul li {
 }
 .welcomeModal h2 {
   text-align: center;
-  text-shadow: 0.1rem 0.1rem 0.1rem maroon;
+  color: maroon;
+  text-shadow: 0.1rem 0.1rem 0.1rem #a0a0a0;
   margin: 0 0 2rem 0;
 }
 .welcomeModal button {
@@ -308,6 +309,9 @@ body .App {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.fileManager .fileList li .fileName p:hover {
+  color: #ff7f50;
 }
 .fileManager .fileList li button {
   max-width: 15%;
