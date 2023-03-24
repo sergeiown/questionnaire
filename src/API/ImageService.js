@@ -56,7 +56,7 @@ export default class ImageService {
                 const url = baseImageDoc.data().url;
 
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} postsListImage(${
+                    `${new Date().toLocaleTimeString('uk-UA')} image (${
                         url.split('%2F').pop().split('?')[0]
                     }) url read from Firestore`
                 );

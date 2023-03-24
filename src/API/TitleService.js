@@ -8,7 +8,7 @@ export default class TitleService {
             .set({ data: postsListTitle })
             .then(() => {
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} postsListTitle(${JSON.parse(
+                    `${new Date().toLocaleTimeString('uk-UA')} title (${JSON.parse(
                         postsListTitle
                     )}) written to Firestore`
                 );
@@ -24,9 +24,7 @@ export default class TitleService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} postsListTitle(${JSON.parse(
-                    data[4].data
-                )}) read from Firestore`
+                `${new Date().toLocaleTimeString('uk-UA')} title (${JSON.parse(data[4].data)}) read from Firestore`
             );
 
             return JSON.parse(data[4].data);

@@ -8,7 +8,7 @@ export default class fileNameService {
             .set({ data: fileName })
             .then(() => {
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} fileName(${JSON.parse(fileName)}) written to Firestore`
+                    `${new Date().toLocaleTimeString('uk-UA')} fileName (${JSON.parse(fileName)}) written to Firestore`
                 );
             })
             .catch((error) => {
@@ -22,7 +22,7 @@ export default class fileNameService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} fileName(${JSON.parse(data[5].data)}) read from Firestore`
+                `${new Date().toLocaleTimeString('uk-UA')} fileName (${JSON.parse(data[5].data)}) read from Firestore`
             );
 
             return JSON.parse(data[5].data);

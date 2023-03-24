@@ -9,7 +9,7 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} newPostsList(${
+                `${new Date().toLocaleTimeString('uk-UA')} new postsList (${
                     JSON.parse(data[0].data).length
                 }) read from Firestore`
             );
@@ -26,7 +26,7 @@ export default class PostService {
             .set({ data: postsList })
             .then(() => {
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} postsList(${
+                    `${new Date().toLocaleTimeString('uk-UA')} postsList (${
                         JSON.parse(postsList).length
                     }) written to Firestore`
                 );
@@ -42,7 +42,7 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} postsList(${
+                `${new Date().toLocaleTimeString('uk-UA')} postsList (${
                     JSON.parse(data[1].data).length
                 }) read from Firestore`
             );

@@ -8,7 +8,7 @@ export default class ColorService {
             .set({ data: postsListColor })
             .then(() => {
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} postsListColor(${JSON.parse(
+                    `${new Date().toLocaleTimeString('uk-UA')} color (${JSON.parse(
                         postsListColor
                     )}) written to Firestore`
                 );
@@ -24,9 +24,7 @@ export default class ColorService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} postsListColor(${JSON.parse(
-                    data[2].data
-                )}) read from Firestore`
+                `${new Date().toLocaleTimeString('uk-UA')} color (${JSON.parse(data[2].data)}) read from Firestore`
             );
 
             return JSON.parse(data[2].data);
