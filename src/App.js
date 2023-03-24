@@ -133,6 +133,10 @@ function App() {
                     <h2>Щиро дякуємо за участь в опитуванні!</h2>
                 </MyModal>
             )}
+
+            <a href="https://github.com/sergeiown/questionnaire/blob/main/LICENSE.md" target="_blank" rel="noreferrer">
+                Copyright (c) 2023 Serhii I. Myshko
+            </a>
         </div>
     );
 }

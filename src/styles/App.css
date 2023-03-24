@@ -240,6 +240,26 @@ body .App {
     width: 95vw;
   }
 }
+body .App a {
+  position: absolute;
+  bottom: 1vmin;
+  right: 4vmin;
+  display: block;
+  color: #ff7f50;
+  font-size: small;
+  text-decoration: none;
+  text-shadow: none;
+  transition: color 0.3s;
+}
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+  body .App a {
+    font-size: smaller;
+    margin: 0 0.2rem 0 0;
+  }
+}
+body .App a:hover {
+  color: #a0a0a0;
+}
 
 .fileManager {
   -webkit-user-select: none;
