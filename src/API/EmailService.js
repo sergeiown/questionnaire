@@ -14,7 +14,7 @@ export default class EmailService {
                 );
             })
             .catch((error) => {
-                console.error(`Error writing postsListEmail: ${error}`);
+                console.error(`Error writing email: ${error}`);
             });
     }
 
@@ -29,7 +29,7 @@ export default class EmailService {
 
             return JSON.parse(data[3].data);
         } catch (error) {
-            console.error(`Error reading postsListEmail: ${error}`);
+            console.error(`Error reading email: ${error}`);
             return [];
         }
     }

@@ -16,7 +16,7 @@ export default class ExcelFileManager {
         const blob = new Blob([XLSX.write(workbook, { type: 'array', bookType: 'xlsx' })]);
         await storageRef.put(blob);
 
-        console.log(`${new Date().toLocaleTimeString('uk-UA')} (${fileName}.xlsx) written to Firestorage`);
+        console.log(`${new Date().toLocaleTimeString('uk-UA')} file (${fileName}.xlsx) written to Firestorage`);
     };
 
     static getAll = async () => {
@@ -40,6 +40,6 @@ export default class ExcelFileManager {
     static delete = async (fileUrl) => {
         const storageRef = firebase.storage().refFromURL(fileUrl);
         await storageRef.delete();
-        console.log(`${new Date().toLocaleTimeString('uk-UA')} (${fileUrl}) deleted from Firestorage`);
+        console.log(`${new Date().toLocaleTimeString('uk-UA')} old survey file deleted from Firestorage`);
     };
 }

@@ -14,7 +14,7 @@ export default class TitleService {
                 );
             })
             .catch((error) => {
-                console.error(`Error writing postsListTitle: ${error}`);
+                console.error(`Error writing title: ${error}`);
             });
     }
 
@@ -29,7 +29,7 @@ export default class TitleService {
 
             return JSON.parse(data[4].data);
         } catch (error) {
-            console.error(`Error reading postsListTitle: ${error}`);
+            console.error(`Error reading title: ${error}`);
             return [];
         }
     }

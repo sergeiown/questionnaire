@@ -9,14 +9,14 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} new postsList (${
+                `${new Date().toLocaleTimeString('uk-UA')} new questions (${
                     JSON.parse(data[0].data).length
                 }) read from Firestore`
             );
 
             return JSON.parse(data[0].data);
         } catch (error) {
-            console.error(`Error reading newPostsList: ${error}`);
+            console.error(`Error reading new questions: ${error}`);
             return [];
         }
     }
@@ -26,13 +26,13 @@ export default class PostService {
             .set({ data: postsList })
             .then(() => {
                 console.log(
-                    `${new Date().toLocaleTimeString('uk-UA')} postsList (${
+                    `${new Date().toLocaleTimeString('uk-UA')} questions (${
                         JSON.parse(postsList).length
                     }) written to Firestore`
                 );
             })
             .catch((error) => {
-                console.error(`Error writing postsList: ${error}`);
+                console.error(`Error writing questions: ${error}`);
             });
     }
 
@@ -42,14 +42,14 @@ export default class PostService {
             const data = querySnapshot.docs.map((doc) => doc.data());
 
             console.log(
-                `${new Date().toLocaleTimeString('uk-UA')} postsList (${
+                `${new Date().toLocaleTimeString('uk-UA')} questions (${
                     JSON.parse(data[1].data).length
                 }) read from Firestore`
             );
 
             return JSON.parse(data[1].data);
         } catch (error) {
-            console.error(`Error reading postsList: ${error}`);
+            console.error(`Error reading questions: ${error}`);
             return [];
         }
     }

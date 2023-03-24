@@ -24,3 +24,4 @@ yarn-error.log*
 
 src/API/FirebaseConfig.js
 public/posts.json
+.env

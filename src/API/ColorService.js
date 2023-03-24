@@ -14,7 +14,7 @@ export default class ColorService {
                 );
             })
             .catch((error) => {
-                console.error(`Error writing postsListColor: ${error}`);
+                console.error(`Error writing color: ${error}`);
             });
     }
 
@@ -29,7 +29,7 @@ export default class ColorService {
 
             return JSON.parse(data[2].data);
         } catch (error) {
-            console.error(`Error reading postsListColor: ${error}`);
+            console.error(`Error reading color: ${error}`);
             return [];
         }
     }

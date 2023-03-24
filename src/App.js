@@ -10,6 +10,7 @@ import MyModal from './components/UI/MyModal/MyModal';
 import FileManager from './components/FileManager/FileManager';
 import AdminArea from './components/AdminArea/AdminArea';
 import UserArea from './components/UserArea/UserArea';
+// import EmailAdmin from './services/EmailAdmin';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -40,7 +41,7 @@ function App() {
         const currentUrl = window.location.href;
         writeText(currentUrl).then(
             () => {
-                console.log('Current URL is copied to the clipboard');
+                console.log(`${new Date().toLocaleTimeString('uk-UA')} current URL is copied to the clipboard`);
                 setCopied(true);
                 setVisible(true);
                 setTimeout(() => {
@@ -59,6 +60,11 @@ function App() {
 
     const handleAnswersSave = (answers) => {
         SurveyService.add(JSON.stringify(answers));
+        // EmailAdmin.sendEmail({
+        //     adminEmail: 'sergeiown@gmail.com',
+        //     answers: ['2023-03-24', '10:00', 'user@example.com', 'John'],
+        //     title: 'Survey Title',
+        // });
 
         setGoodBye(true);
         setVisible(true);
