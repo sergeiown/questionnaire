@@ -53,10 +53,6 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
         localStorage.setItem('title', JSON.stringify(title.query || title.new));
         localStorage.setItem('email', JSON.stringify(email.query || email.new));
         localStorage.setItem('color', JSON.stringify(color.query || color.new));
-        PostService.update(JSON.stringify([...posts, newPost]));
-        TitleService.update(JSON.stringify(title.query || title.new));
-        EmailService.update(JSON.stringify(email.query || email.new));
-        ColorService.update(JSON.stringify(color.query || color.new));
         /* scroll to the post with maximum id */
         const maxId = Math.max(...posts.map((p) => p.id));
         const element = document.getElementById(maxId);
@@ -66,10 +62,6 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
     const removePost = (post) => {
         const filteredPosts = posts.filter((p) => p.id !== post.id);
         setPosts(filteredPosts);
-        /* localStorage.setItem('posts', JSON.stringify(filteredPosts));
-        localStorage.setItem('title', JSON.stringify(title.query || title.new));
-        PostService.update(JSON.stringify(filteredPosts));
-        TitleService.update(JSON.stringify(title.query || title.new)); */
     };
 
     const savePosts = () => {
