@@ -19,6 +19,8 @@ function App() {
     const [goodBye, setGoodBye] = useState(false);
     const [fileName, setFileName] = useState('');
 
+    const answerCookie = document.cookie.split(';').find((cookie) => cookie.trim().startsWith('answer='));
+
     const handleSignIn = (user) => {
         setUser(user);
         setActiveComponent('fileManager');
@@ -130,7 +132,13 @@ function App() {
                 </MyModal>
             )}
 
-            {activeComponent === 'userArea' && <UserArea onSaveAnswers={handleAnswersSave} />}
+            {activeComponent === 'userArea' && answerCookie && (
+                <MyModal visible={true} setVisible={handleModalClose}>
+                    <h2>Між проходженнями опитування на одному пристрої має минути не менше п&apos;яти хвилин.</h2>
+                </MyModal>
+            )}
+
+            {activeComponent === 'userArea' && !answerCookie && <UserArea onSaveAnswers={handleAnswersSave} />}
 
             {goodBye && activeComponent === 'welcome' && (
                 <MyModal visible={visible} setVisible={handleModalClose}>

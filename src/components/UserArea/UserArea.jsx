@@ -18,6 +18,11 @@ const UserArea = ({ onSaveAnswers }) => {
     };
 
     const handleSurveyQuestionsSubmit = (answers) => {
+        const answerCookie = document.cookie.split(';').find((cookie) => cookie.trim().startsWith('answer='));
+        if (!answerCookie) {
+            document.cookie = 'answer=true; max-age=300; path=/';
+        }
+
         onSaveAnswers(answers);
     };
 

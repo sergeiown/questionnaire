@@ -20,6 +20,7 @@ const SurveyAnswers = ({ quests, currentIndex, valueChange, nextQuestion, requir
 
     const handleNextQuestion = (e) => {
         e.preventDefault();
+
         nextQuestion();
 
         valueChange(customValue);
