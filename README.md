@@ -1,6 +1,7 @@
 # Questionnaire
+## Simplify your surveys with Questionnaire!
 
-## An application for conducting surveys with clients / customers / focus group members in real life.
+# An application for conducting surveys with clients / customers / focus group members in real life.
 
 The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.
 
