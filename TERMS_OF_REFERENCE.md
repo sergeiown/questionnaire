@@ -15,7 +15,7 @@ Main interface language: Ukrainian.
 ### Technologies:
 
 -   Front-End: JavaScript, React.
--   Back-End / or implementation on a static server: XLSX + SendGrid.
+-   Back-End / or implementation on a static server:Cloud data base + SheetJS + EmailJS.
 -   Authentication: Google sign-in.
 -   Data storage: Firestore Database + Firebase Storage.
 
@@ -54,7 +54,7 @@ Main interface language: Ukrainian.
 ### Технології:
 
 -   Front-End: JavaScript, React.
--   Back-End / або реалізація на статичному сервері: XLSX + SendGrid.
+-   Back-End / або реалізація на статичному сервері: Хмарна база даних + SheetJS + EmailJS.
 -   Аутентифікація: Google sign-in.
 -   Зберігання даних: Firestore Database + Firebase Storage.
 
