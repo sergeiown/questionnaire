@@ -28,3 +28,4 @@ public/posts.json
 .firebaserc
 firebase.json
 .firebase/hosting.YnVpbGQ.cache
+functions/index.js
