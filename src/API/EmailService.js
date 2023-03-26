@@ -33,4 +33,18 @@ export default class EmailService {
             return [];
         }
     }
+
+    static async getServiceInfo() {
+        try {
+            const querySnapshot = await StorageData.get();
+            const data = querySnapshot.docs.map((doc) => doc.data());
+
+            console.log(`${new Date().toLocaleTimeString('uk-UA')} service information read from Firestore`);
+
+            return { init: data[6].init, service: data[6].service, template: data[6].template };
+        } catch (error) {
+            console.error(`Error reading service information: ${error}`);
+            return [];
+        }
+    }
 }

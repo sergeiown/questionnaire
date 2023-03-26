@@ -26,7 +26,7 @@ const FileManager = ({ onExit, onGoOn }) => {
 
                 <div className="buttons">
                     <MyButton onClick={handleModalCloseOnExit}>Вийти з перегляду результатів</MyButton>
-                    <MyButton onClick={handleModalCloseOnGoOn}>До створення нового опитування</MyButton>
+                    <MyButton onClick={handleModalCloseOnGoOn}>Керувати або створити нове</MyButton>
                 </div>
             </div>
         </MyModal>

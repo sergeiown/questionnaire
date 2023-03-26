@@ -10,6 +10,7 @@ import MyModal from './components/UI/MyModal/MyModal';
 import FileManager from './components/FileManager/FileManager';
 import AdminArea from './components/AdminArea/AdminArea';
 import UserArea from './components/UserArea/UserArea';
+import sendEmail from './services/AdminEmail';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -61,6 +62,8 @@ function App() {
 
     const handleAnswersSave = (answers) => {
         SurveyService.add(JSON.stringify(answers));
+
+        sendEmail(answers);
 
         setGoodBye(true);
         setVisible(true);
