@@ -5,12 +5,12 @@
 
 The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ### Document structure:
 ![image](https://user-images.githubusercontent.com/112722061/227899517-9ea75427-03b8-4105-8774-c91068125168.png)
 --
-
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
---
+### Document layout:
 ![image](https://user-images.githubusercontent.com/112722061/227651331-5ba289e2-a6c2-404d-818e-76d0cc006a74.png)
 --
 ![image](https://user-images.githubusercontent.com/112722061/227652325-b7600493-457a-4de2-b262-db77f4e67f20.png)
