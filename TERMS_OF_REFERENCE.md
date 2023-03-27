@@ -15,7 +15,7 @@ Main interface language: Ukrainian.
 ### Technologies:
 
 -   Front-End: JavaScript, React.
--   Back-End / or implementation on a static server:Cloud data base + SheetJS + EmailJS.
+-   Back-End / or implementation on a static server: Cloud data base + SheetJS + EmailJS.
 -   Authentication: Google sign-in.
 
 ### Design:
