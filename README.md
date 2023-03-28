@@ -1,4 +1,4 @@
-# [Questionnaire](https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg) <img src="https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg" alt="Questionnaire logo" align="right" width="300"/>
+# [Questionnaire](https://questionnaire-sergeiown.web.app/) <img src="https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg" alt="Questionnaire logo" align="right" width="300"/>
 
 ## Simplify your surveys with Questionnaire!
 ### An application for conducting surveys with clients / customers / focus group members in real life.
@@ -64,18 +64,10 @@
 | xlsx                    | ^0.19.2     | Library for working with electronic spreadsheets            |
 
 ### Application structure:
-![image](https://user-images.githubusercontent.com/112722061/227899517-9ea75427-03b8-4105-8774-c91068125168.png)
+<img src="https://user-images.githubusercontent.com/112722061/227899517-9ea75427-03b8-4105-8774-c91068125168.png" align="center"/>
 
 ---
 
 ### Appearance of the application:
-![image](https://user-images.githubusercontent.com/112722061/227651331-5ba289e2-a6c2-404d-818e-76d0cc006a74.png)
+<img src="https://user-images.githubusercontent.com/112722061/227651331-5ba289e2-a6c2-404d-818e-76d0cc006a74.png" alt="screenshot" width="500" align="center"/> <img src="https://user-images.githubusercontent.com/112722061/227652470-a083d4dc-5f77-409c-8716-226c3134aee3.png" alt="screenshot" width="500" align="center"/> <img src="https://user-images.githubusercontent.com/112722061/227652528-0ba8dd06-640d-4b28-a7a0-9faa07fe65d7.png" alt="screenshot" width="500" align="center"/> <img src="https://user-images.githubusercontent.com/112722061/227652325-b7600493-457a-4de2-b262-db77f4e67f20.png" alt="screenshot" width="500" align="center"/> <img src="https://user-images.githubusercontent.com/112722061/227948744-5b34b548-481e-4bcd-bcf9-99fa881365f2.png" alt="screenshot" width="500" align="center"/>
 --
-![image](https://user-images.githubusercontent.com/112722061/227652470-a083d4dc-5f77-409c-8716-226c3134aee3.png)
---
-![image](https://user-images.githubusercontent.com/112722061/227652528-0ba8dd06-640d-4b28-a7a0-9faa07fe65d7.png)
---
-![image](https://user-images.githubusercontent.com/112722061/227652325-b7600493-457a-4de2-b262-db77f4e67f20.png)
---
-![image](https://user-images.githubusercontent.com/112722061/227948744-5b34b548-481e-4bcd-bcf9-99fa881365f2.png)
-
