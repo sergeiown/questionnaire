@@ -1,4 +1,4 @@
-# [Questionnaire](https://questionnaire-sergeiown.web.app/) <img src="https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg" alt="Questionnaire logo" align="right" width="300"/>
+# [Questionnaire](https://questionnaire-sergeiown.web.app/) <img src="https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg" alt="Questionnaire logo" align="right" width="150"/>
 
 ## Simplify your surveys with Questionnaire!
 ### An application for conducting surveys with clients/customers/focus group participants, etc.
