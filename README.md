@@ -5,6 +5,18 @@
 
 The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.
 
+To develop the application, the following additional libraries were used:
+| Library                 | Version     | Purpose                                                     |
+|-------------------------|-------------|------------------------------------------------------------|
+| clipboard-polyfill      | ^4.0.0      | Polyfill for working with the clipboard                     |
+| emailjs-com             | ^3.2.0      | Library for sending emails                                  |
+| firebase                | ^8.10.1     | Infrastructure for developing web applications              |
+| firebase/firestore      |             | Component for storing and retrieving data                   |
+| firebase/auth           |             | Component for user authentication                            |
+| firebase/app-check      |             | Component for protecting web applications                    |
+| react-google-recaptcha  | ^2.1.0      | Component for interacting with reCAPTCHA                     |
+| xlsx                    | ^0.19.2     | Library for working with electronic spreadsheets            |
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Application structure:
@@ -20,3 +32,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![image](https://user-images.githubusercontent.com/112722061/227652325-b7600493-457a-4de2-b262-db77f4e67f20.png)
 --
 ![image](https://user-images.githubusercontent.com/112722061/227948744-5b34b548-481e-4bcd-bcf9-99fa881365f2.png)
+
