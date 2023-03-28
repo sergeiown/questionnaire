@@ -1,7 +1,7 @@
 # [Questionnaire](https://questionnaire-sergeiown.web.app/) <img src="https://github.com/sergeiown/questionnaire/blob/main/src/assets/logo/logo.svg" alt="Questionnaire logo" align="right" width="300"/>
 
 ## Simplify your surveys with Questionnaire!
-### An application for conducting surveys with clients / customers / focus group members in real life.
+### An application for conducting surveys with clients/customers/focus group participants, etc.
 
 ---
 
