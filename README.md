@@ -64,7 +64,7 @@
 | xlsx                    | ^0.19.2     | Library for working with electronic spreadsheets            |
 
 ### Application structure:
-<img src="https://user-images.githubusercontent.com/112722061/227899517-9ea75427-03b8-4105-8774-c91068125168.png" width="600" align="center"/>
+<img src="https://user-images.githubusercontent.com/112722061/227899517-9ea75427-03b8-4105-8774-c91068125168.png" width="500" align="center"/>
 
 ---
 
