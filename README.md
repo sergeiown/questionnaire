@@ -36,7 +36,9 @@
   * Search for a question by its content;
   * Choose a color for the survey design using the color palette or color picker;
   * Adding an email address to receive notifications (the default email address from your Google account is used);
-  * Exit with saving the results (copying the link to the corresponding survey to the clipboard);
+  * Exit with saving the results;
+  * Copy the link to the created survey to the clipboard;
+  * Notification of creating a new survey;
   * Exit without saving the results;
   * Applying temporary storage of intermediate data in case of atypical situations.
 
