@@ -37,7 +37,7 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
 
     useEffect(() => {
         document.title = `Questionnaire - ${posts.length} question(s)`;
-    });
+    }, [posts.length]);
 
     useEffect(() => {
         fetchSavedPosts();
