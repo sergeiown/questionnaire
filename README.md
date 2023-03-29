@@ -9,6 +9,9 @@
 
 **Current functionality:**
 
+***General:***
+- Fully responsive design.
+
 ***Admin area:***
 - Authentication (using Google sign-in);
 - Authorization (using internal roles);
@@ -35,17 +38,18 @@
   * Adding an email address to receive notifications (the default email address from your Google account is used);
   * Exit with saving the results (copying the link to the corresponding survey to the clipboard);
   * Exit without saving the results;
-  * Applying temporary storage of intermediate data in case of atypical situations;
+  * Applying temporary storage of intermediate data in case of atypical situations.
 
 ***User area:***
 - Completing the survey by answering questions one by one;
 - Validation of answers:
-  + By data compliance;
-  + By mandatory data entry;
+  * By data compliance;
+  * By mandatory data entry;
 - Visual display of the survey progress;
 - Textual display of the survey progress;
 - Visual design and sequence of questions in accordance with the administrator's preferences;
-- Notification of completion of the survey.
+- Notification of completion of the survey;
+- Prevent multiple surveys from being taken from the same device.
 
 ---
 **This application was developed using [React](https://react.dev/).**  
