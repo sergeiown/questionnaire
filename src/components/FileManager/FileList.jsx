@@ -13,7 +13,7 @@ const FileList = () => {
 
     const fetchFiles = async () => {
         const files = await ExcelFileManager.getAll();
-        files.sort((a, b) => b.name.localeCompare(a.name));
+        files.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
         setFiles(files);
     };
 

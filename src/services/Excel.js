@@ -28,7 +28,9 @@ export default class ExcelFileManager {
             listResult.items.map(async (itemRef) => {
                 const name = itemRef.name.split('.xlsx')[0];
                 const url = await itemRef.getDownloadURL();
-                files.push({ name, url });
+                const metadata = await itemRef.getMetadata();
+                const createdAt = metadata.timeCreated;
+                files.push({ name, url, createdAt });
             })
         );
 
