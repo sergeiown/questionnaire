@@ -28,3 +28,5 @@ src/API/FirebaseConfig.js
 firebase.json
 .firebase/hosting.YnVpbGQ.cache
 functions/index.js
+
+/ReCaptcha
