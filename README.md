@@ -5,8 +5,6 @@
 
 ---
 
-**The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.**
-
 **Current functionality:**
 
 ***General:***
@@ -52,6 +50,8 @@
 - Visual design and sequence of questions in accordance with the administrator's preferences;
 - Notification of completion of the survey;
 - Prevent multiple surveys from being taken from the same device.
+
+**The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.**
 
 ---
 **This application was developed using [React](https://react.dev/).**  
