@@ -6,7 +6,7 @@
     padding: 0 0 15vmin 0;
     position: relative;
 
-    @include fade(1s, 'in', 1.5s);
+    @include fade(1s, 'in', 0.5s);
 
     @media screen and (max-width: 600px) and (orientation: portrait) {
         padding: 0 0 5vmin 0;
@@ -119,7 +119,7 @@
         .buttons {
             padding: 2rem 0 0 0;
             text-align: center;
-            @include fade(1s, 'in', 2s);
+            @include fade(1s, 'in', 1s);
         }
     }
 

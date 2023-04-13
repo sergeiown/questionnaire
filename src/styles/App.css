@@ -668,7 +668,7 @@ body .App {
   padding: 0 0 15vmin 0;
   position: relative;
   opacity: 0;
-  animation: fade-in 1s 1.5s ease-in-out;
+  animation: fade-in 1s 0.5s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {
@@ -787,7 +787,7 @@ body .App {
   padding: 2rem 0 0 0;
   text-align: center;
   opacity: 0;
-  animation: fade-in 1s 2s ease-in-out;
+  animation: fade-in 1s 1s ease-in-out;
   animation-fill-mode: forwards;
 }
 @keyframes fade-in {
