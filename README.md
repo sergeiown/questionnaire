@@ -4,8 +4,9 @@
 ### An application for conducting surveys with clients/customers/focus group participants, etc.
 
 ---
+***Current version 0.2.0***
 
-**Current functionality:**
+**Functionality:**
 
 ***General:***
 - Fully responsive design.
