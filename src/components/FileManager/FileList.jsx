@@ -10,7 +10,7 @@ const FileList = () => {
     const [files, setFiles] = useState([]);
     const [fileName, setFilename] = useState('');
     const [recipientNum, setRecipientNum] = useState('');
-    const [dateOfEnd, setDateOfEnd] = useState([]);
+    const [dateOfEnd, setDateOfEnd] = useState('');
     const [isFileName, setIsFileName] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -27,7 +27,7 @@ const FileList = () => {
 
     const fetchRecipientNum = async () => {
         const recipientNum = await SurveyService.get();
-        setRecipientNum(recipientNum.length);
+        setRecipientNum(recipientNum.length - 1);
         setDateOfEnd(recipientNum[recipientNum.length - 1].split('"')[1]);
     };
 
@@ -71,7 +71,7 @@ const FileList = () => {
                                 <a
                                     className="downloadUrl"
                                     href={file.url}
-                                    title={`Опитування активне, остання відповідь: ${dateOfEnd}. Всього респондентів: ${recipientNum}`}
+                                    title={`Опитування активне, остання відповідь: ${dateOfEnd}. \nВсього респондентів: ${recipientNum}.`}
                                     download
                                 >
                                     <div className="fileName">
@@ -84,7 +84,7 @@ const FileList = () => {
                                 <a
                                     className="downloadUrl"
                                     href={file.url}
-                                    title={`Опитування завершене ${dateOfEnd}. Всього респондентів: ${recipientNum}`}
+                                    title={`Опитування завершене ${dateOfEnd}. \nВсього респондентів: ${recipientNum}.`}
                                     download
                                 >
                                     <div className="fileName">
