@@ -64,7 +64,6 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
         setPosts(filteredPosts);
     };
 
-    // Функція для переміщення елемента у групі вище (вгору)
     const moveUp = (index) => {
         if (index === 0) {
             return;
@@ -74,7 +73,6 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
         setPosts(newPosts);
     };
 
-    // Функція для переміщення елемента у групі нижче (вниз)
     const moveDown = (index) => {
         if (index === posts.length - 1) {
             return;

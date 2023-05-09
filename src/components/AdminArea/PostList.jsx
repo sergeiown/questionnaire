@@ -40,6 +40,7 @@ const PostList = ({ postListTitle, title, posts, moveUp, remove, moveDown, baseI
                     remove={remove}
                     moveDown={moveDown}
                     index={index}
+                    length={posts.length}
                     number={index + 1}
                     post={post}
                     color={color}
