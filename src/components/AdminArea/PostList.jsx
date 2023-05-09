@@ -3,7 +3,7 @@ import ImageChanger from './PostListImage.jsx';
 import PostItem from './PostItem.jsx';
 import MyCopyright from '../UI/copyright/MyCopyright.jsx';
 
-const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => {
+const PostList = ({ postListTitle, title, posts, moveUp, remove, moveDown, baseImage, color }) => {
     const mainTitle = postListTitle.query || postListTitle.new;
 
     if (!posts.length) {
@@ -33,7 +33,17 @@ const PostList = ({ postListTitle, title, posts, remove, baseImage, color }) => 
             <h2>{title}</h2>
 
             {posts.map((post, index) => (
-                <PostItem key={post.id} id={post.id} remove={remove} number={index + 1} post={post} color={color} />
+                <PostItem
+                    key={post.id}
+                    id={post.id}
+                    moveUp={moveUp}
+                    remove={remove}
+                    moveDown={moveDown}
+                    index={index}
+                    number={index + 1}
+                    post={post}
+                    color={color}
+                />
             ))}
 
             <MyCopyright />

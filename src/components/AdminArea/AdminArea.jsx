@@ -64,6 +64,26 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
         setPosts(filteredPosts);
     };
 
+    // Функція для переміщення елемента у групі вище (вгору)
+    const moveUp = (index) => {
+        if (index === 0) {
+            return;
+        }
+        const newPosts = [...posts];
+        [newPosts[index - 1], newPosts[index]] = [newPosts[index], newPosts[index - 1]];
+        setPosts(newPosts);
+    };
+
+    // Функція для переміщення елемента у групі нижче (вниз)
+    const moveDown = (index) => {
+        if (index === posts.length - 1) {
+            return;
+        }
+        const newPosts = [...posts];
+        [newPosts[index], newPosts[index + 1]] = [newPosts[index + 1], newPosts[index]];
+        setPosts(newPosts);
+    };
+
     const savePosts = () => {
         localStorage.removeItem('posts');
         localStorage.removeItem('title');
@@ -198,7 +218,9 @@ function AdminArea({ onSave, withoutSave, currentEmail }) {
                     postListTitle={title}
                     title={'Перелік питань:'}
                     posts={sortedAndSearchedPosts}
+                    moveUp={moveUp}
                     remove={removePost}
+                    moveDown={moveDown}
                     baseImage={baseImage}
                     color={color.query || color.new}
                 />

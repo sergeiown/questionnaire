@@ -34,8 +34,14 @@ const PostItem = (props) => {
                 </div>
             </div>
             <div className="post__btns">
+                <MyButton onClick={() => props.moveUp(props.index)} color={props.color}>
+                    up
+                </MyButton>
                 <MyButton onClick={() => props.remove(props.post)} color={props.color}>
                     Видалити
+                </MyButton>
+                <MyButton onClick={() => props.moveDown(props.index)} color={props.color}>
+                    down
                 </MyButton>
             </div>
         </div>
