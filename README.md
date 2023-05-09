@@ -26,7 +26,8 @@
     + Selecting whether the answer is required; 
     + Add answer options if necessary;
     + Delete an answer option;
-  * Delete a question;
+  * Delete a question using the appropriate interface element;
+  * Change the order of the questions using the appropriate interface elements;
   * Select and add an image for the survey topic;
   * Add a survey title;
   * Sort the questions added to the survey as needed;
