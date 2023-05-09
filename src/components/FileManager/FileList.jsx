@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 
 import ExcelFileManager from '../../services/Excel';
 import fileNameService from '../../API/fileNameService';
+import SurveyService from '../../API/SurveyService';
 import MyButton from '../UI/button/MyButton';
 import Loader from '../UI/Loader/Loader';
 
 const FileList = () => {
     const [files, setFiles] = useState([]);
     const [fileName, setFilename] = useState('');
+    const [recipientNum, setRecipientNum] = useState('');
+    const [dateOfEnd, setDateOfEnd] = useState([]);
     const [isFileName, setIsFileName] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,6 +25,12 @@ const FileList = () => {
         setFilename(fileName);
     };
 
+    const fetchRecipientNum = async () => {
+        const recipientNum = await SurveyService.get();
+        setRecipientNum(recipientNum.length);
+        setDateOfEnd(recipientNum[recipientNum.length - 1].split('"')[1]);
+    };
+
     const handleFileDelete = async (url) => {
         await ExcelFileManager.delete(url);
         fetchFiles();
@@ -30,6 +39,7 @@ const FileList = () => {
     useEffect(() => {
         fetchFiles();
         fetchFileName();
+        fetchRecipientNum();
     }, []);
 
     useEffect(() => {
@@ -57,12 +67,32 @@ const FileList = () => {
                 <ul className="fileList">
                     {files.map((file, index) => (
                         <li key={file.name}>
-                            <a className="downloadUrl" href={file.url} download>
-                                <div className="fileName">
-                                    <span>{index + 1}. </span>
-                                    <p>{file.name}</p>
-                                </div>
-                            </a>
+                            {index === 0 && (
+                                <a
+                                    className="downloadUrl"
+                                    href={file.url}
+                                    title={`Опитування активне, остання відповідь: ${dateOfEnd}. Всього респондентів: ${recipientNum}`}
+                                    download
+                                >
+                                    <div className="fileName">
+                                        <span>{index + 1}. </span>
+                                        <p>{file.name}</p>
+                                    </div>
+                                </a>
+                            )}
+                            {index > 0 && (
+                                <a
+                                    className="downloadUrl"
+                                    href={file.url}
+                                    title={`Опитування завершене ${dateOfEnd}. Всього респондентів: ${recipientNum}`}
+                                    download
+                                >
+                                    <div className="fileName">
+                                        <span>{index + 1}. </span>
+                                        <p>{file.name}</p>
+                                    </div>
+                                </a>
+                            )}
                             {index === 0 && (
                                 <MyButton title="Видалити" disabled>
                                     &#9940;
