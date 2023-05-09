@@ -36,12 +36,12 @@ const PostItem = (props) => {
             <div className="post__btns">
                 {props.index === 0 && (
                     <MyButton onClick={() => props.moveUp(props.index)} color={props.color} title="Вгору" disabled>
-                        up
+                        <strong>↑</strong>
                     </MyButton>
                 )}
                 {props.index > 0 && (
                     <MyButton onClick={() => props.moveUp(props.index)} color={props.color} title="Вгору">
-                        up
+                        <strong>↑</strong>
                     </MyButton>
                 )}
                 <MyButton onClick={() => props.remove(props.post)} color={props.color} title="Видалити">
@@ -49,12 +49,12 @@ const PostItem = (props) => {
                 </MyButton>
                 {props.index === props.length - 1 && (
                     <MyButton onClick={() => props.moveDown(props.index)} color={props.color} title="Вниз" disabled>
-                        down
+                        <strong>↓</strong>
                     </MyButton>
                 )}
                 {props.index < props.length - 1 && (
                     <MyButton onClick={() => props.moveDown(props.index)} color={props.color} title="Вниз">
-                        down
+                        <strong>↓</strong>
                     </MyButton>
                 )}
             </div>

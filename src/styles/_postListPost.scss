@@ -21,8 +21,14 @@
     }
 
     &__btns {
+        align-self: flex-end;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.3rem;
+
         @media only screen and (max-width: 1200px) and (orientation: portrait) {
             align-self: flex-end;
+            gap: 0.2rem;
         }
     }
 
