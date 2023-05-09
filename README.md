@@ -2,9 +2,8 @@
 
 ## Simplify your surveys with Questionnaire!
 ### An application for conducting surveys with clients/customers/focus group participants, etc.
-
----
-***Current version 0.2.0***
+### *Current version 0.2.0*
+##
 
 **Functionality:**
 
