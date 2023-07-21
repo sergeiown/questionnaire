@@ -11,7 +11,7 @@ const sendEmail = async (answers) => {
         const templateParams = {
             subject: `Стосовно опитування: "${title}"`,
             to_email: `${emailAddress}`,
-            message: `${answers[0]} о ${answers[1]} користувач ${answers[3]} (${answers[2]}) успішно пройшов опитування "${title}".`,
+            message: `${answers[0]} о ${answers[1]} користувач(ка) ${answers[3]} (${answers[2]}) успішно пройшов(ла) опитування "${title}".`,
         };
 
         emailjs.init(`${serviceInfo.init}`);
