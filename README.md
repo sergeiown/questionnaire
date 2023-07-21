@@ -4,7 +4,7 @@
 
 ### An application for conducting surveys with clients / customers / focus group participants, etc.
 
-### _Current version 1.0.0 (routine use has started)_
+### _Current version 1.0.1 (improved email messages)_
 
 ##
 
