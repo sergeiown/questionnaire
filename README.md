@@ -6,7 +6,7 @@
 
 ## *Current version 1.0.1 (improved email messages)*
 
-**Functionality:**
+### Functionality
 
 ***General:***
 
@@ -76,6 +76,8 @@
 | react-google-recaptcha | ^2.1.0 | Component for interacting with reCAPTCHA |
 | xlsx | ^0.19.2 | Library for working with electronic spreadsheets |
 
+---
+
 ### Application structure
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/ccf45333-5078-4b6b-be81-b21cb0e8d047)
@@ -86,13 +88,23 @@
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/5ba289e2-a6c2-404d-818e-76d0cc006a74)
 
+---
+
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/a083d4dc-5f77-409c-8716-226c3134aee3)
+
+---
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/0ba8dd06-640d-4b28-a7a0-9faa07fe65d7)
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/8dc948f2-20e4-46f5-90c3-45aae912accd)
+---
+
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/1d40ced0-f0fb-4550-972d-eeb12c8f64dd)
+
+---
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/5b34b548-481e-4bcd-bcf9-99fa881365f2)
+
+---
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/eb8c6b52-2bf9-4f22-8f82-6004a4a6c321)
 
