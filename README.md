@@ -2,21 +2,17 @@
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/24cca864-e673-462b-97a6-a17a9ce26f24)
 
-## Simplify your surveys with Questionnaire
+## Simplify your surveys with Questionnaire - an application for conducting surveys with clients / customers / focus group participants, etc
 
-### An application for conducting surveys with clients / customers / focus group participants, etc
-
-### _Current version 1.0.1 (improved email messages)_
-
----
+## *Current version 1.0.1 (improved email messages)*
 
 **Functionality:**
 
-**_General:_**
+***General:***
 
 - Fully responsive design.
 
-**_Admin area:_**
+***Admin area:***
 
 - Authentication (using Google sign-in);
 - Authorization (using internal roles);
@@ -49,7 +45,7 @@
   - Exit without saving the results;
   - Applying temporary storage of intermediate data in case of atypical situations.
 
-**_User area:_**
+***User area:***
 
 - Completing the survey by answering questions one by one;
 - Validation of answers:
