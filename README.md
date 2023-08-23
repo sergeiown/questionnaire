@@ -89,6 +89,7 @@
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/f828374b-2ab4-47ff-bfda-943d0c1c72d4)
 
 ---
+### Appearance of the application (admin area)
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/774f9f7a-cdfe-4bdc-bb70-67a6dc3f9ec7)
 
@@ -105,6 +106,7 @@
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/0a799729-7c9c-4eee-975f-4b8445e9f239)
 
 ---
+### Appearance of the application (user area)
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/48ad5fa2-e2ca-4abe-b5d8-7da89d7d73ac)
 
