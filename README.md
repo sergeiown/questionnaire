@@ -106,9 +106,17 @@
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/0a799729-7c9c-4eee-975f-4b8445e9f239)
 
 ---
+
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/1786c91e-a846-4650-bcb2-5fed39fa92a1)
+
+---
 ### Appearance of the application (user area)
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/48ad5fa2-e2ca-4abe-b5d8-7da89d7d73ac)
+
+---
+
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/3e348004-1e26-4c0c-ab84-21aadef31a4a)
 
 ---
 ### Appearance of the application (RWD mobile)
