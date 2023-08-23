@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import ExcelFileManager from '../../services/Excel';
 import fileNameService from '../../API/fileNameService';
-import SurveyService from '../../API/SurveyService';
 import MyButton from '../UI/button/MyButton';
 import Loader from '../UI/Loader/Loader';
 
 const FileList = () => {
     const [files, setFiles] = useState([]);
     const [fileName, setFilename] = useState('');
-    const [recipientNum, setRecipientNum] = useState('');
-    const [dateOfEnd, setDateOfEnd] = useState('');
     const [isFileName, setIsFileName] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -25,12 +22,6 @@ const FileList = () => {
         setFilename(fileName);
     };
 
-    const fetchRecipientNum = async () => {
-        const recipientNum = await SurveyService.get();
-        setRecipientNum(recipientNum.length - 1);
-        setDateOfEnd(recipientNum[recipientNum.length - 1].split('"')[1]);
-    };
-
     const handleFileDelete = async (url) => {
         await ExcelFileManager.delete(url);
         fetchFiles();
@@ -39,7 +30,6 @@ const FileList = () => {
     useEffect(() => {
         fetchFiles();
         fetchFileName();
-        fetchRecipientNum();
     }, []);
 
     useEffect(() => {
@@ -71,7 +61,15 @@ const FileList = () => {
                                 <a
                                     className="downloadUrl"
                                     href={file.url}
-                                    title={`Опитування активне, остання відповідь: ${dateOfEnd}. \nВсього респондентів: ${recipientNum}.`}
+                                    title={`Опитування активне\nстаном на: ${new Date(
+                                        file.updatedAt
+                                    ).toLocaleDateString('uk-UA')} ${new Date(file.updatedAt).toLocaleTimeString(
+                                        'uk-UA',
+                                        {
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                        }
+                                    )}`}
                                     download
                                 >
                                     <div className="fileName">
@@ -84,7 +82,12 @@ const FileList = () => {
                                 <a
                                     className="downloadUrl"
                                     href={file.url}
-                                    title={`Опитування завершене ${dateOfEnd}. \nВсього респондентів: ${recipientNum}.`}
+                                    title={`Опитування завершене: \n${new Date(file.updatedAt).toLocaleDateString(
+                                        'uk-UA'
+                                    )} ${new Date(file.updatedAt).toLocaleTimeString('uk-UA', {
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                    })}`}
                                     download
                                 >
                                     <div className="fileName">

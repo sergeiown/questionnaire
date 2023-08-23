@@ -30,11 +30,12 @@ export default class ExcelFileManager {
                 const url = await itemRef.getDownloadURL();
                 const metadata = await itemRef.getMetadata();
                 const createdAt = metadata.timeCreated;
-                files.push({ name, url, createdAt });
+                const updatedAt = metadata.updated;
+                files.push({ name, url, createdAt, updatedAt });
             })
         );
 
-        console.log(`${new Date().toLocaleTimeString('uk-UA')} list of files retrieved from Firestorage`);
+        console.log(`${new Date().toLocaleTimeString('uk-UA')} list of files retrieved from Firestorage}`);
 
         return files;
     };
