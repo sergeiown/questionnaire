@@ -86,11 +86,11 @@
 
 ### Appearance of the application
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/5ba289e2-a6c2-404d-818e-76d0cc006a74)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/f828374b-2ab4-47ff-bfda-943d0c1c72d4)
 
 ---
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/a083d4dc-5f77-409c-8716-226c3134aee3)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/774f9f7a-cdfe-4bdc-bb70-67a6dc3f9ec7)
 
 ---
 
@@ -98,16 +98,20 @@
 
 ---
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/1d40ced0-f0fb-4550-972d-eeb12c8f64dd)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/22b1ad68-df79-4e35-90bb-c191a536ca48)
 
 ---
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/5b34b548-481e-4bcd-bcf9-99fa881365f2)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/0a799729-7c9c-4eee-975f-4b8445e9f239)
 
 ---
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/eb8c6b52-2bf9-4f22-8f82-6004a4a6c321)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/48ad5fa2-e2ca-4abe-b5d8-7da89d7d73ac)
 
 ---
+### Appearance of the application (RWD mobile)
 
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/965f3499-f9e8-4166-9593-d8da5e7fa397)
+
+---
 ( ͡° ͜ʖ ͡°)
