@@ -96,7 +96,7 @@
 
 ---
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/0ba8dd06-640d-4b28-a7a0-9faa07fe65d7)
+![image](https://github.com/sergeiown/questionnaire/assets/112722061/12cd2549-7b67-4dce-a4cb-774f001be67b)
 
 ---
 
