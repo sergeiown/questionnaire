@@ -55,7 +55,7 @@
 - Textual display of the survey progress;
 - Visual design and sequence of questions in accordance with the administrator's preferences;
 - Notification of completion of the survey;
-- Prevent multiple surveys from being taken from the same device.
+- Prevent multiple surveys from being conducted from a single device (five-minute limit).
 
 **The version with the Ukrainian interface is currently available. The development of an English-language interface is planned.**
 
