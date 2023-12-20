@@ -84,47 +84,15 @@
 
 ---
 
-### Appearance of the application
+### Appearance
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/f828374b-2ab4-47ff-bfda-943d0c1c72d4)
-
----
-
-### Appearance of the application (admin area)
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/774f9f7a-cdfe-4bdc-bb70-67a6dc3f9ec7)
-
----
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/12cd2549-7b67-4dce-a4cb-774f001be67b)
-
----
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/22b1ad68-df79-4e35-90bb-c191a536ca48)
-
----
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/0a799729-7c9c-4eee-975f-4b8445e9f239)
-
----
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/1786c91e-a846-4650-bcb2-5fed39fa92a1)
-
----
-
-### Appearance of the application (user area)
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/48ad5fa2-e2ca-4abe-b5d8-7da89d7d73ac)
-
----
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/3e348004-1e26-4c0c-ab84-21aadef31a4a)
-
----
-
-### Appearance of the application (RWD mobile)
-
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/965f3499-f9e8-4166-9593-d8da5e7fa397)
+|                           |         |         |
+|---------------------------|---------|---------|
+| Application               | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/f828374b-2ab4-47ff-bfda-943d0c1c72d4) | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/774f9f7a-cdfe-4bdc-bb70-67a6dc3f9ec7) |
+| Admin Area                | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/12cd2549-7b67-4dce-a4cb-774f001be67b) | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/22b1ad68-df79-4e35-90bb-c191a536ca48) |
+| Admin Area                | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/0a799729-7c9c-4eee-975f-4b8445e9f239) | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/1786c91e-a846-4650-bcb2-5fed39fa92a1) |
+| User Area                 | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/48ad5fa2-e2ca-4abe-b5d8-7da89d7d73ac) | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/3e348004-1e26-4c0c-ab84-21aadef31a4a) |
+| RWD Mobile                | ![image](https://github.com/sergeiown/questionnaire/assets/112722061/965f3499-f9e8-4166-9593-d8da5e7fa397) |         |
 
 ---
 ( ͡° ͜ʖ ͡°)
