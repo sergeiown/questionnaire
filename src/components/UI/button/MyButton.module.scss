@@ -9,6 +9,7 @@
     box-shadow: 0 0 0.5rem $color-black;
     text-transform: uppercase;
     cursor: pointer;
+    position: relative;
 
     @include hover-button(0.3s);
 
