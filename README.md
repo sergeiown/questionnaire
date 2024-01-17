@@ -1,4 +1,4 @@
-# [Questionnaire](https://questionnaire-sergeiown.web.app/)
+# [Questionnaire](https://github.com/sergeiown/questionnaire)
 
 ![image](https://github.com/sergeiown/questionnaire/assets/112722061/24cca864-e673-462b-97a6-a17a9ce26f24)
 
