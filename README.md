@@ -1,6 +1,6 @@
 # [Questionnaire](https://questionnaire-sergeiown.web.app/)
 
-![image](https://github.com/sergeiown/questionnaire/assets/112722061/24cca864-e673-462b-97a6-a17a9ce26f24)
+![image](https://github.com/sergeiown/questionnaire)
 
 ## Simplify the process of creating and conducting surveys with clients, employees, and other participants using Questionnaire. This application provides full functionality for creating surveys, managing results, and offers a user-friendly interface for both administrators and users
 
